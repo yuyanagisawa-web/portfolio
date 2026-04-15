@@ -171,7 +171,7 @@ export default function Home() {
     <a href="mailto:yourmail@example.com" className="hover:text-white transition">
       yourmail@example.com
     </a>
-    <a href="https://github.com/yourname" target="_blank" rel="noreferrer" className="hover:text-white transition">
+    <a href="https://github.com/yuyanagisawa-web" target="_blank" rel="noreferrer" className="hover:text-white transition">
       GitHub
     </a>
   </div>

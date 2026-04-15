@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import WorksCard from "../components/WorksCard";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
 export default function Home() {

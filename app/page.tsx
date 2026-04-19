@@ -163,17 +163,30 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="pb-24">
-          <h2 className="text-4xl font-bold mb-6">Contact</h2>
+  <h2 className="text-4xl font-bold mb-6">Contact</h2>
+
   <p className="text-gray-400 mb-4">
     お問い合わせはメールまたはGitHubからお願いします。
   </p>
+
   <div className="flex flex-col gap-2 text-gray-200">
-    <a href="mailto:yourmail@example.com" className="hover:text-white transition">
-      yourmail@example.com
+
+    <a
+      href="mailto:stsp7.yy@gmail.com"
+      className="hover:text-white transition"
+    >
+      📧 stsp7.yy@gmail.com
     </a>
-    <a href="https://github.com/yuyanagisawa-web" target="_blank" rel="noreferrer" className="hover:text-white transition">
-      GitHub
+
+    <a
+      href="https://github.com/yuyanagisawa-web"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-white transition"
+    >
+      💻 GitHub
     </a>
+
   </div>
 </section>
 </div>

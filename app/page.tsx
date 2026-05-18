@@ -166,15 +166,29 @@ export default function Home() {
           <section id="about" className="mb-28">
             <div className="max-w-3xl">
               <h2 className="text-4xl font-bold mb-6">About</h2>
+
               <p className="text-gray-300 leading-8">
-                Web制作会社にて1年間、コーポレートサイトやLP制作に携わってきました。
+                事業会社にて約1年半、コーポレートサイトやLP制作に携わってきました。
                 主にHTML/CSSを中心としたコーディングを担当し、JavaScriptやWordPressを用いた
                 サイト構築も経験しています。
+
                 <br />
                 <br />
-                デザインからコーディング、レスポンシブ対応まで一貫して担当できることを強みとしており、
-                現在はNext.jsを学習しながらフロントエンド領域のスキルをさらに伸ばしています。
-              </p>
+
+                前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
+                「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
+
+                <br />
+                <br />
+
+                デザイン調整からコーディング、レスポンシブ対応まで一貫して担当しており、
+                現在はNext.jsを学習しながらフロントエンド領域のスキルも伸ばしています。
+
+                <br />
+                <br />
+
+                ユーザー視点や情報の伝わりやすさを意識しながら、
+                見た目だけでなく目的に沿ったWeb制作を心がけています。              </p>
             </div>
           </section>
           <section className="mb-28">

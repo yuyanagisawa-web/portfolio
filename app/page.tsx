@@ -164,46 +164,48 @@ export default function Home() {
                   情報整理と視認性を意識してデザイン・実装を行いました。
                 </p>
               </Link>
+              {/* TBK */}
+              <Link
+                href="/works/tbk"
+                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+              >
+                <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
+
+                  <img
+                    src="/tbk.jpg"
+                    alt="株式会社都波岐精巧"
+                    className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+
+                </div>
+
+                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
+                  株式会社都波岐精巧
+                </h3>
+
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
+                    デザイン
+                  </span>
+
+                  <span className="text-xs bg-emerald-400/10 text-emerald-200 px-3 py-1 rounded-full border border-emerald-300/20">
+                    コーディング
+                  </span>
+
+                  <span className="text-xs bg-fuchsia-400/10 text-fuchsia-200 px-3 py-1 rounded-full border border-fuchsia-300/20">
+                    レスポンシブ
+                  </span>
+                </div>
+
+                <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
+                  情報量の多い企業サイトのため、
+                  視認性や導線を意識しながらレイアウトを設計しました。
+                </p>
+              </Link>
+
             </div>
+
           </section>
-          {/* TBK */}
-          <Link
-            href="/works/tbk"
-            className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
-          >
-            <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
-
-              <img
-                src="/tbk.jpg"
-                alt="株式会社都波岐精巧"
-                className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-              />
-
-            </div>
-
-            <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-              株式会社都波岐精巧
-            </h3>
-
-            <div className="flex gap-2 mb-4 flex-wrap">
-              <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
-                デザイン
-              </span>
-
-              <span className="text-xs bg-emerald-400/10 text-emerald-200 px-3 py-1 rounded-full border border-emerald-300/20">
-                コーディング
-              </span>
-
-              <span className="text-xs bg-fuchsia-400/10 text-fuchsia-200 px-3 py-1 rounded-full border border-fuchsia-300/20">
-                レスポンシブ
-              </span>
-            </div>
-
-            <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-              情報量の多い企業サイトのため、
-              視認性や導線を意識しながらレイアウトを設計しました。
-            </p>
-          </Link>
           {/* About */}
           <section id="about" className="mb-28">
             <div className="max-w-3xl">

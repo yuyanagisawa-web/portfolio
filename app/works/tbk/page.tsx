@@ -24,7 +24,7 @@ export default function TBKPage() {
                     />
 
                     <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
-                        都波岐精巧
+                        株式会社都波岐精巧
                     </h1>
 
                     <div className="flex flex-wrap gap-3 mb-10">

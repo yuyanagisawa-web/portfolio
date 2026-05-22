@@ -175,14 +175,14 @@ export default function Home() {
 
               <img
                 src="/tbk.jpg"
-                alt="都波岐精巧"
+                alt="株式会社都波岐精巧"
                 className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
               />
 
             </div>
 
             <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-              都波岐精巧
+              株式会社都波岐精巧
             </h3>
 
             <div className="flex gap-2 mb-4 flex-wrap">

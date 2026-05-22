@@ -23,7 +23,7 @@ export default function TBKPage() {
                         className="rounded-2xl mb-10 w-full"
                     />
 
-                    <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
+                    <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-6">
                         株式会社都波岐精巧
                     </h1>
 

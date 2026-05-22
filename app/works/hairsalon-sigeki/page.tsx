@@ -16,7 +16,7 @@ export default function Page() {
           >
             ← Works一覧に戻る
           </Link>
-          <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-4">
+          <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
             Hair Salon Shigeki
           </h1>
 

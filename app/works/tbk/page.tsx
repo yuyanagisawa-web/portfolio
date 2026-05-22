@@ -40,9 +40,6 @@ export default function TBKPage() {
                             レスポンシブ
                         </span>
 
-                        <span className="text-sm px-4 py-2 rounded-full border border-white/15 bg-white/5">
-                            公開
-                        </span>
                     </div>
 
                     <section className="mb-14">

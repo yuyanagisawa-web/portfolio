@@ -18,7 +18,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-xl text-gray-400 mb-6">
-              Web Designer / Coder
+              Web Designer / Frontend Coder
             </p>
 
             <p className="text-sm md:text-lg text-gray-500 leading-7 md:leading-8 max-w-2xl mb-8">
@@ -38,9 +38,8 @@ export default function Home() {
               ユーザー視点や目的を意識したWeb制作を大切にしています。
               <br />
               <br />
-              コーポレートサイトや店舗サイトを中心に、
-              情報整理や見やすさを意識したデザイン・実装を得意としています。
-            </p>
+              現在はNext.jsを用いた自主制作にも取り組み、
+              UI設計や情報整理を意識したフロントエンド実装を学習しています。            </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#works"
@@ -62,7 +61,8 @@ export default function Home() {
             <div className="mb-10">
               <h2 className="text-4xl font-bold mb-3">Works</h2>
               <p className="text-gray-400 leading-7">
-                実務制作に加え、自主制作ではUI設計・状態管理・インタラクションを意識した作品を掲載しています。
+                実務制作に加え、自主制作ではNext.jsを用いたフロントエンド実装や、
+                状態管理を取り入れた作品を掲載しています。
               </p>
             </div>
 
@@ -100,12 +100,13 @@ export default function Home() {
                     Next.js
                   </span>
                   <span className="text-xs bg-fuchsia-400/10 text-fuchsia-200 px-3 py-1 rounded-full border border-fuchsia-300/20">
-                    UI Design
+                    Frontend
                   </span>
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  タスクの追加・編集・完了状態の切り替えができる、タスク管理UIの自主制作です。
+                  タスクの追加・編集・完了状態の切り替えができる、
+                  状態管理を取り入れたタスク管理UIの自主制作です。
                 </p>
               </Link>
               {/* コスメ */}
@@ -151,13 +152,15 @@ export default function Home() {
                   </span>
 
                   <span className="text-xs bg-purple-500/10 text-purple-300 border border-purple-500/20 px-3 py-1 rounded-full">
-                    UI/UX
+                    購入導線を意識
                   </span>
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  商品一覧・詳細・カート確認までの購入導線を意識して制作した、
+                  商品一覧・商品詳細・カート確認まで、
+                  シンプルな購入導線を意識して制作した
                   コスメECサイトの自主制作です。
+
                 </p>
               </Link>
               {/* ジム */}
@@ -310,26 +313,20 @@ export default function Home() {
                 <br />
                 <br />
 
-                前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
+                前職では広告代理店にて、
+                営業・企画書作成・ディレクション業務を経験し、
                 「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
-
                 <br />
                 <br />
 
-                デザイン調整からコーディング、レスポンシブ対応まで一貫して担当しており、
-                現在はNext.jsを学習しながらフロントエンド領域のスキルも伸ばしています。
-
+                デザイン調整からコーディング、
+                レスポンシブ対応まで一貫して担当しており、
+                現在はNext.jsを用いた自主制作にも取り組んでいます。
                 <br />
                 <br />
 
-                ユーザー視点や情報の伝わりやすさを意識しながら、
-                見た目だけでなく目的に沿ったWeb制作を心がけています。
-                <br />
-                <br />
-
-                制作では、単にデザインを再現するだけでなく、
-                情報の伝わりやすさやユーザーの見やすさを意識しながら、
-                細かな余白や配置バランスまで調整しています。
+                情報整理や余白設計を意識しながら、
+                見やすさと使いやすさを両立したWeb制作を心がけています。
               </p>
             </div>
           </section>
@@ -379,8 +376,6 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-6">Contact</h2>
 
             <p className="text-gray-400 mb-4">
-              お気軽にご連絡ください。
-              お問い合わせはメールまたはGitHubよりお願いいたします。
             </p>
 
             <div className="flex flex-col gap-2 text-gray-200">

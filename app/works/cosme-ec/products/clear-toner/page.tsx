@@ -78,7 +78,7 @@ export default function Page() {
                                 化粧水
                             </p>
 
-                            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-5">
                                 Clear Toner
                             </h1>
 

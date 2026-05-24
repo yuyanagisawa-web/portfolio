@@ -65,11 +65,11 @@ export default function Page() {
                         ← 商品一覧に戻る
                     </Link>
 
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                    <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
                         Cart
                     </h1>
 
-                    <p className="text-[#6f6258] text-lg mb-14">
+                    <p className="text-sm md:text-base text-[#6f6258] mb-8 md:mb-10">
                         購入前の確認画面を想定したカートUIです。
                     </p>
 
@@ -78,24 +78,24 @@ export default function Page() {
                         {cartItems.map((item) => (
                             <div
                                 key={item.slug}
-                                className="rounded-[2rem] bg-white p-10 shadow-sm border border-black/5"
+                                className="rounded-[2rem] bg-white p-5 md:p-7 shadow-sm border border-black/5"
                             >
 
                                 <div className="flex items-center justify-between">
 
                                     <div className="flex items-center gap-8">
 
-                                        <div className="h-32 w-24 rounded-[2rem] bg-[#e7ddd2] flex items-center justify-center">
-                                            <div className="h-16 w-8 rounded-full bg-white/80" />
+                                        <div className="h-24 w-20 rounded-[1.5rem] bg-[#e7ddd2] flex items-center justify-center">
+                                            <div className="h-12 w-6 rounded-full bg-white/80" />
                                         </div>
 
                                         <div>
 
-                                            <h2 className="text-4xl font-bold mb-2">
+                                            <h2 className="text-xl md:text-2xl font-semibold mb-1">
                                                 {item.name}
                                             </h2>
 
-                                            <p className="text-[#6f6258] text-xl mb-2">
+                                            <p className="text-[#6f6258] text-sm md:text-base mb-2">
                                                 {item.category} / {item.size}
                                             </p>
 
@@ -103,7 +103,7 @@ export default function Page() {
 
                                                 <button
                                                     onClick={() => updateQuantity(item.slug, "decrease")}
-                                                    className="h-9 w-9 rounded-full border border-black/10 bg-white hover:bg-black hover:text-white transition"
+                                                    className="h-8 w-8 rounded-full border border-black/10 bg-white hover:bg-black hover:text-white transition text-sm"
                                                 >
                                                     -
                                                 </button>
@@ -127,7 +127,7 @@ export default function Page() {
 
                                     <div className="text-right">
 
-                                        <p className="text-3xl font-bold mb-4">
+                                        <p className="text-xl md:text-2xl font-semibold mb-3">
                                             ¥{(item.price * item.quantity).toLocaleString()}
                                         </p>
 
@@ -147,7 +147,7 @@ export default function Page() {
 
                     </div>
 
-                    <div className="rounded-[2rem] bg-white p-10 shadow-sm border border-black/5">
+                    <div className="rounded-[2rem] bg-white p-5 md:p-7 shadow-sm border border-black/5">
 
                         <div className="space-y-5 text-[#6f6258] text-xl">
 
@@ -170,17 +170,17 @@ export default function Page() {
 
                         <div className="flex justify-between items-center mb-10">
 
-                            <p className="text-3xl font-bold">
+                            <p className="text-2xl md:text-3xl font-semibold">
                                 合計
                             </p>
 
-                            <p className="text-5xl font-bold">
+                            <p className="text-4xl font-bold">
                                 ¥{totalPrice.toLocaleString()}
                             </p>
 
                         </div>
 
-                        <button className="w-full rounded-full bg-[#1f1b18] text-white py-5 text-lg font-medium hover:opacity-80 transition">
+                        <button className="w-full rounded-full bg-[#1f1b18] text-white py-4 text-sm md:text-base font-medium hover:opacity-80 transition">
                             購入手続きへ進む
                         </button>
 

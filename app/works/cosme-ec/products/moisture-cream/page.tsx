@@ -80,7 +80,7 @@ export default function Page() {
                                 保湿クリーム
                             </p>
 
-                            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                            <h1 className="text-3xl md:text-[52px] font-semibold tracking-tight leading-[1.05] mb-5">
                                 Moisture Cream
                             </h1>
 

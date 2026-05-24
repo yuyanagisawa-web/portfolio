@@ -7,8 +7,8 @@ export default function Page() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-[#f7f3ee] text-[#1f1b18] px-6 md:px-10">
-                <div className="max-w-6xl mx-auto py-20">
+            <main className="min-h-screen bg-[#f7f3ee] text-[#1f1b18] px-5 md:px-10">
+                <div className="max-w-6xl mx-auto py-14 md:py-16">
                     <p className="text-sm tracking-[0.2em] text-[#9b8f84] uppercase mb-4">
                         Works Detail
                     </p>
@@ -20,31 +20,31 @@ export default function Page() {
                         ← Works一覧に戻る
                     </Link>
 
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-5 md:mb-6">
                         Lumière Skin
                     </h1>
 
-                    <p className="text-[#6f6258] text-xl leading-[2.2] max-w-4xl mb-16">
+                    <p className="text-[#6f6258] text-base md:text-xl leading-8 md:leading-[2.2] max-w-4xl mb-8 md:mb-16">
                         自然由来のスキンケアアイテムを展開する、
                         ミニマルなコスメブランドを想定したECサイトです。
                         毎日のスキンケア時間が、
                         少し静かで心地よい体験になる世界観を表現しました。
                     </p>
 
-                    <p className="text-[#8b7d70] text-lg leading-[2.2] max-w-4xl">
+                    <p className="text-[#8b7d70] text-sm md:text-base leading-8 max-w-2xl mb-10 md:mb-12">
                         肌にやさしくなじむ質感や、
                         落ち着いた余白設計を通して、
                         シンプルで上品なブランド体験を目指しています。
                     </p>
 
-                    <section className="rounded-[2rem] bg-white border border-black/5 p-6 md:p-10 mb-14 shadow-sm">
-                        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-center">
+                    <section className="rounded-[1.5rem] md:rounded-[2rem] bg-white border border-black/5 p-5 md:p-7 mb-12 shadow-sm">
+                        <div className="grid gap-8 md:gap-10 md:grid-cols-[1.1fr_0.9fr] items-center">
                             <div>
                                 <p className="text-sm tracking-[0.25em] text-[#b6a99e] uppercase mb-5">
                                     Skincare EC Concept
                                 </p>
 
-                                <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
                                     肌に、静かな
                                     <br />
                                     うるおいを。
@@ -59,7 +59,7 @@ export default function Page() {
 
                                     <Link
                                         href="/works/cosme-ec/site"
-                                        className="rounded-full bg-[#1f1b18] text-white px-6 py-3 text-sm font-medium hover:opacity-80 transition"
+                                        className="w-full md:w-auto text-center rounded-full bg-[#1f1b18] text-white px-6 py-3 text-sm font-medium hover:opacity-80 transition"
                                     >
                                         サイトを見る
                                     </Link>
@@ -69,7 +69,7 @@ export default function Page() {
                                 </div>
                             </div>
 
-                            <div className="rounded-[1.5rem] bg-[#efe7dd] p-6 md:p-8">
+                            <div className="rounded-[1.5rem] bg-[#efe7dd] p-5 md:p-6">
                                 <div className="aspect-[4/5] rounded-[1.25rem] bg-gradient-to-br from-[#ffffff] via-[#eadfd3] to-[#cdbdaa] border border-white/70 flex items-center justify-center">
                                     <div className="text-center">
                                         <p className="text-sm tracking-[0.3em] text-[#8b7d70] uppercase mb-4">

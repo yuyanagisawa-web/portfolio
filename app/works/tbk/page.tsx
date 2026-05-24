@@ -49,6 +49,7 @@ export default function TBKPage() {
 
                         <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
                             製造業のコーポレートサイトとして、
+                            <br />
                             企業情報や事業内容が分かりやすく伝わる構成を意識して制作しました。
                         </p>
                     </section>
@@ -60,6 +61,7 @@ export default function TBKPage() {
 
                         <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
                             デザイン調整、HTML/CSSコーディング、
+                            <br />
                             レスポンシブ対応、公開まで一貫して担当しました。
                         </p>
                     </section>
@@ -71,9 +73,13 @@ export default function TBKPage() {
 
                         <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
                             情報量の多い企業サイトのため、
+                            <br />
                             視認性や導線を意識しながらレイアウトを設計しました。
+                            <br />
                             Figmaをベースにしつつ、
+                            <br />
                             余白や配置、見出しバランスを調整し、
+                            <br />
                             見やすく信頼感のあるデザインになるよう工夫しています。
                         </p>
                     </section>

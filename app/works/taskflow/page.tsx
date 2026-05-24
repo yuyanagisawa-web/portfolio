@@ -33,12 +33,16 @@ export default function Page() {
                   Concept LP
                 </p>
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-                  今日やることを、<br />
+                  今日やることを、
+                  <br />
                   迷わず整理する。
                 </h2>
                 <p className="text-gray-400 leading-8 mb-8">
                   TaskFlowは、タスク・優先度・完了状態をひとつの画面で整理できる
-                  タスク管理UIです。情報量を抑え、追加・編集・完了までの操作が直感的に分かる設計を意識しました。
+                  <br />
+                  タスク管理UIです。情報量を抑え、追加・編集・完了までの操作が
+                  <br />
+                  直感的に分かる設計を意識しました。
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a
@@ -158,17 +162,27 @@ export default function Page() {
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              タスク管理ツールでは、追加・編集・完了といった基本操作が分かりやすいことが重要だと考えました。
+              タスク管理ツールでは、追加・編集・完了といった
+              <br />
+              基本操作が分かりやすいことが重要だと考えました。
               <br /><br />
-              そのため、TaskFlowでは操作数を抑えながら、タスクの状態や優先度がひと目で分かる構成を意識して制作しました。            </p>
+              そのため、TaskFlowでは操作数を抑えながら、
+              <br />
+              タスクの状態や優先度がひと目で分かる構成を意識して制作しました。            </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              タスクの追加、編集、完了切り替えといった操作ごとにUIの状態が分かりやすく変化するように設計しました。
-              <br /><br />
-              また、Next.js / TypeScriptで状態管理を行い、Tailwind CSSでレスポンシブ時にも崩れにくいカードUIを実装しています。            </p>
+              タスクの追加・編集・完了切り替えなど、
+              操作ごとにUIの状態が分かりやすく変化するよう設計しました。
+
+              <br />
+              <br />
+
+              また、レスポンシブ時にも崩れにくいよう、
+              カードUIの余白やレイアウトを調整しています。
+            </p>
           </section>
 
 

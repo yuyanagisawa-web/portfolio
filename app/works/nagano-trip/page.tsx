@@ -72,7 +72,10 @@ export default function Page() {
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
               サービス内容や利用イメージが伝わりやすいよう、
+              <br />
               情報整理と視認性を意識して制作しました。
+              <br />
+              <br />
 
               幅広い年代のユーザーにも見やすいデザインを目指しています。
             </p>
@@ -82,9 +85,13 @@ export default function Page() {
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
               情報量が多くなりすぎないよう、
+              <br />
               セクションごとに整理しながらレイアウトを設計しました。
+              <br />
+              <br />
 
               視認性を意識して余白や文字サイズを調整し、
+              <br />
               スマートフォンでも読みやすいよう実装しています。
             </p>
           </section>

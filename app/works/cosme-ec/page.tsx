@@ -26,14 +26,19 @@ export default function Page() {
 
                     <p className="text-[#6f6258] text-base md:text-xl leading-8 md:leading-[2.2] max-w-4xl mb-8 md:mb-16">
                         自然由来のスキンケアアイテムを展開する、
+                        <br />
                         ミニマルなコスメブランドを想定したECサイトです。
+                        <br />
                         毎日のスキンケア時間が、
+                        <br />
                         少し静かで心地よい体験になる世界観を表現しました。
                     </p>
 
                     <p className="text-[#8b7d70] text-sm md:text-base leading-8 max-w-2xl mb-10 md:mb-12">
                         肌にやさしくなじむ質感や、
+                        <br />
                         落ち着いた余白設計を通して、
+                        <br />
                         シンプルで上品なブランド体験を目指しています。
                     </p>
 
@@ -52,6 +57,7 @@ export default function Page() {
 
                                 <p className="text-[#6f6258] leading-8 mb-8">
                                     毎日のスキンケアを心地よく選べるよう、
+                                    <br />
                                     商品の特徴・価格・購入アクションが自然に目に入る構成を意識しました。
                                 </p>
 
@@ -109,6 +115,7 @@ export default function Page() {
                             コスメECでは、商品の魅力だけでなく、購入まで迷わず進める導線設計が重要だと考えました。
                             <br /><br />
                             そのため、Lumière Skinではブランドの上品さが伝わる余白設計と、
+                            <br />
                             商品情報・価格・購入ボタンが自然に目に入るカードUIを意識して制作しました。
                         </p>
                     </section>
@@ -119,6 +126,7 @@ export default function Page() {
                             全体の色数を抑え、余白・角丸・淡い背景色でスキンケアブランドらしい落ち着いた印象を作りました。
                             <br /><br />
                             また、商品カードでは画像領域、カテゴリ、商品名、説明文、価格、購入ボタンの順に情報を整理し、
+                            <br />
                             スマートフォンでも購入導線が分かりやすい構成にしています。
                         </p>
                     </section>
@@ -133,11 +141,13 @@ export default function Page() {
                             <br /><br />
 
                             商品一覧では視線が自然に流れるカードレイアウトを採用し、
+                            <br />
                             商品詳細では価格・特徴・購入CTAが分かりやすく伝わる構成にしています。
 
                             <br /><br />
 
                             また、余白や色数を抑えることで、
+                            <br />
                             スキンケアブランドらしい上品で落ち着いた世界観を表現しました。
                         </p>
                     </section>

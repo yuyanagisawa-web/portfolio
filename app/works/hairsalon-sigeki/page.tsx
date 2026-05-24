@@ -72,9 +72,13 @@ export default function Page() {
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
               美容室の高級感やかっこよさが伝わるよう、
+              <br />
               写真の見せ方や余白を活かしたデザインを意識して制作しました。
+              <br />
+              <br />
 
               パララックス表現やホバー時の動きを取り入れ、
+              <br />
               サイト全体の世界観が感じられる構成を意識しています。
             </p>
           </section>
@@ -83,9 +87,13 @@ export default function Page() {
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
               写真が引き立つよう余白や文字サイズを調整し、
+              <br />
               視線の流れを意識しながらレイアウトを設計しました。
+              <br />
+              <br />
 
               また、スマートフォンでも快適に閲覧できるよう、
+              <br />
               レスポンシブ対応にも配慮しています。
             </p>
           </section>

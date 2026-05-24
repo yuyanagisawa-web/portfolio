@@ -72,9 +72,12 @@ export default function Page() {
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
               体操クラブの魅力や安心感が伝わるよう、
+              <br />
               ファーストビューの見せ方や情報導線を意識して制作しました。
-
+              <br />
+              <br />
               初めて訪れるユーザーにも内容が伝わりやすいよう、
+              <br />
               情報整理や視認性を重視しています。
             </p>
           </section>
@@ -82,10 +85,12 @@ export default function Page() {
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              写真の印象が伝わりやすいよう余白感を調整し、
+              写真の印象が伝わりやすいよう余白感を調整し、<br />
               スマートフォンでも読みやすいよう情報の優先順位を整理しました。
-
-              サービス内容や導線が直感的に伝わる構成を意識しています。            </p>
+              <br />
+              <br />
+              サービス内容や導線が直感的に伝わる構成を意識しています。
+            </p>
           </section>
 
           <a

@@ -52,13 +52,17 @@ export default function Page() {
 
                         <p className="text-[#6f6258] text-sm md:text-lg leading-7 md:leading-[2] max-w-2xl mb-5 md:mb-8">
                             自然由来のスキンケアアイテムを通して、
+                            <br />
                             毎日のケア時間を心地よく整える
+                            <br />
                             ミニマルなスキンケアブランド。
                         </p>
 
                         <p className="text-[#8b7d70] text-sm md:text-base leading-7 md:leading-8 max-w-2xl">
                             肌になじむ軽やかな使用感と、
+                            <br />
                             落ち着いた空気感を大切にしながら、
+                            <br />
                             静かで上品なスキンケア体験を提案します。
                         </p>
                     </section>

@@ -88,8 +88,11 @@ export default function Page() {
 
                             <p className="text-[#6f6258] leading-8 mb-8">
                                 みずみずしいテクスチャで肌に素早くなじみ、
+                                <br />
                                 うるおいを与えながらキメを整える化粧水です。
+                                <br />
                                 毎日のスキンケアを軽やかに整え、
+                                <br />
                                 透明感のある印象へ導きます。
                             </p>
 
@@ -102,7 +105,9 @@ export default function Page() {
 
                                     <p className="text-sm text-[#6f6258] leading-7">
                                         肌になじみやすい軽やかな使用感を想定し、
+                                        <br />
                                         朝晩どちらでも使いやすい
+                                        <br />
                                         ベーシックな化粧水として設計しています。
                                     </p>
                                 </div>

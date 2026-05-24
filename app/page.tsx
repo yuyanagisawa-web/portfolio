@@ -29,16 +29,19 @@ export default function Home() {
               <br />
 
               HTML/CSSを中心としたコーディングを担当し、
+              <br />
               デザイン調整からレスポンシブ対応まで一貫して対応しています。
 
               <br />
               <br />
 
               前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
+              <br />
               ユーザー視点や目的を意識したWeb制作を大切にしています。
               <br />
               <br />
               現在はNext.jsを用いた自主制作にも取り組み、
+              <br />
               UI設計や情報整理を意識したフロントエンド実装を学習しています。            </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -62,6 +65,7 @@ export default function Home() {
               <h2 className="text-4xl font-bold mb-3">Works</h2>
               <p className="text-gray-400 leading-7">
                 実務制作に加え、自主制作ではNext.jsを用いたフロントエンド実装や、
+                <br />
                 状態管理を取り入れた作品を掲載しています。
               </p>
             </div>
@@ -106,6 +110,7 @@ export default function Home() {
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
                   タスクの追加・編集・完了状態の切り替えができる、
+                  <br />
                   状態管理を取り入れたタスク管理UIの自主制作です。
                 </p>
               </Link>
@@ -158,7 +163,9 @@ export default function Home() {
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
                   商品一覧・商品詳細・カート確認まで、
+                  <br />
                   シンプルな購入導線を意識して制作した
+                  <br />
                   コスメECサイトの自主制作です。
 
                 </p>
@@ -192,6 +199,7 @@ export default function Home() {
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
                   子ども向けの親しみやすさと安心感を意識し、
+                  <br />
                   情報量が多くなりすぎないよう余白や視線導線を工夫しました。
                 </p>
               </Link>

@@ -64,9 +64,9 @@ export default function Home() {
             <div className="mb-10">
               <h2 className="text-4xl font-bold mb-3">Works</h2>
               <p className="text-gray-400 leading-7">
-                実務制作に加え、自主制作ではNext.jsを用いたフロントエンド実装や、
+                実務制作に加え、自主制作ではNext.jsを用いた
                 <br />
-                状態管理を取り入れた作品を掲載しています。
+                フロントエンド実装にも取り組んでいます。
               </p>
             </div>
 
@@ -109,9 +109,9 @@ export default function Home() {
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  タスクの追加・編集・完了状態の切り替えができる、
+                  タスクの追加・編集・完了切り替えなど、
                   <br />
-                  状態管理を取り入れたタスク管理UIの自主制作です。
+                  操作感を意識して制作したタスク管理UIです。
                 </p>
               </Link>
               {/* コスメ */}
@@ -230,8 +230,9 @@ export default function Home() {
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  落ち着いた世界観を意識し、
-                  写真が引き立つ余白設計とシンプルな導線設計を意識しました。
+                  サイト全体の世界観を意識し、
+                  <br />
+                  パララックスや写真の見せ方を工夫して制作しました。
                 </p>
               </Link>
 
@@ -263,6 +264,7 @@ export default function Home() {
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
                   サービス内容が伝わりやすいよう、
+                  <br />
                   情報整理と視認性を意識してデザイン・実装を行いました。
                 </p>
               </Link>
@@ -301,6 +303,7 @@ export default function Home() {
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
                   情報量の多い企業サイトのため、
+                  <br />
                   視認性や導線を意識しながらレイアウトを設計しました。
                 </p>
               </Link>
@@ -315,25 +318,32 @@ export default function Home() {
 
               <p className="text-gray-300 leading-8">
                 事業会社にて約1年半、コーポレートサイトやLP制作に携わってきました。
+                <br />
                 主にHTML/CSSを中心としたコーディングを担当し、JavaScriptやWordPressを用いた
+                <br />
                 サイト構築も経験しています。
 
                 <br />
                 <br />
 
                 前職では広告代理店にて、
+                <br />
                 営業・企画書作成・ディレクション業務を経験し、
+                <br />
                 「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
                 <br />
                 <br />
 
                 デザイン調整からコーディング、
+                <br />
                 レスポンシブ対応まで一貫して担当しており、
+                <br />
                 現在はNext.jsを用いた自主制作にも取り組んでいます。
                 <br />
                 <br />
 
                 情報整理や余白設計を意識しながら、
+                <br />
                 見やすさと使いやすさを両立したWeb制作を心がけています。
               </p>
             </div>

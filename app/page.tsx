@@ -71,103 +71,43 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* TaskFlow */}
+              {/* TBK */}
               <Link
-                href="/works/taskflow"
+                href="/works/tbk"
                 className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
-                <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-white/[0.12] to-white/[0.03] border border-white/10 p-5 overflow-hidden">
-                  <div className="rounded-xl border border-white/10 bg-black/40 p-4">
-                    <div className="flex justify-between mb-4">
-                      <span className="font-semibold">Today</span>
-                      <span className="text-xs text-gray-500">4 tasks</span>
-                    </div>
-                    <div className="space-y-2">
-                      {["LP構成を確認", "UIパーツ作成", "レスポンシブ調整"].map((task) => (
-                        <div key={task} className="rounded-lg bg-white/[0.06] p-3 text-sm text-gray-200">
-                          {task}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
+
+                  <img
+                    src="/tbk.jpg"
+                    alt="株式会社都波岐精巧"
+                    className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+
                 </div>
 
                 <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                  TaskFlow
+                  株式会社都波岐精巧
                 </h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
-                    自主制作
+                    デザイン
                   </span>
+
                   <span className="text-xs bg-emerald-400/10 text-emerald-200 px-3 py-1 rounded-full border border-emerald-300/20">
-                    Next.js
+                    コーディング
                   </span>
+
                   <span className="text-xs bg-fuchsia-400/10 text-fuchsia-200 px-3 py-1 rounded-full border border-fuchsia-300/20">
-                    Frontend
+                    レスポンシブ
                   </span>
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  タスクの追加・編集・完了切り替えなど、
+                  情報量の多い企業サイトのため、
                   <br />
-                  操作感を意識して制作したタスク管理UIです。
-                </p>
-              </Link>
-              {/* コスメ */}
-              <Link
-                href="/works/cosme-ec"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
-              >
-                <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
-                  <div className="grid grid-cols-3 gap-3 h-full">
-                    {[1, 2, 3].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl bg-white border border-black/5 p-3 flex flex-col justify-between"
-                      >
-                        <div className="rounded-xl bg-[#efe7dd] h-20 flex items-center justify-center">
-                          <div className="h-12 w-6 rounded-t-full rounded-b-lg bg-[#d8c7b5]" />
-                        </div>
-
-                        <div>
-                          <p className="text-[10px] text-[#9c8d80] mb-1">
-                            skincare
-                          </p>
-
-                          <div className="h-2 rounded bg-[#1f1b18]/10 mb-1" />
-                          <div className="h-2 w-2/3 rounded bg-[#1f1b18]/10" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                  Lumière Skin
-                </h3>
-
-                <div className="flex gap-2 mb-4 flex-wrap">
-                  <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
-                    自主制作
-                  </span>
-
-                  <span className="text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-3 py-1 rounded-full">
-                    EC Design
-                  </span>
-
-                  <span className="text-xs bg-purple-500/10 text-purple-300 border border-purple-500/20 px-3 py-1 rounded-full">
-                    購入導線を意識
-                  </span>
-                </div>
-
-                <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  商品一覧・商品詳細・カート確認まで、
-                  <br />
-                  シンプルな購入導線を意識して制作した
-                  <br />
-                  コスメECサイトの自主制作です。
-
+                  視認性や導線を意識しながらレイアウトを設計しました。
                 </p>
               </Link>
               {/* ジム */}
@@ -268,43 +208,104 @@ export default function Home() {
                   情報整理と視認性を意識してデザイン・実装を行いました。
                 </p>
               </Link>
-              {/* TBK */}
+
+              {/* TaskFlow */}
               <Link
-                href="/works/tbk"
+                href="/works/taskflow"
                 className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
-                <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
-
-                  <img
-                    src="/tbk.jpg"
-                    alt="株式会社都波岐精巧"
-                    className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                  />
-
+                <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-white/[0.12] to-white/[0.03] border border-white/10 p-5 overflow-hidden">
+                  <div className="rounded-xl border border-white/10 bg-black/40 p-4">
+                    <div className="flex justify-between mb-4">
+                      <span className="font-semibold">Today</span>
+                      <span className="text-xs text-gray-500">4 tasks</span>
+                    </div>
+                    <div className="space-y-2">
+                      {["LP構成を確認", "UIパーツ作成", "レスポンシブ調整"].map((task) => (
+                        <div key={task} className="rounded-lg bg-white/[0.06] p-3 text-sm text-gray-200">
+                          {task}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                  株式会社都波岐精巧
+                  TaskFlow
                 </h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
-                    デザイン
+                    自主制作
                   </span>
-
                   <span className="text-xs bg-emerald-400/10 text-emerald-200 px-3 py-1 rounded-full border border-emerald-300/20">
-                    コーディング
+                    Next.js
                   </span>
-
                   <span className="text-xs bg-fuchsia-400/10 text-fuchsia-200 px-3 py-1 rounded-full border border-fuchsia-300/20">
-                    レスポンシブ
+                    Frontend
                   </span>
                 </div>
 
                 <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                  情報量の多い企業サイトのため、
+                  タスクの追加・編集・完了切り替えなど、
                   <br />
-                  視認性や導線を意識しながらレイアウトを設計しました。
+                  操作感を意識して制作したタスク管理UIです。
+                </p>
+              </Link>
+              {/* コスメ */}
+              <Link
+                href="/works/cosme-ec"
+                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+              >
+                <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
+                  <div className="grid grid-cols-3 gap-3 h-full">
+                    {[1, 2, 3].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl bg-white border border-black/5 p-3 flex flex-col justify-between"
+                      >
+                        <div className="rounded-xl bg-[#efe7dd] h-20 flex items-center justify-center">
+                          <div className="h-12 w-6 rounded-t-full rounded-b-lg bg-[#d8c7b5]" />
+                        </div>
+
+                        <div>
+                          <p className="text-[10px] text-[#9c8d80] mb-1">
+                            skincare
+                          </p>
+
+                          <div className="h-2 rounded bg-[#1f1b18]/10 mb-1" />
+                          <div className="h-2 w-2/3 rounded bg-[#1f1b18]/10" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
+                  Lumière Skin
+                </h3>
+
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
+                    自主制作
+                  </span>
+
+                  <span className="text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-3 py-1 rounded-full">
+                    EC Design
+                  </span>
+
+                  <span className="text-xs bg-purple-500/10 text-purple-300 border border-purple-500/20 px-3 py-1 rounded-full">
+                    購入導線を意識
+                  </span>
+                </div>
+
+                <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
+                  商品一覧・商品詳細・カート確認まで、
+                  <br />
+                  シンプルな購入導線を意識して制作した
+                  <br />
+                  コスメECサイトの自主制作です。
+
                 </p>
               </Link>
 

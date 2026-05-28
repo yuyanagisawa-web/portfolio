@@ -30,7 +30,7 @@ export default function Page() {
             className="w-full rounded-2xl border border-white/10 mb-12"
           />
 
-          <div className="grid gap-8 md:grid-cols-4 mb-12">
+          <div className="grid gap-8 md:grid-cols-5 mb-12">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Role
@@ -64,6 +64,15 @@ export default function Page() {
 
               <p className="leading-7 text-gray-200">
                 20〜30代の男性ユーザー
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
+                Period
+              </h2>
+
+              <p className="leading-7 text-gray-200">
+                2025.08 / 約8日
               </p>
             </div>
           </div>

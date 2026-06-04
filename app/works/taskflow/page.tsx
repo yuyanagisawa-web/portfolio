@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#050505] text-white px-6 md:px-10">
+      <main className="min-h-screen bg-[#111111] text-white px-6 md:px-10">
         <div className="max-w-5xl mx-auto py-20">
           <p className="text-sm tracking-[0.2em] text-gray-500 uppercase mb-4">
             Works Detail

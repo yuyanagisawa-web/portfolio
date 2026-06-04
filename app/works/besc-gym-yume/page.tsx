@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#050505] text-white px-6 md:px-10">
+      <main className="min-h-screen bg-[#111111] text-white px-6 md:px-10">
         <div className="max-w-5xl mx-auto py-20">
           <p className="text-sm tracking-[0.2em] text-gray-500 uppercase mb-4">
             Works Detail
@@ -17,7 +17,7 @@ export default function Page() {
             ← Works一覧に戻る
           </Link>
           <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
-            ベスク体操クラブ
+            体操クラブ
           </h1>
 
           <p className="text-lg text-gray-400 mb-10">
@@ -102,14 +102,7 @@ export default function Page() {
             </p>
           </section>
 
-          <a
-            href="https://besc-gym-yume.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
-          >
-            サイトを見る
-          </a>
+
         </div>
       </main>
       <BackToTop />

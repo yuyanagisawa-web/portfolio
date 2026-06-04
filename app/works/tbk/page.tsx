@@ -108,14 +108,7 @@ export default function Page() {
                         </p>
                     </section>
 
-                    <a
-                        href="https://tbk-1978.graws-service.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
-                    >
-                        サイトを見る
-                    </a>
+
                 </div>
             </main>
             <BackToTop />

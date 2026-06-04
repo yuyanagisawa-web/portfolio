@@ -5,89 +5,133 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#050505] text-white px-6 md:px-10">
+      <main className="min-h-screen bg-[#111111] text-white px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
           {/* Hero */}
-          <section className="pt-16 pb-20 md:pt-24 md:pb-24">
-            <p className="text-sm tracking-[0.2em] text-gray-400 uppercase mb-4">
-              Portfolio
-            </p>
+          <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-24">
+            <div className="absolute -top-28 -right-20 w-[420px] h-[420px] rounded-full bg-[#d8b4fe]/18 blur-3xl animate-float" />
+            <div className="absolute top-56 -left-24 w-[360px] h-[360px] rounded-full bg-[#fbcfe8]/12 blur-3xl animate-float-slow" />
+            <div className="absolute bottom-10 right-1/4 w-32 h-32 rounded-full bg-[#e9d5ff]/15 blur-2xl animate-pulse" />
+            <div className="absolute top-28 right-24 hidden md:block w-32 h-32 rounded-full border border-pink-200/20 animate-spin-slow" />
+            <div className="absolute bottom-28 right-40 hidden md:block w-2 h-2 rounded-full bg-pink-200/80 animate-ping" />
+            <div className="absolute bottom-40 right-24 hidden md:block w-20 h-[1px] bg-gradient-to-r from-transparent via-pink-200/50 to-transparent rotate-[-25deg]" />
 
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-6">
-              Yanagisawa Yu
-            </h1>
+            <div className="relative z-10">
+              <p className="text-sm tracking-[0.3em] text-[#e9d5ff] uppercase mb-4">
+                Portfolio
+              </p>
 
-            <p className="text-base md:text-xl text-gray-400 mb-6">
-              Web Designer / Frontend Coder
-            </p>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-6">
+                Yanagisawa
+                <span className="bg-gradient-to-r from-[#fbcfe8] to-[#d8b4fe] bg-clip-text text-transparent">
+                  Yu
+                </span>
+              </h1>
 
-            <p className="text-sm md:text-lg text-gray-500 leading-7 md:leading-8 max-w-2xl mb-8">
-              事業会社にて約1年半、
-              コーポレートサイトやLP制作に携わってきました。
+              <p className="text-base md:text-xl text-gray-400 mb-6 shadow-[0_20px_80px_rgba(244,194,214,0.08)]">
+                Web Designer / Frontend Coder
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-4 py-1 rounded-full border border-[#fbcfe8]/20 bg-[#fbcfe8]/10 text-[#fbcfe8] text-sm">
+                  Web Design
+                </span>
+                <span className="px-4 py-1 rounded-full border border-[#d8b4fe]/20 bg-[#d8b4fe]/10 text-[#d8b4fe] text-sm">
+                  Coding
+                </span>
+                <span className="px-4 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300 text-sm">
+                  Responsive
+                </span>
+              </div>
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
+                コーディングを中心に、
+                見やすく伝わるWebサイト制作を心掛けています。
+              </p>
+              <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-gradient-to-br from-white/[0.055] to-[#d8b4fe]/[0.035] backdrop-blur-sm p-8 shadow-[0_24px_100px_rgba(216,180,254,0.08)]">
+                <p className="text-base md:text-lg text-gray-300 leading-9">
 
-              <br />
-              <br />
+                  事業会社にて約1年半、
+                  コーポレートサイトやLP制作に携わってきました。
 
-              HTML/CSSを中心としたコーディングを担当し、
-              <br />
-              デザイン調整からレスポンシブ対応まで一貫して対応しています。
+                  <br /><br />
 
-              <br />
-              <br />
+                  主に
+                  <span className="text-pink-200 font-medium">
+                    HTML/CSS・JavaScript
+                  </span>
+                  を用いたコーディングを担当し、
+                  デザイン調整からレスポンシブ対応まで一貫して対応しています。
 
-              前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
-              <br />
-              ユーザー視点や目的を意識したWeb制作を大切にしています。
-              <br />
-              <br />
-              現在はNext.jsを用いた自主制作にも取り組み、
-              <br />
-              UI設計や情報整理を意識したフロントエンド実装を学習しています。            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#works"
-                className="inline-flex items-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
-              >
-                Worksを見る
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition"
-              >
-                Aboutを見る
-              </a>
-            </div>
+                  <br /><br />
+
+                  前職では広告代理店にて
+                  <span className="text-pink-200 font-medium">
+                    営業・企画書作成・ディレクション
+                  </span>
+                  を経験し、
+                  ユーザー視点や目的を意識したWeb制作を大切にしています。
+
+                  <br /><br />
+
+                  現在は
+                  <span className="text-pink-200 font-medium">
+                    Next.js
+                  </span>
+                  を用いた自主制作にも取り組み、
+                  UI設計や情報整理を意識したフロントエンド実装を学習しています。
+
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="#works"
+                  className="inline-flex items-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
+                >
+                  Worksを見る
+                </a>
+                <a
+                  href="#about"
+                  className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition"
+                >
+                  Aboutを見る
+                </a>
+              </div></div>
           </section>
 
           {/* Works */}
           <section id="works" className="mb-28">
-            <div className="mb-10">
-              <h2 className="text-4xl font-bold mb-3">Works</h2>
-              <p className="text-gray-400 leading-7">
-                実務制作に加え、自主制作ではNext.jsを用いた
-                <br />
-                フロントエンド実装にも取り組んでいます。
+            <div className="mb-16">
+              <span className="text-7xl font-bold text-white/5">
+                06
+              </span>
+
+              <p className="-mt-10 text-pink-200 tracking-[0.3em] text-sm uppercase">
+                Selected Projects
               </p>
+
+              <h2 className="text-5xl font-bold mt-2">
+                Works
+              </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* TBK */}
+            <div className="grid md:grid-cols-2 gap-10">              {/* TBK */}
               <Link
                 href="/works/tbk"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
 
                   <img
                     src="/tbk.jpg"
-                    alt="株式会社都波岐精巧"
+                    alt="金属加工業"
                     className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                   />
 
                 </div>
-
+                <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                  Corporate Site
+                </p>
                 <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                  株式会社都波岐精巧
+                  金属加工業
                 </h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
@@ -113,17 +157,20 @@ export default function Home() {
               {/* ジム */}
               <Link
                 href="/works/besc-gym-yume"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
 
                   <img
                     src="/besk.jpg"
-                    alt="BESC GYM YUME"
+                    alt="GYM"
                     className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
 
                 </div>
-                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">ベスク体操クラブ</h3>
+                <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                  Column Site
+                </p>
+                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">体操クラブ</h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
@@ -147,15 +194,18 @@ export default function Home() {
               {/* 美容室 */}
               <Link
                 href="/works/hairsalon-sigeki"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
                   <img
                     src="/shigeki.jpg"
-                    alt="Hair Salon Shigeki"
+                    alt="Hair Salon"
                     className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
                 </div>
-                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">Hair Salon Shigeki</h3>
+                <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                  Salon Site
+                </p>
+                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">美容室</h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
@@ -179,16 +229,19 @@ export default function Home() {
               {/* 長野 */}
               <Link
                 href="/works/nagano-trip"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
 
                   <img
                     src="/nagano.jpg"
-                    alt="Nagano Trip"
+                    alt="Trip"
                     className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
                 </div>
-                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">有限会社信州観光バス</h3>
+                <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                  Travel Site
+                </p>
+                <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">観光バス会社</h3>
 
                 <div className="flex gap-2 mb-4 flex-wrap">
                   <span className="text-xs bg-blue-400/10 text-blue-200 px-3 py-1 rounded-full border border-blue-300/20">
@@ -212,7 +265,7 @@ export default function Home() {
               {/* TaskFlow */}
               <Link
                 href="/works/taskflow"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-white/[0.12] to-white/[0.03] border border-white/10 p-5 overflow-hidden">
                   <div className="rounded-xl border border-white/10 bg-black/40 p-4">
@@ -255,7 +308,7 @@ export default function Home() {
               {/* コスメ */}
               <Link
                 href="/works/cosme-ec"
-                className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
                 <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
                   <div className="grid grid-cols-3 gap-3 h-full">
@@ -312,80 +365,204 @@ export default function Home() {
             </div>
 
           </section>
+
+
+
           {/* About */}
-          <section id="about" className="mb-28">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold mb-6">About</h2>
+          <section id="about" className="mb-28 relative">
+            <div className="mb-12">
+              <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
+                About
+              </p>
 
-              <p className="text-gray-300 leading-8">
-                事業会社にて約1年半、コーポレートサイトやLP制作に携わってきました。
-                <br />
-                主にHTML/CSSを中心としたコーディングを担当し、JavaScriptやWordPressを用いた
-                <br />
-                サイト構築も経験しています。
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                About Me
+              </h2>
 
-                <br />
-                <br />
-
-                前職では広告代理店にて、
-                <br />
-                営業・企画書作成・ディレクション業務を経験し、
-                <br />
-                「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
-                <br />
-                <br />
-
-                デザイン調整からコーディング、
-                <br />
-                レスポンシブ対応まで一貫して担当しており、
-                <br />
-                現在はNext.jsを用いた自主制作にも取り組んでいます。
-                <br />
-                <br />
-
-                情報整理や余白設計を意識しながら、
-                <br />
-                見やすさと使いやすさを両立したWeb制作を心がけています。
+              <p className="text-gray-300 leading-8 max-w-3xl">
+                Webデザインとコーディングを通じて、
+                ユーザーにとって見やすく伝わりやすいWebサイト制作を心がけています。
               </p>
             </div>
+
+            <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8">
+              <div className="rounded-[2rem] border border-[#e9d5ff]/10 bg-gradient-to-br from-white/[0.055] to-[#d8b4fe]/[0.035] backdrop-blur-sm p-8 md:p-10 shadow-[0_24px_100px_rgba(216,180,254,0.08)]">
+                <p className="text-gray-300 leading-9">
+                  事業会社にて約1年半、コーポレートサイトやLP制作に携わってきました。
+                  主にHTML/CSS・JavaScriptを用いたコーディングを担当し、
+                  デザイン調整からレスポンシブ対応まで一貫して対応しています。
+
+                  <br />
+                  <br />
+
+                  前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
+                  「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] border border-[#fbcfe8]/10 bg-white/[0.035] p-8 md:p-10">
+                <p className="text-sm text-[#fbcfe8] tracking-[0.2em] uppercase mb-4">
+                  Mind
+                </p>
+
+                <ul className="space-y-5 text-gray-300 leading-8">
+                  <li>情報整理と余白設計を大切にしています。</li>
+                  <li>デザイン意図を理解したコーディングを心がけています。</li>
+                  <li>ユーザー視点と目的意識を持って制作します。</li>
+                </ul>
+              </div>
+            </div>
           </section>
+
+          {/* Profile */}
           <section className="mb-28">
-            <h2 className="text-4xl font-bold mb-8">Skills</h2>
+            <div className="mb-12">
+              <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
+                Profile
+              </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
+              <h2 className="text-5xl md:text-6xl font-bold">
+                Career & Strength
+              </h2>
+            </div>
 
-              <div className="rounded-2xl border border-white/10 p-6 bg-white/[0.03] hover:-translate-y-1 hover:border-white/20 transition duration-300">
-                <h3 className="text-xl font-semibold mb-4">Coding</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="rounded-[2rem] border border-[#e9d5ff]/10 bg-gradient-to-br from-[#fbcfe8]/[0.04] to-white/[0.025] p-8 md:p-10">
+                <h3 className="text-2xl font-semibold mb-8 text-[#fbcfe8]">
+                  Career
+                </h3>
 
-                <ul className="space-y-2 text-gray-300">
-                  <li>HTML / CSS</li>
-                  <li>JavaScript</li>
-                  <li>Responsive Design</li>
-                  <li>WordPress</li>
-                </ul>
+                <div className="space-y-8">
+                  <div className="relative pl-8 border-l border-[#fbcfe8]/20">
+                    <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[#fbcfe8]" />
+                    <p className="text-sm text-gray-500 mb-2">現在</p>
+                    <p className="text-gray-300 leading-8">
+                      Webデザイナーとして、コーポレートサイトやLP制作を担当。
+                      デザイン調整からHTML/CSSコーディング、レスポンシブ対応まで行っています。
+                    </p>
+                  </div>
+
+                  <div className="relative pl-8 border-l border-[#fbcfe8]/20">
+                    <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[#d8b4fe]" />
+                    <p className="text-sm text-gray-500 mb-2">前職</p>
+                    <p className="text-gray-300 leading-8">
+                      広告代理店にて、営業・企画書作成・ディレクション業務を経験。
+                      ユーザー視点や目的を考える姿勢を制作にも活かしています。
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 p-6 bg-white/[0.03] hover:-translate-y-1 hover:border-white/20 transition duration-300">
-                <h3 className="text-xl font-semibold mb-4">Design</h3>
+              <div className="rounded-[2rem] border border-[#d8b4fe]/10 bg-gradient-to-br from-[#d8b4fe]/[0.045] to-white/[0.025] p-8 md:p-10">
+                <h3 className="text-2xl font-semibold mb-8 text-[#d8b4fe]">
+                  Strength
+                </h3>
 
-                <ul className="space-y-2 text-gray-300 ">
-                  <li>Figma</li>
-                  <li>LP Design</li>
-                  <li>Corporate Site Design</li>
-                  <li>UI Layout Design</li>
-                </ul>
+                <div className="space-y-5">
+                  {[
+                    "情報を整理し、見やすく伝わる構成を考えること",
+                    "デザイン意図を理解したHTML/CSSコーディング",
+                    "前職経験を活かしたユーザー視点・目的意識",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 text-gray-300 leading-7"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* Skills */}
+          <section className="mb-28">
+            <div className="mb-12">
+              <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
+                Skills
+              </p>
+
+              <h2 className="text-5xl md:text-6xl font-bold">
+                Skills & Tools
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+
+              {/* Coding */}
+              <div className="rounded-[2rem] border border-[#d8b4fe]/10 bg-gradient-to-br from-[#d8b4fe]/[0.04] to-white/[0.025] p-8">
+                <h3 className="text-xl font-semibold mb-5 text-[#d8b4fe]">
+                  Coding
+                </h3>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Responsive",
+                    "WordPress",
+                    "React",
+                    "Gatsby",
+                    "Next.js",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-full border border-[#d8b4fe]/20 bg-[#d8b4fe]/10 text-[#d8b4fe] text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 p-6 bg-white/[0.03] hover:-translate-y-1 hover:border-white/20 transition duration-300">
-                <h3 className="text-xl font-semibold mb-4">Other</h3>
+              {/* Design */}
+              <div className="rounded-[2rem] border border-[#fbcfe8]/10 bg-gradient-to-br from-[#fbcfe8]/[0.04] to-white/[0.025] p-8">
+                <h3 className="text-xl font-semibold mb-5 text-[#fbcfe8]">
+                  Design
+                </h3>
 
-                <ul className="space-y-2 text-gray-300">
-                  <li>Direction</li>
-                  <li>Proposal Creation</li>
-                  <li>Layout Design</li>
-                  <li>Client Communication</li>
-                  <li>Information Design</li>
-                </ul>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Figma",
+                    "LP Design",
+                    "Corporate Site",
+                    "UI Design",
+                    "Wireframe",
+                    "Responsive Design",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-full border border-[#fbcfe8]/20 bg-[#fbcfe8]/10 text-[#fbcfe8] text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Other */}
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+                <h3 className="text-xl font-semibold mb-5 text-white">
+                  Other
+                </h3>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Direction",
+                    "Proposal",
+                    "Client Work",
+                    "Information Design",
+                    "Communication",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
 
             </div>

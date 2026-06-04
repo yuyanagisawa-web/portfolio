@@ -17,19 +17,31 @@ export default function Page() {
             ← Works一覧に戻る
           </Link>
           <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
-            有限会社信州観光バス
+            観光バス会社
           </h1>
 
           <p className="text-lg text-gray-400 mb-10">
             デザイン / コーディング / レスポンシブ対応
           </p>
 
-          <img
-            src="/nagano.jpg"
-            alt="Nagano Trip"
+          {/* <img
+            src="/nagano.png"
+            alt="観光バス会社"
             className="w-full rounded-2xl border border-white/10 mb-12"
-          />
+          /> */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-3xl font-bold mb-6">
+              サイト全体イメージ
+            </h2>
 
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+              <img
+                src="/nagano01.png"
+                alt="観光バス会社 全体"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </section>
           <div className="grid gap-8 md:grid-cols-5 mb-12">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">

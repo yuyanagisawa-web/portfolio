@@ -1,7 +1,53 @@
+"use client";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
+type Work = {
+  title: string
+  category: string
+  image: string
+  popupImage: string
+  href: string
+  description: string
+}
+
 export default function Home() {
+  const [selectedWork, setSelectedWork] = useState<Work | null>(null)
+
+  const works: Work[] = [{
+    title: "金属加工業",
+    category: "Corporate Site",
+    image: "/tbk.png",
+    popupImage: "/tbk01.png",
+    href: "/works/tbk",
+    description: "情報量の多い企業サイトのため、視認性や導線を意識しながらレイアウトを設計しました。",
+  },
+  {
+    title: "体操クラブ",
+    category: "Column Site",
+    image: "/besk.jpg",
+    popupImage: "/besk01.png",
+    href: "/works/besc-gym-yume",
+    description: "子ども向けの親しみやすさと安心感を意識し、余白や視線導線を工夫しました。",
+  },
+  {
+    title: "美容室",
+    category: "Salon Site",
+    image: "/shigeki.png",
+    popupImage: "/shigeki01.png",
+    href: "/works/hairsalon-sigeki",
+    description: "サイト全体の世界観を意識し、パララックスや写真の見せ方を工夫して制作しました。",
+  },
+  {
+    title: "観光バス会社",
+    category: "Travel Site",
+    image: "/nagano.png",
+    popupImage: "/nagano01.png",
+    href: "/works/nagano-trip",
+    description: "サービス内容が伝わりやすいよう、情報整理と視認性を意識して制作しました。",
+  },
+  ];
   return (
     <>
       <Navbar />
@@ -113,8 +159,80 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-10">              {/* TBK */}
-              <Link
+            <div className="grid md:grid-cols-2 gap-10">
+              {works.map((work) => (
+                <button
+                  key={work.title}
+                  onClick={() => setSelectedWork(work)}
+                  className="text-left group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                >
+                  <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+
+                  <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                    {work.category}
+                  </p>
+
+                  <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
+                    {work.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
+                    {work.description}
+                  </p>
+                </button>
+              ))}
+              {selectedWork && (
+                <div
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-5"
+                  onClick={() => setSelectedWork(null)}
+                >
+                  <div
+                    className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#181818] border border-white/15 p-5 md:p-8"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={() => setSelectedWork(null)}
+                      className="absolute right-5 top-5 text-white/70 hover:text-white text-2xl"
+                    >
+                      ×
+                    </button>
+                    <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                      {selectedWork.category}
+                    </p>
+
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                      {selectedWork.title}
+                    </h3>
+
+                    <p className="text-gray-300 leading-7 mb-6">
+                      {selectedWork.description}
+                    </p>
+
+                    <Link
+                      href={selectedWork.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition mb-6"
+                    >
+                      詳細を見る
+                    </Link>
+                    <img
+                      src={selectedWork.popupImage}
+                      alt={selectedWork.title}
+                      className="w-full max-h-[75vh] object-contain rounded-2xl mb-6"
+                    />
+
+
+                  </div>
+                </div>
+              )}
+              {/* TBK */}
+              {/* <Link
                 href="/works/tbk"
                 className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
               >
@@ -154,7 +272,6 @@ export default function Home() {
                   視認性や導線を意識しながらレイアウトを設計しました。
                 </p>
               </Link>
-              {/* ジム */}
               <Link
                 href="/works/besc-gym-yume"
                 className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
@@ -191,7 +308,6 @@ export default function Home() {
                 </p>
               </Link>
 
-              {/* 美容室 */}
               <Link
                 href="/works/hairsalon-sigeki"
                 className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
@@ -226,7 +342,6 @@ export default function Home() {
                 </p>
               </Link>
 
-              {/* 長野 */}
               <Link
                 href="/works/nagano-trip"
                 className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
@@ -234,7 +349,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
 
                   <img
-                    src="/nagano.jpg"
+                    src="/nagano.png"
                     alt="Trip"
                     className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
                 </div>
@@ -260,7 +375,7 @@ export default function Home() {
                   <br />
                   情報整理と視認性を意識してデザイン・実装を行いました。
                 </p>
-              </Link>
+              </Link> */}
 
               {/* TaskFlow */}
               <Link
@@ -361,12 +476,8 @@ export default function Home() {
 
                 </p>
               </Link>
-
             </div>
-
           </section>
-
-
 
           {/* About */}
           <section id="about" className="mb-28 relative">

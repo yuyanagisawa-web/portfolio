@@ -24,12 +24,24 @@ export default function Page() {
             デザイン / コーディング / レスポンシブ対応
           </p>
 
-          <img
+          {/* <img
             src="/besk.jpg"
-            alt="BESC GYM YUME"
+            alt="体操クラブ"
             className="w-full rounded-2xl border border-white/10 mb-12"
-          />
+          /> */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-3xl font-bold mb-6">
+              サイト全体イメージ
+            </h2>
 
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+              <img
+                src="/besk01.png"
+                alt="体操クラブ 全体"
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </section>
           <div className="grid gap-8 md:grid-cols-5 mb-12">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">

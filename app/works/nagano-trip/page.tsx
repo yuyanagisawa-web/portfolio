@@ -42,17 +42,17 @@ export default function Page() {
               />
             </div>
           </section>
-          <div className="grid gap-8 md:grid-cols-5 mb-12">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <div className="grid gap-8 md:grid-cols-6 mb-12">
+            <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Role
               </h2>
               <p className="leading-7 text-gray-200">
-                デザイン / コーディング / レスポンシブ対応
+                デザイン / コーディング /<br /> レスポンシブ対応
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Tech
               </h2>
@@ -61,7 +61,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Type
               </h2>
@@ -69,16 +69,16 @@ export default function Page() {
                 観光情報サイト
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Target
               </h2>
 
               <p className="leading-7 text-gray-200">
-                観光や団体利用を検討しているユーザー
+                観光や団体利用を検討している<br />ユーザー
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">
                 Period
               </h2>

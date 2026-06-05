@@ -65,11 +65,24 @@ export default function Page() {
 
                                     <Link
                                         href="/works/cosme-ec/site"
-                                        className="w-full md:w-auto text-center rounded-full bg-[#1f1b18] text-white px-6 py-3 text-sm font-medium hover:opacity-80 transition"
+                                        className="
+    w-full md:w-auto
+    text-center
+    rounded-full
+    px-6 py-3
+    text-sm font-medium
+    bg-gradient-to-r
+    from-[#e8ddd2]
+    to-[#d8c7b5]
+    text-[#3b322c]
+    border border-[#d8c7b5]
+    shadow-sm
+    hover:opacity-90
+    transition
+  "
                                     >
-                                        サイトを見る
+                                        サイトを見る →
                                     </Link>
-
 
 
                                 </div>
@@ -90,10 +103,10 @@ export default function Page() {
 
                     <div className="grid gap-6 md:grid-cols-4 mb-14">
                         {[
-                            ["Role", "デザイン / コーディング / レスポンシブ対応"],
-                            ["Tech", "Next.js / TypeScript / Tailwind CSS"],
-                            ["Type", "自主制作 / EC Design / UI Design"],
-                            ["Target", "20〜40代のスキンケアに関心のあるユーザー"],
+                            ["Role", "デザイン / コーディング /<br/> レスポンシブ対応"],
+                            ["Tech", "Next.js / TypeScript /<br/> Tailwind CSS"],
+                            ["Type", "自主制作 / EC Design /<br/> UI Design"],
+                            ["Target", "20〜40代のスキンケアに<br/>関心のあるユーザー"],
                         ].map(([label, value]) => (
                             <div
                                 key={label}
@@ -102,7 +115,10 @@ export default function Page() {
                                 <h2 className="text-sm text-[#b6a99e] mb-3 uppercase tracking-widest">
                                     {label}
                                 </h2>
-                                <p className="leading-7 text-[#4f453d]">{value}</p>
+                                <p
+                                    className="leading-7 text-[#4f453d]"
+                                    dangerouslySetInnerHTML={{ __html: value }}
+                                />
                             </div>
                         ))}
                     </div>

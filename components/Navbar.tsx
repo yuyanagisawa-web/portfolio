@@ -7,12 +7,16 @@ export default function Navbar() {
         <nav className="flex items-center justify-between h-14 md:h-16">
 
           {/* ロゴ */}
-          <Link
-  href="/"
-  className="text-base md:text-lg font-semibold tracking-wide"
->
-  Yanagisawa Yu
-</Link>
+          <Link href="/" className="group flex items-center gap-3">
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#fbcfe8]/20 bg-white/[0.03] text-sm font-bold text-[#fbcfe8]">
+              Y
+              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-[#d8b4fe]" />
+            </span>
+
+            <span className="text-lg font-bold tracking-wide text-white">
+              Yu Yanagisawa
+            </span>
+          </Link>
 
           {/* メニュー */}
           <div className="flex items-center gap-4 md:gap-6 text-sm md:text-base text-gray-300">

@@ -54,9 +54,21 @@ export default function Page() {
 
                   <Link
                     href="/works/taskflow/demo"
-                    className="rounded-full border border-white/15 px-5 py-3 text-sm text-gray-300 hover:bg-white/10 transition"
+                    className="
+    inline-flex items-center gap-2
+    rounded-full
+    border border-[#d8b4fe]/30
+    bg-[#d8b4fe]/10
+    text-[#fbcfe8]
+    px-5 py-3
+    text-sm
+    font-medium
+    hover:bg-[#d8b4fe]/20
+    hover:border-[#fbcfe8]/40
+    transition
+  "
                   >
-                    View Demo
+                    View Demo →
                   </Link>
                 </div>
               </div>
@@ -98,7 +110,7 @@ export default function Page() {
                 Role
               </h2>
               <p className="leading-7 text-gray-200">
-                デザイン / コーディング / レスポンシブ対応
+                デザイン / コーディング /<br /> レスポンシブ対応
               </p>
             </div>
 
@@ -107,7 +119,7 @@ export default function Page() {
                 Tech
               </h2>
               <p className="leading-7 text-gray-200">
-                Next.js / TypeScript / Tailwind CSS
+                Next.js / TypeScript /<br /> Tailwind CSS
               </p>
             </div>
 
@@ -116,7 +128,7 @@ export default function Page() {
                 Type
               </h2>
               <p className="leading-7 text-gray-200">
-                自主制作 / UI Design / Interactive Demo
+                自主制作 / UI Design /<br /> Interactive Demo
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
@@ -125,7 +137,7 @@ export default function Page() {
               </h2>
 
               <p className="leading-7 text-gray-200">
-                タスク管理に課題を感じる個人・チーム
+                タスク管理に課題を<br />感じる個人・チーム
               </p>
             </div>
           </div>
@@ -136,15 +148,15 @@ export default function Page() {
               {[
                 {
                   title: "タスクを追加",
-                  text: "入力欄から新しいタスクを追加でき、Enter操作にも対応しています。",
+                  text: "入力欄から新しいタスクを追加でき、<br />Enter操作にも対応しています。",
                 },
                 {
                   title: "内容と優先度を編集",
-                  text: "追加後のタスク名や優先度を変更できるようにし、入力ミスにも対応できるUIにしました。",
+                  text: "追加後のタスク名や優先度を<br />変更できるようにし、入力ミスにも<br />対応できるUIにしました。",
                 },
                 {
                   title: "完了状態を切り替え",
-                  text: "Complete / Undoで状態を変更でき、完了済みタスクは視覚的に区別できるようにしています。",
+                  text: "Complete / Undoで状態を変更でき、<br />完了済みタスクは視覚的に<br />区別できるようにしています。",
                 },
               ].map((feature) => (
                 <div
@@ -152,9 +164,10 @@ export default function Page() {
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06] transition"
                 >
                   <h3 className="font-bold mb-3">{feature.title}</h3>
-                  <p className="text-sm text-gray-400 leading-7">
-                    {feature.text}
-                  </p>
+                  <p
+                    className="text-sm text-gray-400 leading-7"
+                    dangerouslySetInnerHTML={{ __html: feature.text }}
+                  />
                 </div>
               ))}
             </div>

@@ -67,3 +67,19 @@ body {
 .animate-spin-slow {
   animation: spinSlow 22s linear infinite;
 }
+
+.page-fade {
+  animation: pageFade 0.8s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

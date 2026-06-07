@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
@@ -51,8 +52,12 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative min-h-screen bg-[#111111] text-white overflow-x-hidden">
-
+      <motion.main
+        className="relative min-h-screen bg-[#111111] text-white overflow-x-hidden"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="relative z-10 px-6 md:px-10">
           <div className="max-w-7xl mx-auto">
             {/* Hero */}
@@ -66,77 +71,121 @@ export default function Home() {
                 <div className="absolute top-[260px] right-[10vw] w-[520px] h-[520px] rounded-full bg-[#fbcfe8]/4 blur-[220px]" />
               </div>
 
-              <div className="relative z-10">
-                <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#fbcfe8]/15 bg-white/[0.03] px-4 py-2 text-xs tracking-[0.2em] text-[#fbcfe8]">
-                  <span className="h-2 w-2 rounded-full bg-[#fbcfe8]" />
-                  WEB PORTFOLIO
-                </div>
-                {/* <p className="text-sm tracking-[0.3em] text-[#e9d5ff] uppercase mb-4">
-                  Portfolio
-                </p> */}
+              <div className="relative z-10 grid lg:grid-cols-[1fr_340px] gap-10 items-center">
+                <div>
+                  <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#fbcfe8]/15 bg-white/[0.03] px-4 py-2 text-xs tracking-[0.2em] text-[#fbcfe8]">
+                    <span className="h-2 w-2 rounded-full bg-[#fbcfe8]" />
+                    WEB PORTFOLIO
+                  </div>
+                  <p className="text-sm tracking-[0.3em] text-[#e9d5ff] uppercase mb-4">
+                    Portfolio
+                  </p>
 
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-6">
-                  Yanagisawa
-                  <span className="bg-gradient-to-r from-[#fbcfe8] to-[#d8b4fe] bg-clip-text text-transparent">
-                    Yu
-                  </span>
-                </h1>
-
-                <p className="text-base md:text-xl text-gray-400 mb-6">
-                  Web Designer / Frontend Coder
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-4 py-1 rounded-full border border-[#fbcfe8]/20 bg-[#fbcfe8]/10 text-[#fbcfe8] text-sm">
-                    Web Design
-                  </span>
-                  <span className="px-4 py-1 rounded-full border border-[#d8b4fe]/20 bg-[#d8b4fe]/10 text-[#d8b4fe] text-sm">
-                    Coding
-                  </span>
-                  <span className="px-4 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300 text-sm">
-                    Responsive
-                  </span>
-                </div>
-
-                <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
-                  コーディングを中心に、
-                  見やすく伝わるWebサイト制作を心掛けています。
-                </p>
-
-                <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
-                  <p className="text-base md:text-lg text-gray-300 leading-9">
-                    事業会社にて約1年半、
-                    コーポレートサイトやLP制作に携わってきました。
-
-                    <br /><br />
-
-                    主に
-                    <span className="text-pink-200 font-medium">
-                      HTML/CSS・JavaScript
+                  <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-6">
+                    Yanagisawa
+                    <span className="bg-gradient-to-r from-[#fbcfe8] to-[#d8b4fe] bg-clip-text text-transparent">
+                      Yu
                     </span>
-                    を用いたコーディングを担当し、<br />
-                    デザイン調整からレスポンシブ対応まで一貫して対応しています。
+                  </h1>
 
-                    <br /><br />
+                  <p className="text-base md:text-xl text-gray-400 mb-6">
+                    Web Designer / Frontend Coder
+                  </p>
 
-                    前職では広告代理店にて
-                    <span className="text-pink-200 font-medium">
-                      営業・企画書作成・ディレクション
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-4 py-1 rounded-full border border-[#fbcfe8]/20 bg-[#fbcfe8]/10 text-[#fbcfe8] text-sm">
+                      Web Design
                     </span>
-                    を経験し、<br />
-                    ユーザー視点や目的を意識したWeb制作を大切にしています。
+                    <span className="px-4 py-1 rounded-full border border-[#d8b4fe]/20 bg-[#d8b4fe]/10 text-[#d8b4fe] text-sm">
+                      Coding
+                    </span>
+                    <span className="px-4 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300 text-sm">
+                      Responsive
+                    </span>
+                  </div>
 
-                    <br /><br />
+                  <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
+                    コーディングを中心に、
+                    見やすく伝わるWebサイト制作を心掛けています。
+                  </p>
 
-                    現在は
-                    <span className="text-pink-200 font-medium">
+                  <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
+                    <p className="text-base md:text-lg text-gray-300 leading-9">
+                      事業会社にて約1年半、
+                      コーポレートサイトやLP制作に携わってきました。
+
+                      <br /><br />
+
+                      主に
+                      <span className="text-pink-200 font-medium">
+                        HTML/CSS・JavaScript
+                      </span>
+                      を用いたコーディングを担当し、<br />
+                      デザイン調整からレスポンシブ対応まで一貫して対応しています。
+
+                      <br /><br />
+
+                      前職では広告代理店にて
+                      <span className="text-pink-200 font-medium">
+                        営業・企画書作成・ディレクション
+                      </span>
+                      を経験し、<br />
+                      ユーザー視点や目的を意識したWeb制作を大切にしています。
+
+                      <br /><br />
+
+                      現在は
+                      <span className="text-pink-200 font-medium">
+                        Next.js
+                      </span>
+                      を用いた自主制作にも取り組み、<br />
+                      UI設計や情報整理を意識したフロントエンド実装を学習しています。
+                    </p>
+                  </div>
+                </div>
+                <div className="hidden lg:block self-end">
+                  <div className="relative">
+                    <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#fbcfe8]/10 to-[#d8b4fe]/10 blur-2xl" />
+
+                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
+                      <img
+                        src="/profile.jpg"
+                        alt="Yu Yanagisawa"
+                        className="w-full h-[500px] object-cover"
+                      />
+
+                      {/* 写真内プロフィール */}
+                      <div className="absolute left-5 bottom-5 rounded-2xl border border-white/10 bg-black/50 backdrop-blur-md px-4 py-3">
+                        <p className="text-xs tracking-[0.15em] text-gray-400 uppercase">
+                          Tokyo, Japan
+                        </p>
+
+                        <p className="text-sm font-medium text-white mt-1">
+                          Frontend Developer
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* スキルタグ */}
+                  <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                    <span className="px-3 py-1 rounded-full bg-[#fbcfe8]/10 text-[#fbcfe8] text-xs">
+                      HTML
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-[#d8b4fe]/10 text-[#d8b4fe] text-xs">
+                      CSS
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-[#fbcfe8]/10 text-[#fbcfe8] text-xs">
+                      JavaScript
+                    </span>
+
+                    <span className="px-3 py-1 rounded-full bg-[#d8b4fe]/10 text-[#d8b4fe] text-xs">
                       Next.js
                     </span>
-                    を用いた自主制作にも取り組み、<br />
-                    UI設計や情報整理を意識したフロントエンド実装を学習しています。
-                  </p>
+                  </div>
                 </div>
-
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="#works"
@@ -578,7 +627,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-      </main>
+      </motion.main>
       <BackToTop />
     </>
   )

@@ -1,7 +1,20 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../../components/Navbar";
 import BackToTop from "../../../components/BackToTop";
+
 export default function Page() {
+  const [selectedImage, setSelectedImage] = useState<null | {
+    src: string;
+    alt: string;
+  }>(null);
+
+  const siteImages = [
+    { src: "/shigeki01.png", alt: "トップページ" },
+    { src: "/shigeki02.png", alt: "メニューページ" },
+    { src: "/shigeki03.png", alt: "スタッフページ" },
+  ];
   return (
     <>
       <Navbar />
@@ -31,17 +44,68 @@ export default function Page() {
           /> */}
           <section className="mb-12">
             <h2 className="text-xl md:text-3xl font-bold mb-6">
-              サイト全体イメージ
+              サイトイメージ
             </h2>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
-              <img
-                src="/shigeki01.png"
-                alt="美容室 全体"
-                className="w-full rounded-2xl"
-              />
+            <div className="grid gap-6 md:grid-cols-3">
+              {siteImages.map((image) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setSelectedImage(image)}
+                  className="group rounded-3xl border border-white/10 bg-white/[0.03] p-3 text-left hover:border-white/30 transition"
+                >
+                  <div className="h-[420px] overflow-hidden rounded-2xl bg-white">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                    />
+                  </div>
+
+                  <p className="mt-3 text-sm text-gray-400">
+                    {image.alt}を拡大
+                  </p>
+                </button>
+              ))}
             </div>
+
+            {selectedImage && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-5 py-10"
+                onClick={() => setSelectedImage(null)}
+              >
+                <div
+                  className="relative w-full max-w-5xl max-h-[85vh] rounded-3xl bg-[#181818] border border-white/15 overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* 固定ヘッダー */}
+                  <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#181818]/95 px-5 py-3 backdrop-blur">
+                    <p className="text-sm text-gray-400">
+                      {selectedImage.alt}
+                    </p>
+
+                    <button
+                      onClick={() => setSelectedImage(null)}
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 hover:text-white hover:bg-white/10 text-2xl"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  {/* ここだけスクロール */}
+                  <div className="max-h-[calc(85vh-73px)] overflow-y-auto p-5">
+                    <img
+                      src={selectedImage.src}
+                      alt={selectedImage.alt}
+                      className="mx-auto w-full rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </section>
+
           <div className="grid gap-8 md:grid-cols-6 mb-12">
             <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h2 className="text-sm text-gray-500 mb-3 uppercase tracking-widest">

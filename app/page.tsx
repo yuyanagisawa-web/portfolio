@@ -118,11 +118,14 @@ export default function Home() {
 
                       主に
                       <span className="text-pink-200 font-medium">
-                        HTML/CSS・JavaScript
-                      </span>
-                      を用いたコーディングを担当し、<br />
-                      デザイン調整からレスポンシブ対応まで一貫して対応しています。
+                        コーポレートサイトや採用サイト、LP制作
+                      </span>に携わってきました。
 
+                      <br />
+                      <span className="text-pink-200 font-medium">
+                        Webデザインからコーディング、
+                      </span>
+                      公開対応、修正対応まで一貫して担当しています。
                       <br /><br />
 
                       前職では広告代理店にて

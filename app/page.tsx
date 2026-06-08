@@ -119,45 +119,21 @@ export default function Home() {
                     </span>
                   </div>
 
-                  <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
+                  {/* <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
                     コーディングを中心に、
                     見やすく伝わるWebサイト制作を心掛けています。
-                  </p>
+                  </p> */}
 
                   <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
                     <p className="text-base md:text-lg text-gray-300 leading-9">
-                      事業会社にて約1年半、
-                      コーポレートサイトやLP制作に携わってきました。
+                      事業会社にて約1年半、 <br />
+                      コーポレートサイト・採用サイト・LP制作を担当。 <br /> <br />
 
-                      <br /><br />
+                      HTML/CSS・JavaScriptを中心に、 <br />
+                      デザイン調整から公開対応まで一貫して携わっています。 <br /> <br />
 
-                      主に
-                      <span className="text-pink-200 font-medium">
-                        コーポレートサイトや採用サイト、LP制作
-                      </span>に携わってきました。
-
-                      <br />
-                      <span className="text-pink-200 font-medium">
-                        Webデザインからコーディング、
-                      </span>
-                      公開対応、修正対応まで一貫して担当しています。
-                      <br /><br />
-
-                      前職では広告代理店にて
-                      <span className="text-pink-200 font-medium">
-                        営業・企画書作成・ディレクション
-                      </span>
-                      を経験し、<br />
-                      ユーザー視点や目的を意識したWeb制作を大切にしています。
-
-                      <br /><br />
-
-                      現在は
-                      <span className="text-pink-200 font-medium">
-                        Next.js
-                      </span>
-                      を用いた自主制作にも取り組み、<br />
-                      UI設計や情報整理を意識したフロントエンド実装を学習しています。
+                      現在はReact / Next.jsを用いた <br />
+                      フロントエンド開発にも取り組んでいます。
                     </p>
                   </div>
                 </div>
@@ -179,30 +155,28 @@ export default function Home() {
                         </p>
 
                         <p className="text-sm font-medium text-white mt-1">
-                          Frontend Developer
+                          Web Designer / Coder
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* スキルタグ */}
-                  <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                  {/* <div className="mt-4 flex flex-wrap gap-2 justify-center">
                     <span className="px-3 py-1 rounded-full bg-[#fbcfe8]/10 text-[#fbcfe8] text-xs">
-                      HTML
+                      Web Design
                     </span>
 
                     <span className="px-3 py-1 rounded-full bg-[#d8b4fe]/10 text-[#d8b4fe] text-xs">
-                      CSS
+                      Frontend
                     </span>
 
                     <span className="px-3 py-1 rounded-full bg-[#fbcfe8]/10 text-[#fbcfe8] text-xs">
-                      JavaScript
+                      Responsive
                     </span>
 
-                    <span className="px-3 py-1 rounded-full bg-[#d8b4fe]/10 text-[#d8b4fe] text-xs">
-                      Next.js
-                    </span>
-                  </div>
+
+                  </div> */}
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <a

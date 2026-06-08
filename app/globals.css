@@ -83,3 +83,9 @@ body {
     transform: translateY(0);
   }
 }
+
+.noise {
+  background-image: url("/noise.png");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}

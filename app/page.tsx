@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
+import WaveCanvas from "@/components/WaveCanvas";
 type Work = {
   title: string
   category: string
@@ -11,11 +12,21 @@ type Work = {
   popupImage: string
   href: string
   description: string
+  tags: string[]
 }
 
 export default function Home() {
   const [selectedWork, setSelectedWork] = useState<Work | null>(null)
-
+  const cardHover =
+    "transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.015] hover:border-white/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)]"
+  const tagStyle: Record<string, string> = {
+    実務: "bg-blue-400/10 text-blue-200 border-blue-300/20",
+    自主制作: "bg-emerald-400/10 text-emerald-200 border-emerald-300/20",
+    HTML: "bg-orange-400/10 text-orange-200 border-orange-300/20",
+    CSS: "bg-sky-400/10 text-sky-200 border-sky-300/20",
+    JavaScript: "bg-yellow-400/10 text-yellow-200 border-yellow-300/20",
+    Gatsby: "bg-purple-400/10 text-purple-200 border-purple-300/20",
+  }
   const works: Work[] = [{
     title: "金属加工業",
     category: "Corporate Site",
@@ -23,6 +34,7 @@ export default function Home() {
     popupImage: "/tbk01.png",
     href: "/works/tbk",
     description: "情報量の多い企業サイトのため、視認性や導線を意識しながらレイアウトを設計しました。",
+    tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "体操クラブ",
@@ -31,6 +43,7 @@ export default function Home() {
     popupImage: "/besk01.png",
     href: "/works/besc-gym-yume",
     description: "子ども向けの親しみやすさと安心感を意識し、余白や視線導線を工夫しました。",
+    tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "美容室",
@@ -39,6 +52,7 @@ export default function Home() {
     popupImage: "/shigeki01.png",
     href: "/works/hairsalon-sigeki",
     description: "サイト全体の世界観を意識し、パララックスや写真の見せ方を工夫して制作しました。",
+    tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "観光バス会社",
@@ -47,6 +61,7 @@ export default function Home() {
     popupImage: "/nagano01.png",
     href: "/works/nagano-trip",
     description: "サービス内容が伝わりやすいよう、情報整理と視認性を意識して制作しました。",
+    tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   ];
   return (
@@ -61,7 +76,7 @@ export default function Home() {
         <div className="relative z-10 px-6 md:px-10">
           <div className="max-w-7xl mx-auto">
             {/* Hero */}
-            <section className="relative pt-16 pb-20 md:pt-24 md:pb-24">
+            <section className="relative pt-16 pb-32 md:pt-24 md:pb-20">
               {/* Hero背景：画面幅いっぱい */}
               <div className="absolute top-0 left-1/2 -z-10 h-full w-screen -translate-x-1/2 pointer-events-none overflow-hidden">
                 <div className="absolute inset-0 bg-[#111111]" />
@@ -205,14 +220,40 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            {/* Wave */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fbcfe8]/5 to-transparent" />
+            <div className="w-full relative z-10 -mt-20 -mb-20">
+              <WaveCanvas />
+            </div>
             {/* Works */}
-            <section id="works" className="mb-28">
+            <section id="works" className="relative pt-24 md:pt-32 pb-28">
+              <div className="pointer-events-none absolute inset-0">
+                <div className="
+      absolute top-[-180px] right-[-200px]
+      w-[420px] h-[420px]
+      rounded-full
+      bg-[#d8b4fe]/20
+      blur-[180px]
+      opacity-80
+    " />
+
+                <div className="
+      absolute bottom-[-200px] left-[-180px]
+      w-[460px] h-[460px]
+      rounded-full
+      bg-[#fbcfe8]/10
+      blur-[160px]
+      opacity-60
+    " />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fbcfe8]/5 to-transparent" />
               <div className="mb-16">
                 <span className="text-7xl font-bold text-white/5">
                   06
                 </span>
 
-                <p className="-mt-10 text-pink-200 tracking-[0.3em] text-sm uppercase">
+                <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3 flex items-center gap-2">
+                  <span className="text-pink-300">✦</span>
                   Selected Projects
                 </p>
 
@@ -222,11 +263,18 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-10">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fbcfe8]/5 to-transparent pointer-events-none" />
                 {works.map((work) => (
                   <button
                     key={work.title}
                     onClick={() => setSelectedWork(work)}
-                    className="text-left group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                    className="
+                    group text-left rounded-3xl border border-white/15 bg-white/[0.03]
+                    p-5 transition-all duration-300 ease-out
+                    hover:-translate-y-1 hover:scale-[1.015]
+                    hover:border-white/30 hover:shadow-xl
+                    will-change-transform
+                    "
                   >
                     <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
                       <img
@@ -239,6 +287,20 @@ export default function Home() {
                     <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
                       {work.category}
                     </p>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {work.tags.map((tag) => {
+                        const style = tagStyle[tag] || "bg-white/5 text-gray-300 border-white/10"
+
+                        return (
+                          <span
+                            key={tag}
+                            className={`text-xs px-3 py-1 rounded-full border ${style}`}
+                          >
+                            {tag}
+                          </span>
+                        )
+                      })}
+                    </div>
 
                     <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
                       {work.title}
@@ -300,8 +362,16 @@ export default function Home() {
                 {/* TaskFlow */}
                 <Link
                   href="/works/taskflow"
-                  className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                  className="
+                  group rounded-3xl border border-white/15 bg-white/[0.03] p-5 block
+                  transition-all duration-300 ease-out
+                  will-change-transform
+                  hover:-translate-y-2 hover:scale-[1.02]
+                  hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  active:scale-[0.99]
+                  "
                 >
+                  <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
                   <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-white/[0.12] to-white/[0.03] border border-white/10 p-5 overflow-hidden">
                     <div className="rounded-xl border border-white/10 bg-black/40 p-4">
                       <div className="flex justify-between mb-4">
@@ -343,8 +413,16 @@ export default function Home() {
                 {/* コスメ */}
                 <Link
                   href="/works/cosme-ec"
-                  className="group rounded-3xl border border-white/15 bg-white/[0.03] p-5 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition duration-300 block"
+                  className="
+                  group rounded-3xl border border-white/15 bg-white/[0.03] p-5 block
+                  transition-all duration-300 ease-out
+                  will-change-transform
+                  hover:-translate-y-2 hover:scale-[1.02]
+                  hover:border-white/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  active:scale-[0.99]
+                  "
                 >
+                  <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
                   <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
                     <div className="grid grid-cols-3 gap-3 h-full">
                       {[1, 2, 3].map((item) => (
@@ -401,9 +479,34 @@ export default function Home() {
 
             {/* About */}
             <section id="about" className="mb-28 relative">
+
+              <div className="absolute inset-0 pointer-events-none -z-10">
+                <div
+                  className="
+      animate-pulse blur-3xl rounded-full absolute
+
+      w-[400px] h-[400px]
+      top-[-200px] right-[-200px]
+
+      bg-[#d8b4fe]/15
+
+      max-md:w-[260px]
+      max-md:h-[260px]
+      max-md:top-auto
+      max-md:bottom-[-120px]
+      max-md:right-[-80px]
+
+      max-md:bg-[#d8b4fe]/5
+      max-md:blur-2xl
+      max-md:opacity-70
+    "
+                />
+              </div>
               <div className="mb-12">
+                <div className="absolute top-8 right-10 w-24 h-24 border border-pink-300/10 rounded-full" />
+                <div className="absolute top-16 right-20 w-40 h-40 border border-pink-300/5 rounded-full" />
                 <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
-                  About
+                  <span className="text-pink-300">◌</span> About
                 </p>
 
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -449,10 +552,11 @@ export default function Home() {
             </section>
 
             {/* Profile */}
-            <section className="mb-28">
+            <section className="mb-28 relative overflow-hidden">
+
               <div className="mb-12">
                 <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
-                  Profile
+                  <span className="text-pink-300">✦</span>Profile
                 </p>
 
                 <h2 className="text-5xl md:text-6xl font-bold">
@@ -467,8 +571,14 @@ export default function Home() {
                   </h3>
 
                   <div className="space-y-8">
-                    <div className="relative pl-8 border-l border-[#fbcfe8]/20">
-                      <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[#fbcfe8]" />
+                    <div className="relative pl-8">
+
+                      {/* 縦ライン */}
+                      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-[#fbcfe8] via-[#d8b4fe]/50 to-transparent" />
+
+                      {/* 丸 */}
+                      <span className="absolute -left-[4px] top-2 w-2.5 h-2.5 rounded-full bg-[#fbcfe8] shadow-[0_0_12px_rgba(251,207,232,.8)]" />
+
                       <p className="text-sm text-gray-500 mb-2">現在</p>
                       <p className="text-gray-300 leading-8">
                         Webデザイナーとして、コーポレートサイトやLP制作を担当。<br />
@@ -476,7 +586,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="relative pl-8 border-l border-[#fbcfe8]/20">
+                    <div className="relative pl-8 relative pl-8">
                       <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[#d8b4fe]" />
                       <p className="text-sm text-gray-500 mb-2">前職</p>
                       <p className="text-gray-300 leading-8">
@@ -500,9 +610,21 @@ export default function Home() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 text-gray-300 leading-7"
+                        className="
+                      flex gap-3 items-start
+                      rounded-2xl
+                      border border-white/10
+                      bg-white/[0.035]
+                      px-5 py-4
+                      "
                       >
-                        {item}
+                        <span className="text-pink-300 mt-1">
+                          ✦
+                        </span>
+
+                        <span className="text-gray-300 leading-7">
+                          {item}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -510,10 +632,14 @@ export default function Home() {
               </div>
             </section>
             {/* Skills */}
-            <section className="mb-28">
+            <section className="relative mb-28">
+
+
+
+              {/* Skills内容 */}
               <div className="mb-12">
                 <p className="text-[#e9d5ff] tracking-[0.3em] text-sm uppercase mb-3">
-                  Skills
+                  <span className="text-pink-300">❀</span>Skills
                 </p>
 
                 <h2 className="text-5xl md:text-6xl font-bold">

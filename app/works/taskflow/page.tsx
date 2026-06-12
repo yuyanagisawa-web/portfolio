@@ -175,26 +175,22 @@ export default function Page() {
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              タスク管理ツールでは、追加・編集・完了といった
+              タスク管理ツールでは、タスクの追加・編集・完了といった基本操作を直感的に行えることが重要だと考えました。
               <br />
-              基本操作が分かりやすいことが重要だと考えました。
-              <br /><br />
-              そのため、TaskFlowでは操作数を抑えながら、
-              <br />
-              タスクの状態や優先度がひと目で分かる構成を意識して制作しました。            </p>
+              そのためTaskFlowでは、ユーザーが迷わず操作できることを重視し、  <br />
+              タスクの状態や優先度がひと目で把握できるUIを目指して制作しました。
+            </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              タスクの追加・編集・完了切り替えなど、
-              操作ごとにUIの状態が分かりやすく変化するよう設計しました。
-
+              タスクの追加・編集・完了切り替えなど、操作に応じて状態が分かりやすく変化するUIを意識しました。 <br />
               <br />
+              また、情報量が増えても見やすさを維持できるよう、カードUIの余白や情報の配置を調整しています。 <br />
               <br />
-
-              また、レスポンシブ時にも崩れにくいよう、
-              カードUIの余白やレイアウトを調整しています。
+              レスポンシブ対応では、スマートフォンでも操作しやすいようレイアウトやボタンサイズを最適化し、 <br />
+              快適に利用できることを意識して実装しました。
             </p>
           </section>
 

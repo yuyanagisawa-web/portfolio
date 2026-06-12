@@ -33,7 +33,7 @@ export default function Home() {
     image: "/tbk.png",
     popupImage: "/tbk01.png",
     href: "/works/tbk",
-    description: "情報量の多い企業サイトのため、視認性や導線を意識しながらレイアウトを設計しました。",
+    description: "情報量の多い企業サイトのため、視認性や情報の優先順位を意識しながらデザイン・コーディングを行いました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {

@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
 import WaveCanvas from "@/components/WaveCanvas";
+import Image from "next/image"
+
 type Work = {
   title: string
   category: string
@@ -16,16 +18,31 @@ type Work = {
 }
 
 export default function Home() {
+
   const [selectedWork, setSelectedWork] = useState<Work | null>(null)
-  const cardHover =
-    "transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.015] hover:border-white/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)]"
+  useEffect(() => {
+    if (!selectedWork) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedWork(null)
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = "auto"
+    }
+  }, [selectedWork])
   const tagStyle: Record<string, string> = {
     実務: "bg-blue-400/10 text-blue-200 border-blue-300/20",
     自主制作: "bg-emerald-400/10 text-emerald-200 border-emerald-300/20",
     HTML: "bg-orange-400/10 text-orange-200 border-orange-300/20",
     CSS: "bg-sky-400/10 text-sky-200 border-sky-300/20",
     JavaScript: "bg-yellow-400/10 text-yellow-200 border-yellow-300/20",
-    Gatsby: "bg-purple-400/10 text-purple-200 border-purple-300/20",
   }
   const works: Work[] = [{
     title: "製造業",
@@ -33,7 +50,8 @@ export default function Home() {
     image: "/tbk.png",
     popupImage: "/tbk01.png",
     href: "/works/tbk",
-    description: "情報量の多い企業サイトのため、視認性や情報の優先順位を意識しながらデザイン・コーディングを行いました。",
+    description:
+      "情報量の多い企業サイトのため、情報の優先順位と視認性を整理し、ユーザーが迷わず閲覧できる構成とデザインを意識して制作しました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -42,7 +60,8 @@ export default function Home() {
     image: "/besk.jpg",
     popupImage: "/besk01.png",
     href: "/works/besc-gym-yume",
-    description: "子ども向けの親しみやすさと安心感を意識し、写真の見せ方や余白の取り方、情報への導線を工夫しました。",
+    description:
+      "子ども向けサービスとしての親しみやすさと安心感を重視し、写真の見せ方や余白設計、導線設計を工夫して制作しました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -51,7 +70,8 @@ export default function Home() {
     image: "/shigeki.png",
     popupImage: "/shigeki01.png",
     href: "/works/hairsalon-sigeki",
-    description: "サイト全体の世界観を意識し、パララックスや写真の見せ方を工夫して制作しました。",
+    description:
+      "世界観を重視したビジュアル設計を行い、写真表現や余白、動きのバランスを調整しながらブランドイメージに沿って制作しました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -60,10 +80,12 @@ export default function Home() {
     image: "/nagano.png",
     popupImage: "/nagano01.png",
     href: "/works/nagano-trip",
-    description: "サービス内容が伝わりやすいよう、情報整理と視認性を意識して制作しました。",
+    description:
+      "サービス内容が直感的に伝わるよう、情報整理と導線設計を意識し、閲覧ストレスの少ない構成で制作しました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   ];
+
   return (
     <>
       <Navbar />
@@ -104,7 +126,7 @@ export default function Home() {
                   </h1>
 
                   <p className="text-base md:text-xl text-gray-400 mb-6">
-                    Web Designer / Frontend Coder
+                    Web Designer / Coder
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -119,21 +141,22 @@ export default function Home() {
                     </span>
                   </div>
 
-                  {/* <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
-                    コーディングを中心に、
-                    見やすく伝わるWebサイト制作を心掛けています。
-                  </p> */}
+                  <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
+                    Webデザインからコーディングまで一貫して対応できるWebデザイナー
+                  </p>
 
                   <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
                     <p className="text-base md:text-lg text-gray-300 leading-9">
-                      現在は事業会社でWebデザイナーとして約1年半勤務しており、<br />
-                      コーポレートサイトや採用サイト、LPの制作を担当しています。<br />
+                      現在は事業会社にてWebデザイナーとして約1年半勤務しており、<br />
+                      コーポレートサイト・採用サイト・LP制作を担当しています。<br />
                       <br />
-                      FigmaやXDを用いたデザイン制作から、HTML/CSS・JavaScriptによる実装、<br />
-                      WordPressの更新・運用まで一貫して携わっています。<br />
+
+                      主にWebデザインおよびHTML/CSS/JavaScriptによるコーディングを担当し、<br />
+                      デザインの調整からレスポンシブ対応まで一貫して対応しています。<br />
                       <br />
-                      また、現在はリーダーとして品質管理や進行管理にも携わっており、<br />
-                      ユーザー視点を意識した制作を心掛けています。
+
+                      また、WordPressサイトの更新・運用業務にも携わっています。
+                      制作業務を通じて、ユーザーにとって分かりやすい情報設計を意識しています。
                     </p>
                   </div>
                 </div>
@@ -142,9 +165,11 @@ export default function Home() {
                     <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#fbcfe8]/10 to-[#d8b4fe]/10 blur-2xl" />
 
                     <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
-                      <img
+                      <Image
                         src="/profile.jpg"
                         alt="Yu Yanagisawa"
+                        width={500}
+                        height={500}
                         className="w-full h-[500px] object-cover"
                       />
 
@@ -489,8 +514,7 @@ export default function Home() {
 
                 <p className="text-gray-300 leading-8 max-w-3xl">
                   Webデザインとコーディングを通じて、<br />
-                  ユーザーにとって見やすく伝わりやすいWebサイト制作を心がけています。
-                </p>
+                  ユーザーにとって見やすく、情報が整理されたWebサイト制作を心がけています。                </p>
               </div>
 
               <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8">
@@ -634,11 +658,8 @@ export default function Home() {
                       "HTML",
                       "CSS",
                       "JavaScript",
-                      "Responsive",
                       "WordPress",
-                      "React",
-                      "Gatsby",
-                      "Next.js",
+
                     ].map((skill) => (
                       <span
                         key={skill}
@@ -658,12 +679,10 @@ export default function Home() {
 
                   <div className="flex flex-wrap gap-3">
                     {[
+                      "Web Design",
                       "Figma",
                       "LP Design",
-                      "Corporate Site",
-                      "UI Design",
-                      "Wireframe",
-                      "Responsive Design",
+                      "Corporate Site Design",
                     ].map((skill) => (
                       <span
                         key={skill}
@@ -683,11 +702,10 @@ export default function Home() {
 
                   <div className="flex flex-wrap gap-3">
                     {[
-                      "Direction",
-                      "Proposal",
-                      "Client Work",
-                      "Information Design",
-                      "Communication",
+                      "Client Communication",
+                      "Project Coordination",
+                      "Production Management",
+                      "Quality Assurance",
                     ].map((skill) => (
                       <span
                         key={skill}
@@ -705,8 +723,7 @@ export default function Home() {
             <section id="contact" className="pt-8 pb-24">
               <h2 className="text-4xl font-bold mb-6">Contact</h2>
 
-              <p className="text-gray-400 mb-4">
-              </p>
+
 
               <div className="flex flex-col gap-2 text-gray-200">
 

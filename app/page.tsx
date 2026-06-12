@@ -126,14 +126,14 @@ export default function Home() {
 
                   <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
                     <p className="text-base md:text-lg text-gray-300 leading-9">
-                      事業会社にて約1年半、 <br />
-                      コーポレートサイト・採用サイト・LP制作を担当。 <br /> <br />
-
-                      HTML/CSS・JavaScriptを中心に、 <br />
-                      デザイン調整から公開対応まで一貫して携わっています。 <br /> <br />
-
-                      現在はReact / Next.jsを用いた <br />
-                      フロントエンド開発にも取り組んでいます。
+                      現在は事業会社でWebデザイナーとして約1年半勤務しており、<br />
+                      コーポレートサイトや採用サイト、LPの制作を担当しています。<br />
+                      <br />
+                      FigmaやXDを用いたデザイン制作から、HTML/CSS・JavaScriptによる実装、<br />
+                      WordPressの更新・運用まで一貫して携わっています。<br />
+                      <br />
+                      また、現在はリーダーとして品質管理や進行管理にも携わっており、<br />
+                      ユーザー視点を意識した制作を心掛けています。
                     </p>
                   </div>
                 </div>

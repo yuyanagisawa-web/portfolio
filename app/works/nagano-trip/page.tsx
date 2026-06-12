@@ -156,28 +156,24 @@ export default function Page() {
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              サービス内容や利用イメージが伝わりやすいよう、
-              <br />
-              情報整理と視認性を意識して制作しました。
-              <br />
-              <br />
+              長野旅行の魅力やサービス内容が分かりやすく伝わるよう、 <br />
+              情報の整理と視認性を意識して制作しました。 <br /> <br />
 
-              幅広い年代のユーザーにも見やすいデザインを目指しています。
+              旅行を検討しているユーザーが利用イメージを持ちやすいよう、 <br />
+              写真を活かしながら親しみやすいデザインを目指しています。
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              情報量が多くなりすぎないよう、
-              <br />
-              セクションごとに整理しながらレイアウトを設計しました。
-              <br />
-              <br />
+              掲載情報が多くなりすぎないよう、コンテンツごとに情報を整理し、<br />
+              ユーザーが必要な情報を探しやすい構成を意識しました。<br /><br />
 
-              視認性を意識して余白や文字サイズを調整し、
-              <br />
-              スマートフォンでも読みやすいよう実装しています。
+              また、長野の魅力が伝わるよう写真を大きく配置し、余白や文字サイズのバランスを調整することで、<br />
+              幅広い年代のユーザーにも読みやすいデザインになるよう工夫しています。
+              <br /><br />
+              スマートフォンでの閲覧も考慮し、視認性や操作性を意識して実装しました。
             </p>
           </section>
 

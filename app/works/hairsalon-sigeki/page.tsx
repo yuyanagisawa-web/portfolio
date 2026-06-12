@@ -139,7 +139,7 @@ export default function Page() {
               </h2>
 
               <p className="leading-7 text-gray-200">
-                20〜30代の男性ユーザー
+                20〜40代の男性ユーザー
               </p>
             </div>
             <div className="md:col-span-2 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
@@ -156,31 +156,30 @@ export default function Page() {
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">制作背景</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              美容室の高級感やかっこよさが伝わるよう、
-              <br />
-              写真の見せ方や余白を活かしたデザインを意識して制作しました。
+              美容室の集客および採用応募の強化を目的として制作しました。
               <br />
               <br />
-
-              パララックス表現やホバー時の動きを取り入れ、
+              サロンの高級感や技術力が伝わることに加え、
               <br />
-              サイト全体の世界観が感じられる構成を意識しています。
+              初めて訪れるユーザーにも親しみやすさを感じてもらえるよう、
+              <br />
+              写真を活かしたデザインや余白設計を意識しています。
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl md:text-3xl font-bold mb-4">工夫した点</h2>
             <p className="text-sm md:text-base text-gray-300 leading-7 md:leading-8">
-              写真が引き立つよう余白や文字サイズを調整し、
+              サイト全体の世界観を統一するため、パララックス表現やホバーアニメーションを取り入れ、   <br />
+              閲覧時にサロンの雰囲気や魅力が伝わるよう工夫しました。
               <br />
-              視線の流れを意識しながらレイアウトを設計しました。
               <br />
+              また、写真が主役となるよう余白や文字サイズのバランスを調整し、   <br />
+              視線の流れを意識しながらデザインを制作しています。   <br />
               <br />
-
-              また、スマートフォンでも快適に閲覧できるよう、
+              高級感とかっこよさを表現しつつも、
               <br />
-              レスポンシブ対応にも配慮しています。
-            </p>
+              採用や来店を検討しているユーザーが親しみやすさを感じられるデザインを目指しました。            </p>
           </section>
 
 

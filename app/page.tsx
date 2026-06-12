@@ -42,7 +42,7 @@ export default function Home() {
     image: "/besk.jpg",
     popupImage: "/besk01.png",
     href: "/works/besc-gym-yume",
-    description: "子ども向けの親しみやすさと安心感を意識し、余白や視線導線を工夫しました。",
+    description: "子ども向けの親しみやすさと安心感を意識し、写真の見せ方や余白の取り方、情報への導線を工夫しました。",
     tags: ["実務", "HTML", "CSS", "JavaScript"]
   },
   {

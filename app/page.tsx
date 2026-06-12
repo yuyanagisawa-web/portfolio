@@ -28,7 +28,7 @@ export default function Home() {
     Gatsby: "bg-purple-400/10 text-purple-200 border-purple-300/20",
   }
   const works: Work[] = [{
-    title: "金属加工業",
+    title: "製造業",
     category: "Corporate Site",
     image: "/tbk.png",
     popupImage: "/tbk01.png",

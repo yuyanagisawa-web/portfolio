@@ -32,7 +32,7 @@ export default function Page() {
                     </Link>
 
                     <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
-                        金属加工業
+                        製造業
                     </h1>
 
                     <p className="text-lg text-gray-400 mb-10">
@@ -41,7 +41,7 @@ export default function Page() {
 
                     {/* <img
                         src="/tbk.png"
-                        alt="金属加工業"
+                        alt="製造業"
                         className="w-full rounded-2xl border border-white/10 mb-12"
                     /> */}
                     <section className="mb-12">

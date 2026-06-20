@@ -142,21 +142,22 @@ export default function Home() {
                   </div>
 
                   <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
-                    Webデザインからコーディングまで一貫して対応できるWebデザイナー
+                    Webサイトのデザインから実装まで一貫して担当するWebデザイナー
                   </p>
 
                   <div className="max-w-3xl mb-10 rounded-3xl border border-[#fbcfe8]/10 bg-white/[0.035] backdrop-blur-sm p-8">
                     <p className="text-base md:text-lg text-gray-300 leading-9">
                       現在は事業会社にてWebデザイナーとして約1年半勤務しており、<br />
-                      コーポレートサイト・採用サイト・LP制作を担当しています。<br />
-                      <br />
+                      コーポレートサイト・採用サイト・LP制作を担当しています。<br /><br />
 
                       主にWebデザインおよびHTML/CSS/JavaScriptによるコーディングを担当し、<br />
-                      デザインの調整からレスポンシブ対応まで一貫して対応しています。<br />
-                      <br />
+                      デザイン調整からレスポンシブ対応まで一貫して対応しています。<br /><br />
 
-                      また、WordPressサイトの更新・運用業務にも携わっています。
-                      制作業務を通じて、ユーザーにとって分かりやすい情報設計を意識しています。
+                      また、チームリーダーとして、メンバーの制作物の確認や相談対応なども担当しています。<br /><br />
+
+                      制作においては、クライアントの要望を整理しながら、情報の優先順位や導線を意識し、<br />
+                      ユーザーが目的の情報へ迷わず到達できる分かりやすいデザインを心掛けています。
+
                     </p>
                   </div>
                 </div>

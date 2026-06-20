@@ -52,7 +52,7 @@ export default function Home() {
     href: "/works/tbk",
     description:
       "情報量の多い企業サイトのため、情報の優先順位と視認性を整理し、ユーザーが迷わず閲覧できる構成とデザインを意識して制作しました。",
-    tags: ["デザイン", "HTML", "CSS", "JavaScript"]
+    tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "体操クラブ",
@@ -62,7 +62,7 @@ export default function Home() {
     href: "/works/besc-gym-yume",
     description:
       "子ども向けサービスとしての親しみやすさと安心感を重視し、写真の見せ方や余白設計、導線設計を工夫して制作しました。",
-    tags: ["デザイン", "HTML", "CSS", "JavaScript"]
+    tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "美容室",
@@ -72,7 +72,7 @@ export default function Home() {
     href: "/works/hairsalon-sigeki",
     description:
       "世界観を重視したビジュアル設計を行い、写真表現や余白、動きのバランスを調整しながらブランドイメージに沿って制作しました。",
-    tags: ["デザイン", "HTML", "CSS", "JavaScript"]
+    tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
     title: "観光バス会社",
@@ -82,7 +82,7 @@ export default function Home() {
     href: "/works/nagano-trip",
     description:
       "サービス内容が直感的に伝わるよう、情報整理と導線設計を意識し、閲覧ストレスの少ない構成で制作しました。",
-    tags: ["デザイン", "HTML", "CSS", "JavaScript"]
+    tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   ];
 

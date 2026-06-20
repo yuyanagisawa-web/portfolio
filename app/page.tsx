@@ -513,25 +513,30 @@ export default function Home() {
                 </h2>
 
                 <p className="text-gray-300 leading-8 max-w-3xl">
-                  Webデザインとコーディングを通じて、<br />
-                  ユーザーにとって見やすく、情報が整理されたWebサイト制作を心がけています。                </p>
+                  Webデザインからコーディングまで一貫して対応し、
+                  <br />
+                  目的や伝えたい情報を整理しながら、分かりやすいWebサイト制作を心がけています。                   </p>
               </div>
 
               <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8">
                 <div className="rounded-[2rem] border border-[#e9d5ff]/10 bg-gradient-to-br from-white/[0.055] to-[#d8b4fe]/[0.035] backdrop-blur-sm p-8 md:p-10 shadow-[0_24px_100px_rgba(216,180,254,0.08)]">
                   <p className="text-gray-300 leading-9">
-                    事業会社にて約1年半、コーポレートサイトやLP制作に携わってきました。
+                    現在は事業会社にてWebデザイナーとして約1年半、
                     <br />
-                    主にHTML/CSS・JavaScriptを用いたコーディングを担当し、
+                    コーポレートサイト・採用サイト・LP制作に携わっています。
                     <br />
-                    デザイン調整からレスポンシブ対応まで一貫して対応しています。
+                    WebデザインからHTML/CSS・JavaScriptを用いたコーディング、
+                    <br />
+                    レスポンシブ対応まで一貫して担当しています。
 
                     <br />
                     <br />
 
                     前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
                     <br />
-                    「誰に何を伝えるサイトなのか」を意識した制作を大切にしています。
+                    制作においても「誰に何を伝えるサイトなのか」を意識しながら、
+                    <br />
+                    情報の優先順位や見せ方を整理することを大切にしています。
                   </p>
                 </div>
 
@@ -541,9 +546,9 @@ export default function Home() {
                   </p>
 
                   <ul className="space-y-5 text-gray-300 leading-8">
-                    <li>情報整理と余白設計を大切にしています。</li>
-                    <li>デザイン意図を理解したコーディングを心がけています。</li>
-                    <li>ユーザー視点と目的意識を持って制作します。</li>
+                    <li>目的やターゲットに合わせて、情報の見せ方を整理することを大切にしています。</li>
+                    <li>デザイン意図を理解したうえで、実装まで一貫して対応することを心がけています。</li>
+                    <li>見た目だけでなく、ユーザーにとって分かりやすい導線や視認性も意識して制作します。</li>
                   </ul>
                 </div>
               </div>
@@ -579,8 +584,9 @@ export default function Home() {
 
                       <p className="text-sm text-gray-500 mb-2">現在</p>
                       <p className="text-gray-300 leading-8">
-                        Webデザイナーとして、コーポレートサイトやLP制作を担当。<br />
-                        デザイン調整からHTML/CSSコーディング、<br />レスポンシブ対応まで行っています。
+                        事業会社にてWebデザイナーとして、コーポレートサイトや採用サイト、LP制作に携わっています。<br />
+                        WebデザインからHTML/CSS・JavaScriptを用いたコーディング、<br />
+                        レスポンシブ対応まで一貫して担当しています。
                       </p>
                     </div>
 
@@ -588,8 +594,9 @@ export default function Home() {
                       <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[#d8b4fe]" />
                       <p className="text-sm text-gray-500 mb-2">前職</p>
                       <p className="text-gray-300 leading-8">
-                        広告代理店にて、営業・企画書作成・ディレクション業務を経験。<br />
-                        ユーザー視点や目的を考える姿勢を制作にも活かしています。
+                        広告代理店にて、営業・企画書作成・ディレクション業務を経験しました。<br />
+                        その経験を活かし、現在の制作でも「誰に何を伝えるか」を意識しながら、<br />
+                        情報の見せ方や訴求の整理を大切にしています。
                       </p>
                     </div>
                   </div>
@@ -602,9 +609,9 @@ export default function Home() {
 
                   <div className="space-y-5">
                     {[
-                      "情報を整理し、見やすく伝わる構成を考えること",
-                      "デザイン意図を理解したHTML/CSSコーディング",
-                      "前職経験を活かしたユーザー視点・目的意識",
+                      "情報の優先順位を整理し、分かりやすく見せること",
+                      "デザイン意図を踏まえたコーディング・実装",
+                      "目的やターゲットを意識したサイト制作",
                     ].map((item) => (
                       <div
                         key={item}
@@ -658,7 +665,7 @@ export default function Home() {
                       "HTML",
                       "CSS",
                       "JavaScript",
-                      "WordPress",
+                      "Responsive Design",
 
                     ].map((skill) => (
                       <span
@@ -680,9 +687,10 @@ export default function Home() {
                   <div className="flex flex-wrap gap-3">
                     {[
                       "Web Design",
-                      "Figma",
                       "LP Design",
                       "Corporate Site Design",
+                      "Figma",
+                      "Information Design",
                     ].map((skill) => (
                       <span
                         key={skill}
@@ -703,9 +711,9 @@ export default function Home() {
                   <div className="flex flex-wrap gap-3">
                     {[
                       "Client Communication",
-                      "Project Coordination",
-                      "Production Management",
-                      "Quality Assurance",
+                      "Project Management",
+                      "Schedule Management",
+                      "Quality Control",
                     ].map((skill) => (
                       <span
                         key={skill}

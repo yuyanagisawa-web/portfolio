@@ -51,7 +51,7 @@ export default function Home() {
     popupImage: "/tbk01.png",
     href: "/works/tbk",
     description:
-      "情報量の多い企業サイトのため、情報の優先順位と視認性を整理し、ユーザーが迷わず閲覧できる構成とデザインを意識して制作しました。",
+      "製品情報・加工内容・採用情報を分かりやすく伝えることを目的に、情報整理と視認性を意識して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -61,7 +61,7 @@ export default function Home() {
     popupImage: "/besk01.png",
     href: "/works/besc-gym-yume",
     description:
-      "子ども向けサービスとしての親しみやすさと安心感を重視し、写真の見せ方や余白設計、導線設計を工夫して制作しました。",
+      "子ども向けサービスとしての親しみやすさと安心感を重視し、保護者にも信頼感が伝わるよう写真表現やレイアウトを工夫して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -71,7 +71,7 @@ export default function Home() {
     popupImage: "/shigeki01.png",
     href: "/works/hairsalon-sigeki",
     description:
-      "世界観を重視したビジュアル設計を行い、写真表現や余白、動きのバランスを調整しながらブランドイメージに沿って制作しました。",
+      "店舗の世界観や雰囲気が伝わるよう、写真を活かしたビジュアル設計と余白のバランスを意識して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
@@ -81,7 +81,7 @@ export default function Home() {
     popupImage: "/nagano01.png",
     href: "/works/nagano-trip",
     description:
-      "サービス内容が直感的に伝わるよう、情報整理と導線設計を意識し、閲覧ストレスの少ない構成で制作しました。",
+      "観光プランやサービス内容を分かりやすく伝えるため、情報整理と視認性を意識して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   ];

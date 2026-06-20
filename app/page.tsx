@@ -405,9 +405,9 @@ export default function Home() {
                   </div>
 
                   <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                    タスクの追加・編集・完了切り替えなど、
+                    タスクの追加・編集・完了切り替えを直感的に行えるよう、
                     <br />
-                    操作感を意識して制作したタスク管理UIです。
+                    操作性と視認性を意識して制作したタスク管理UIです。
                   </p>
                 </Link>
                 {/* コスメ */}
@@ -466,12 +466,11 @@ export default function Home() {
                   </div>
 
                   <p className="text-sm text-gray-400 leading-6 min-h-[72px]">
-                    商品一覧・商品詳細・カート確認まで、
+                    ブランドの世界観を表現しながら、
                     <br />
-                    シンプルな購入導線を意識して制作した
+                    商品比較から購入までを分かりやすく設計した
                     <br />
-                    コスメECサイトの自主制作です。
-
+                    コスメECサイトです。
                   </p>
                 </Link>
               </div>

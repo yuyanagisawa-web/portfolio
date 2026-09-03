@@ -45,6 +45,17 @@ export default function Home() {
     JavaScript: "bg-yellow-400/10 text-yellow-200 border-yellow-300/20",
   }
   const works: Work[] = [{
+    title: "建設業",
+    category: "Corporate Site",
+    image: "/kizuna.png",
+    popupImage: "/kizuna01.png",
+    href: "/works/kizuna",
+    description:
+      "動画を活かしたファーストビューや、スクロールに合わせてコンテンツ・画像が切り替わる動きを取り入れ、企業の魅力を印象的に伝えられるサイトを制作しました。",
+    tags: ["Design", "HTML", "CSS", "JavaScript"]
+  },
+
+  {
     title: "製造業",
     category: "Corporate Site",
     image: "/tbk.png",

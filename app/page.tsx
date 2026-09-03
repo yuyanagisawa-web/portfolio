@@ -65,16 +65,16 @@ export default function Home() {
       "製品情報・加工内容・採用情報を分かりやすく伝えることを目的に、情報整理と視認性を意識して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
-  {
-    title: "体操クラブ",
-    category: "Column Site",
-    image: "/besk.jpg",
-    popupImage: "/besk01.png",
-    href: "/works/besc-gym-yume",
-    description:
-      "子ども向けサービスとしての親しみやすさと安心感を重視し、保護者にも信頼感が伝わるよう写真表現やレイアウトを工夫して制作しました。",
-    tags: ["Design", "HTML", "CSS", "JavaScript"]
-  },
+  // {
+  //   title: "体操クラブ",
+  //   category: "Column Site",
+  //   image: "/besk.jpg",
+  //   popupImage: "/besk01.png",
+  //   href: "/works/besc-gym-yume",
+  //   description:
+  //     "子ども向けサービスとしての親しみやすさと安心感を重視し、保護者にも信頼感が伝わるよう写真表現やレイアウトを工夫して制作しました。",
+  //   tags: ["Design", "HTML", "CSS", "JavaScript"]
+  // },
   {
     title: "美容室",
     category: "Salon Site",

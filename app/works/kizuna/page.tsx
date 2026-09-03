@@ -12,7 +12,7 @@ export default function Page() {
 
     const siteImages = [
         { src: "/kizuna01.png", alt: "トップページ" },
-        { src: "/kizuna02.png", alt: "トップページ詳細" },
+        { src: "/kizuna02.png", alt: "トップページKVスクロール後ビュー" },
         { src: "/kizuna03.png", alt: "事業内容ページ" },
         { src: "/kizuna04.png", alt: "採用ページ" },
 
@@ -52,18 +52,21 @@ export default function Page() {
                         </h2>
 
                         <div className="grid gap-6 md:grid-cols-3">
-                            {siteImages.map((image) => (
+                            {siteImages.map((image, index) => (
                                 <button
                                     key={image.src}
                                     type="button"
                                     onClick={() => setSelectedImage(image)}
                                     className="group rounded-3xl border border-white/10 bg-white/[0.03] p-3 text-left hover:border-white/30 transition"
                                 >
-                                    <div className="h-[420px] overflow-hidden rounded-2xl bg-white">
+                                    <div
+                                        className={`${index === 0 ? "h-[420px]" : "h-[280px]"
+                                            } overflow-hidden rounded-2xl bg-white`}
+                                    >
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                                            className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
                                         />
                                     </div>
 

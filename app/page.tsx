@@ -284,6 +284,7 @@ export default function Home() {
                     p-5 transition-all duration-300 ease-out
                     hover:-translate-y-1 hover:scale-[1.015]
                     hover:border-white/30 hover:shadow-xl
+                    cursor-pointer
                     will-change-transform
                     "
                   >

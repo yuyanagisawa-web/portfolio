@@ -59,10 +59,7 @@ export default function Page() {
                                     onClick={() => setSelectedImage(image)}
                                     className="group rounded-3xl border border-white/10 bg-white/[0.03] p-3 text-left hover:border-white/30 transition"
                                 >
-                                    <div
-                                        className={`${index === 0 ? "h-[420px]" : "h-[280px]"
-                                            } overflow-hidden rounded-2xl bg-white`}
-                                    >
+                                    <div className="h-[300px] overflow-hidden rounded-2xl bg-white">
                                         <img
                                             src={image.src}
                                             alt={image.alt}

@@ -328,45 +328,49 @@ export default function Home() {
                     onClick={() => setSelectedWork(null)}
                   >
                     <div
-                      className="relative w-full max-w-4xl max-h-[82vh] overflow-y-auto rounded-3xl bg-[#181818] border border-white/15 p-5 md:p-8"
+                      className="relative w-full max-w-4xl max-h-[82vh] rounded-3xl bg-[#181818] border border-white/15"
                       onClick={(e) => e.stopPropagation()}
                     >
+                      {/* ×ボタン：常に右上に表示 */}
                       <button
                         onClick={() => setSelectedWork(null)}
-                        className="absolute right-5 top-5 text-white/70 hover:text-white text-2xl"
+                        className="absolute right-5 top-5 z-10 text-white/70 hover:text-white text-2xl"
                       >
                         ×
                       </button>
 
-                      <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
-                            {selectedWork.category}
-                          </p>
+                      {/* スクロールする部分 */}
+                      <div className="max-h-[82vh] overflow-y-auto p-5 md:p-8">
+                        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.2em] text-violet-300 mb-2">
+                              {selectedWork.category}
+                            </p>
 
-                          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                            {selectedWork.title}
-                          </h3>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                              {selectedWork.title}
+                            </h3>
 
-                          <p className="text-gray-300 leading-7 max-w-2xl">
-                            {selectedWork.description}
-                          </p>
+                            <p className="text-gray-300 leading-7 max-w-2xl">
+                              {selectedWork.description}
+                            </p>
+                          </div>
+
+                          <Link
+                            href={selectedWork.href}
+                            onClick={(e) => e.stopPropagation()}
+                            className="shrink-0 inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
+                          >
+                            詳細を見る
+                          </Link>
                         </div>
 
-                        <Link
-                          href={selectedWork.href}
-                          onClick={(e) => e.stopPropagation()}
-                          className="shrink-0 inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
-                        >
-                          詳細を見る
-                        </Link>
+                        <img
+                          src={selectedWork.popupImage}
+                          alt={selectedWork.title}
+                          className="mx-auto w-full max-w-[280px] md:max-w-[340px] object-contain rounded-2xl"
+                        />
                       </div>
-
-                      <img
-                        src={selectedWork.popupImage}
-                        alt={selectedWork.title}
-                        className="mx-auto w-full max-w-[280px] md:max-w-[340px] object-contain rounded-2xl"
-                      />
                     </div>
                   </div>
                 )}

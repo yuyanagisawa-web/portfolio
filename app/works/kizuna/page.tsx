@@ -51,7 +51,7 @@ export default function Page() {
                             サイトイメージ
                         </h2>
 
-                        <div className="grid gap-6 md:grid-cols-3">
+                        <div className="grid gap-6 md:grid-cols-2">
                             {siteImages.map((image, index) => (
                                 <button
                                     key={image.src}

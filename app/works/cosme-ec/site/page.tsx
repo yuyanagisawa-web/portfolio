@@ -5,8 +5,17 @@ import BackToTop from "../../../../components/BackToTop";
 export default function Page() {
     const products = [
         {
+            name: "Clear Toner",
+            slug: "clear-toner",
+            image: "/images/clear-toner.png",
+            category: "化粧水",
+            price: "¥3,200",
+            text: "肌のキメを整え、なめらかな印象へ導く化粧水。",
+        },
+        {
             name: "Glow Serum",
             slug: "glow-serum",
+            image: "/images/glow-serum.png",
             category: "美容液",
             price: "¥4,800",
             text: "肌にうるおいと透明感を与えるデイリーセラム。",
@@ -14,16 +23,10 @@ export default function Page() {
         {
             name: "Moisture Cream",
             slug: "moisture-cream",
+            image: "/images/moisture-cream.png",
             category: "保湿クリーム",
             price: "¥3,900",
             text: "乾燥しやすい肌をやさしく包み込むクリーム。",
-        },
-        {
-            name: "Clear Toner",
-            slug: "clear-toner",
-            category: "化粧水",
-            price: "¥3,200",
-            text: "肌のキメを整え、なめらかな印象へ導く化粧水。",
         },
     ];
 
@@ -74,15 +77,12 @@ export default function Page() {
                                 className="rounded-[1.5rem] bg-white border border-black/5 p-4 md:p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition"
                             >
 
-                                <div className="aspect-[4/5] rounded-[1.25rem] bg-[#efe7dd] mb-5 flex items-center justify-center">
-
-                                    <div className="text-center">
-                                        <div className="mx-auto h-32 w-20 md:h-36 md:w-24 rounded-t-full rounded-b-2xl bg-white border border-white shadow-sm mb-4" />
-
-                                        <p className="text-xs tracking-[0.2em] uppercase text-[#b6a99e]">
-                                            Lumière
-                                        </p>
-                                    </div>
+                                <div className="aspect-[4/5] rounded-[1.25rem] bg-[#efe7dd] mb-5 flex items-center justify-center p-6">
+                                    <img
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="w-full h-full object-contain"
+                                    />
                                 </div>
 
                                 <p className="text-xs tracking-[0.2em] uppercase text-[#b6a99e] mb-2">

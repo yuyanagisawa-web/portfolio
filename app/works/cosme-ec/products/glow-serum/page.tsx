@@ -59,21 +59,24 @@ export default function Page() {
                     <div className="grid gap-10 md:grid-cols-[1fr_0.9fr] items-start">
 
                         <div className="rounded-[2rem] bg-[#efe7dd] p-8">
-                            <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-white via-[#eadfd3] to-[#cdbdaa] border border-white/70 flex items-center justify-center">
-
-                                <div className="text-center">
-
-                                    <div className="mx-auto h-56 w-32 rounded-t-full rounded-b-2xl bg-white/80 border border-white shadow-sm mb-5" />
-
-                                    <p className="text-xs tracking-[0.25em] uppercase text-[#8b7d70]">
-                                        Lumière
-                                    </p>
-
-                                </div>
-
+                            <div className="
+        aspect-[4/5]
+        rounded-[1.5rem]
+        bg-gradient-to-br
+        from-white
+        via-[#eadfd3]
+        to-[#cdbdaa]
+        border border-white/70
+        flex items-center justify-center
+        p-8
+    ">
+                                <img
+                                    src="/images/glow-serum.png"
+                                    alt="Glow Serum"
+                                    className="w-full h-full object-contain"
+                                />
                             </div>
                         </div>
-
                         <div>
 
                             <p className="text-sm tracking-[0.2em] text-[#b6a99e] uppercase mb-4">

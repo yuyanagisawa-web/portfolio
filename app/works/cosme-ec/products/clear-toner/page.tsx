@@ -72,7 +72,7 @@ export default function Page() {
         p-8
     ">
                                 <img
-                                    src="/images/clear-toner.png"
+                                    src="/clear-toner.png"
                                     alt=""
                                     className="w-full h-full object-contain"
                                 />

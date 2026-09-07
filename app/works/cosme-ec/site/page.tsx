@@ -7,7 +7,7 @@ export default function Page() {
         {
             name: "Clear Toner",
             slug: "clear-toner",
-            image: "/images/clear-toner.png",
+            image: "/clear-toner.png",
             category: "化粧水",
             price: "¥3,200",
             text: "肌のキメを整え、なめらかな印象へ導く化粧水。",
@@ -15,7 +15,7 @@ export default function Page() {
         {
             name: "Glow Serum",
             slug: "glow-serum",
-            image: "/images/glow-serum.png",
+            image: "/glow-serum.png",
             category: "美容液",
             price: "¥4,800",
             text: "肌にうるおいと透明感を与えるデイリーセラム。",
@@ -23,7 +23,7 @@ export default function Page() {
         {
             name: "Moisture Cream",
             slug: "moisture-cream",
-            image: "/images/moisture-cream.png",
+            image: "/moisture-cream.png",
             category: "保湿クリーム",
             price: "¥3,900",
             text: "乾燥しやすい肌をやさしく包み込むクリーム。",

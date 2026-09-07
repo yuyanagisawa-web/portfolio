@@ -71,7 +71,7 @@ export default function Page() {
         p-8
     ">
                                 <img
-                                    src="/images/glow-serum.png"
+                                    src="/glow-serum.png"
                                     alt="Glow Serum"
                                     className="w-full h-full object-contain"
                                 />

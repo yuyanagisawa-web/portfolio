@@ -71,7 +71,7 @@ export default function Page() {
         p-8
     ">
                                 <img
-                                    src="/images/moisture-cream.png"
+                                    src="/moisture-cream.png"
                                     alt=""
                                     className="w-full h-full object-contain"
                                 />

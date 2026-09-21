@@ -12,15 +12,15 @@ export default function Page() {
     } | null>(null);
 
     const siteImages = [
-        { src: "/tbk01.png", alt: "トップページ" },
-        { src: "/tbk02.png", alt: "特徴ページ" },
-        { src: "/tbk03.png", alt: "設備ページ" },
+        { src: "/welfare01.png", alt: "トップページ" },
+        { src: "/welfare02.png", alt: "私たちについて" },
+        { src: "/welfare03.png", alt: "事業内容" },
     ];
 
     const information = [
         {
             label: "Role",
-            value: "デザイン / コーディング /\nレスポンシブ対応",
+            value: "デザイン / コーディング / レスポンシブ対応",
         },
         {
             label: "Tech",
@@ -32,11 +32,7 @@ export default function Page() {
         },
         {
             label: "Target",
-            value: "企業情報や事業内容を確認したい\nユーザー",
-        },
-        {
-            label: "Period",
-            value: "2026.04 / 約5日",
+            value: "福祉・医療分野での就業を検討している方",
         },
     ];
 
@@ -65,7 +61,7 @@ export default function Page() {
                         </p>
 
                         <h1 className="font-heading-ja mb-5 text-3xl font-medium tracking-[0.08em] text-foreground md:text-4xl">
-                            製造業
+                            福祉事業
                         </h1>
 
                         <p className="text-sm leading-8 text-[#625B57] md:text-base">
@@ -101,7 +97,7 @@ export default function Page() {
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="block h-[700px] w-full object-cover object-top"
+                                            className="block h-[900px] w-full object-cover object-top"
                                         />
                                     </div>
                                 </button>
@@ -156,27 +152,15 @@ export default function Page() {
 
                             <div className="space-y-6 text-sm leading-8 text-[#625B57] md:text-base md:leading-9">
                                 <p>
-                                    会社案内としての役割に加え、製品・加工内容の訴求強化および
+                                    介護・看護・障がい・保育分野の人材サービスを紹介する
                                     <br />
-                                    採用応募の促進を目的としたコーポレートサイトの制作を担当しました。
+                                    コーポレートサイトです。
                                 </p>
 
                                 <p>
-                                    既存サイトでは情報量が多く、初見ユーザーにとって
+                                    サービス内容だけでなく、企業の考え方やスタッフの紹介なども
                                     <br />
-                                    製品情報・加工内容・採用情報への到達がしづらいという課題がありました。
-                                </p>
-
-                                <p>
-                                    そのため、主要コンテンツへの導線を整理するとともに、
-                                    <br />
-                                    見出しや余白の設計を見直し、必要な情報を探しやすい構成を意識して制作しました。
-                                </p>
-
-                                <p>
-                                    また、工場・設備・製品写真を活用し、
-                                    <br />
-                                    企業の技術力や信頼感を適切に伝えられるデザインを目指しました。
+                                    掲載し、利用者が必要な情報を確認できる構成になっています。
                                 </p>
                             </div>
                         </section>
@@ -209,16 +193,14 @@ export default function Page() {
                                         </p>
 
                                         <h3 className="text-sm font-medium text-foreground md:text-base">
-                                            ブランドトーンの両立
+                                            写真を活かしたデザイン
                                         </h3>
                                     </div>
 
                                     <p className="text-sm leading-8 text-[#625B57] md:text-base">
-                                        クライアント要件として、技術力や信頼感を表現しつつ、
+                                        スタッフや施設の写真を大きく配置し、
                                         <br />
-                                        親しみやすさも感じられるデザインが求められていたため、
-                                        <br />
-                                        両者のバランスを意識して制作しました。
+                                        企業の雰囲気が視覚的に伝わるデザインを意識しました。
                                     </p>
                                 </div>
 
@@ -232,16 +214,16 @@ export default function Page() {
                                         </p>
 
                                         <h3 className="text-sm font-medium text-foreground md:text-base">
-                                            UIデザイン
+                                            情報の整理
                                         </h3>
                                     </div>
 
                                     <p className="text-sm leading-8 text-[#625B57] md:text-base">
-                                        ボタンやカードに角丸を採用することで親しみやすさを表現しつつ、
+                                        企業理念や事業内容など、情報量の多いページでも
                                         <br />
-                                        背景や装飾にはシャープなラインを取り入れ、
+                                        見出し・余白・背景色を使って内容を区切り、
                                         <br />
-                                        製造業としての精度や技術力が伝わるよう工夫しました。
+                                        読み進めやすいレイアウトにしました。
                                     </p>
                                 </div>
 
@@ -255,23 +237,22 @@ export default function Page() {
                                         </p>
 
                                         <h3 className="text-sm font-medium text-foreground md:text-base">
-                                            情報整理と視認性
+                                            視認性と導線設計
                                         </h3>
                                     </div>
 
                                     <p className="text-sm leading-8 text-[#625B57] md:text-base">
-                                        見出しの階層や情報のグルーピングを整理し、
+                                        青を基調とした配色と明確な見出しによって
                                         <br />
-                                        ユーザーが目的の情報を見つけやすいレイアウトを意識しました。
+                                        情報のまとまりを表現し、
                                         <br />
-                                        余白やコンテンツ間の間隔も調整し、
-                                        <br />
-                                        情報量が多くても読み進めやすいデザインを目指しました。
+                                        お問い合わせへの導線も分かりやすく配置しました。
                                     </p>
                                 </div>
                             </div>
                         </section>
                     </div>
+
                 </div>
             </main>
 

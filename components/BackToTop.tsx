@@ -26,7 +26,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-6 right-6 z-50 rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm text-white backdrop-blur hover:bg-white/20 transition"
+      className="fixed bottom-6 right-6 z-50 flex h-12 w-20 flex-col items-center justify-center rounded-full border border-[#6F6258] bg-[#6F6258] text-white shadow-lg transition hover:bg-[#51483F] hover:shadow-xl"
       aria-label="ページ上部へ戻る"
     >
       ↑ Top

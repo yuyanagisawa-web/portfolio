@@ -6,14 +6,25 @@ import { useRouter } from "next/navigation";
 import Navbar from "../../../../../components/Navbar";
 import BackToTop from "../../../../../components/BackToTop";
 
+type CartItem = {
+    slug: string;
+    name: string;
+    category: string;
+    size: string;
+    price: number;
+    quantity: number;
+};
+
 export default function Page() {
     const [quantity, setQuantity] = useState(1);
     const router = useRouter();
 
     const addToCart = () => {
-        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const cart: CartItem[] = JSON.parse(
+            localStorage.getItem("cart") || "[]"
+        );
 
-        const newItem = {
+        const newItem: CartItem = {
             slug: "moisture-cream",
             name: "Moisture Cream",
             category: "保湿クリーム",
@@ -23,11 +34,11 @@ export default function Page() {
         };
 
         const existingItem = cart.find(
-            (item: any) => item.slug === newItem.slug
+            (item) => item.slug === newItem.slug
         );
 
         const updatedCart = existingItem
-            ? cart.map((item: any) =>
+            ? cart.map((item) =>
                 item.slug === newItem.slug
                     ? {
                         ...item,
@@ -46,141 +57,266 @@ export default function Page() {
         <>
             <Navbar />
 
-            <main className="min-h-screen bg-[#f7f3ee] text-[#1f1b18] px-6 md:px-10">
-                <div className="max-w-6xl mx-auto py-20">
+            <main className="min-h-screen bg-[#F7F3EE] px-5 text-[#1F1B18] md:px-10">
+                <div className="mx-auto max-w-6xl py-12 md:py-16">
 
+                    {/* 戻るボタン */}
                     <Link
                         href="/works/cosme-ec/site"
-                        className="inline-flex items-center text-sm text-[#6f6258] hover:text-[#1f1b18] mb-10"
+                        className="mb-10 inline-flex items-center gap-2 rounded-full border border-[#DED6D2] bg-[#F3ECE6] px-5 py-3 text-sm text-[#625B57] transition-colors hover:bg-[#E8DCD6] hover:text-[#965564]"
                     >
                         ← 商品一覧に戻る
                     </Link>
 
-                    <div className="grid gap-10 md:grid-cols-[1fr_0.9fr] items-start">
+                    {/* パンくずリスト */}
+                    <nav
+                        aria-label="パンくずリスト"
+                        className="mb-8 flex flex-wrap items-center gap-2 text-xs text-[#9B8F84]"
+                    >
+                        <Link
+                            href="/works/cosme-ec/site"
+                            className="transition hover:text-[#6F6258]"
+                        >
+                            Lumière Skin
+                        </Link>
 
-                        <div className="rounded-[2rem] bg-[#efe7dd] p-8">
-                            <div className="
-        aspect-[4/5]
-        rounded-[1.5rem]
-        bg-gradient-to-br
-        from-white
-        via-[#eadfd3]
-        to-[#cdbdaa]
-        border border-white/70
-        flex items-center justify-center
-        p-8
-    ">
-                                <img
-                                    src="/moisture-cream.png"
-                                    alt=""
-                                    className="w-full h-full object-contain"
-                                />
+                        <span>/</span>
+                        <span>保湿クリーム</span>
+                        <span>/</span>
+                        <span className="text-[#6F6258]">Moisture Cream</span>
+                    </nav>
+
+                    {/* 商品メインエリア */}
+                    <section className="grid items-start gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
+
+                        {/* 左：商品画像 */}
+                        <div>
+                            <div className="overflow-hidden rounded-[2rem] bg-[#EFE7DD] p-6 md:p-10">
+                                <div className="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] border border-white/70 bg-gradient-to-br from-white via-[#EADFD3] to-[#CDBDAA] p-8">
+                                    <img
+                                        src="/moisture-cream.png"
+                                        alt="Lumière Skin Moisture Cream"
+                                        className="h-full w-full object-contain drop-shadow-xl"
+                                    />
+                                </div>
                             </div>
+
+                            <p className="mt-5 text-center text-xs tracking-[0.2em] text-[#A49486]">
+                                LUMIÈRE SKIN — DAILY SKINCARE
+                            </p>
                         </div>
 
+                        {/* 右：商品情報 */}
                         <div>
-
-                            <p className="text-sm tracking-[0.2em] text-[#b6a99e] uppercase mb-4">
-                                保湿クリーム
+                            <p className="mb-4 text-xs tracking-[0.25em] text-[#B79D95]">
+                                LUMIÈRE SKIN / CREAM
                             </p>
 
-                            <h1 className="text-3xl md:text-[52px] font-semibold tracking-tight leading-[1.05] mb-5">
+                            <h1 className="mb-3 text-3xl font-medium tracking-[0.03em] text-[#3B322C] md:text-5xl">
                                 Moisture Cream
                             </h1>
 
-                            <p className="text-2xl font-semibold mb-6">
-                                ¥3,900
+                            <p className="mb-7 text-sm text-[#8B7D70]">
+                                モイスチャークリーム / 保湿クリーム
                             </p>
 
-                            <p className="text-[#6f6258] leading-8 mb-8">
+                            {/* 価格 */}
+                            <div className="mb-7 flex flex-wrap items-baseline gap-3 border-b border-[#DED6D2] pb-7">
+                                <p className="text-3xl font-medium tracking-[0.03em] text-[#3B322C]">
+                                    ¥3,900
+                                </p>
+
+                                <span className="text-xs text-[#8B7D70]">
+                                    / 50g
+                                </span>
+                            </div>
+
+                            {/* 商品説明 */}
+                            <p className="mb-5 text-sm leading-8 text-[#6F6258] md:text-base">
                                 乾燥しやすい肌をやさしく包み込む高保湿クリームです。
-                                <br />
                                 しっとり感を保ちながらも重すぎない使用感を意識し、
-                                <br />
                                 毎日のスキンケアに取り入れやすい設計にしています。
-
-                                <br /><br />
-
                                 肌をやわらかく整えながら、
-                                <br />
                                 落ち着いたスキンケア時間を演出するアイテムを想定しています。
                             </p>
 
-                            <div className="grid gap-4 mb-8">
-
-                                <div className="rounded-2xl bg-white border border-black/5 p-5 shadow-sm">
-                                    <h2 className="font-semibold mb-2">
-                                        特徴
-                                    </h2>
-
-                                    <p className="text-sm text-[#6f6258] leading-7">
-                                        長時間うるおいを保ちながら、
-                                        <br />
-                                        ベタつきすぎないバランスを意識した保湿クリームです。
-                                        <br />
-                                        やさしく落ち着いた世界観が伝わるよう、
-                                        <br />
-                                        ミニマルな商品UIで構成しています。
-                                    </p>
-                                </div>
-
-                                <div className="rounded-2xl bg-white border border-black/5 p-5 shadow-sm">
-                                    <h2 className="font-semibold mb-2">
-                                        こんな方におすすめ
-                                    </h2>
-
-                                    <ul className="text-sm text-[#6f6258] leading-7 space-y-1">
-                                        <li>・乾燥が気になる方</li>
-                                        <li>・しっとりした使用感が好きな方</li>
-                                        <li>・シンプルなスキンケアを好む方</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div className="grid gap-3 mb-8 text-sm text-[#6f6258]">
-                                <p>内容量：50g</p>
-                                <p>使用目安：夜</p>
-                                <p>肌タイプ：乾燥しやすい肌へ</p>
-                            </div>
-                            <div className="flex items-center gap-4 mb-8">
-
-                                <button
-                                    onClick={() =>
-                                        setQuantity((prev) =>
-                                            Math.max(1, prev - 1)
-                                        )
-                                    }
-                                    className="h-10 w-10 rounded-full border border-black/10 bg-white"
-                                >
-                                    -
-                                </button>
-
-                                <span className="min-w-6 text-center font-medium">
-                                    {quantity}
-                                </span>
-
-                                <button
-                                    onClick={() =>
-                                        setQuantity((prev) => prev + 1)
-                                    }
-                                    className="h-10 w-10 rounded-full border border-black/10 bg-white"
-                                >
-                                    +
-                                </button>
-
-                            </div>
-                            <button
-                                onClick={addToCart}
-                                className="w-full md:w-auto inline-flex justify-center rounded-full bg-[#1f1b18] text-white px-8 py-4 text-sm font-medium hover:opacity-80 transition"
+                            {/* 下部の商品詳細へのリンク */}
+                            <a
+                                href="#product-details"
+                                className="mb-9 inline-flex items-center gap-2 border-b border-[#B79D95] pb-2 text-sm text-[#6F6258] transition hover:text-[#965564]"
                             >
-                                カートに入れる
-                            </button>
+                                商品の特徴・おすすめ情報を見る
+                                <span aria-hidden="true">↓</span>
+                            </a>
 
+                            {/* 購入エリア */}
+                            <div className="rounded-2xl border border-[#E5DCD7] bg-white/80 p-6 shadow-sm md:p-7">
+
+                                {/* 数量選択 */}
+                                <div className="mb-6 flex items-center justify-between gap-4">
+                                    <span className="text-sm font-medium text-[#625B57]">
+                                        数量
+                                    </span>
+
+                                    <div className="inline-flex items-center overflow-hidden rounded-full border border-[#DED6D2] bg-white">
+                                        <button
+                                            type="button"
+                                            aria-label="数量を減らす"
+                                            onClick={() =>
+                                                setQuantity((prev) => Math.max(1, prev - 1))
+                                            }
+                                            disabled={quantity === 1}
+                                            className="flex h-11 w-11 items-center justify-center text-lg text-[#6F6258] transition hover:bg-[#F3ECE6] disabled:cursor-not-allowed disabled:opacity-30"
+                                        >
+                                            −
+                                        </button>
+
+                                        <span
+                                            aria-live="polite"
+                                            className="min-w-10 text-center text-sm font-medium text-[#3B322C]"
+                                        >
+                                            {quantity}
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            aria-label="数量を増やす"
+                                            onClick={() => setQuantity((prev) => prev + 1)}
+                                            className="flex h-11 w-11 items-center justify-center text-lg text-[#6F6258] transition hover:bg-[#F3ECE6]"
+                                        >
+                                            ＋
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* 小計 */}
+                                <div className="mb-6 flex items-center justify-between border-t border-[#EEE6E1] pt-5">
+                                    <span className="text-sm text-[#8B7D70]">
+                                        小計
+                                    </span>
+
+                                    <span className="text-xl font-medium text-[#3B322C]">
+                                        ¥{(3900 * quantity).toLocaleString("ja-JP")}
+                                    </span>
+                                </div>
+
+                                {/* カートボタン */}
+                                <button
+                                    type="button"
+                                    onClick={addToCart}
+                                    className="flex w-full items-center justify-center gap-4 rounded-full border border-[#6F6258] bg-[#6F6258] px-8 py-4 text-sm font-medium tracking-[0.08em] text-white transition-colors hover:bg-transparent hover:text-[#6F6258]"
+                                >
+                                    カートに入れる
+                                    <span aria-hidden="true">→</span>
+                                </button>
+
+                                <p className="mt-4 text-center text-xs leading-6 text-[#9B8F84]">
+                                    カートに追加後、購入内容の確認画面へ進みます。
+                                </p>
+                            </div>
+
+                            {/* 商品スペック */}
+                            <dl className="mt-8 divide-y divide-[#DED6D2] border-y border-[#DED6D2] text-sm">
+                                <div className="grid grid-cols-[90px_1fr] gap-4 py-4">
+                                    <dt className="text-[#9B8F84]">内容量</dt>
+                                    <dd className="text-[#625B57]">50g</dd>
+                                </div>
+
+                                <div className="grid grid-cols-[90px_1fr] gap-4 py-4">
+                                    <dt className="text-[#9B8F84]">使用目安</dt>
+                                    <dd className="text-[#625B57]">夜</dd>
+                                </div>
+
+                                <div className="grid grid-cols-[90px_1fr] gap-4 py-4">
+                                    <dt className="text-[#9B8F84]">肌タイプ</dt>
+                                    <dd className="text-[#625B57]">
+                                        乾燥しやすい肌へ
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </section>
+
+                    {/* 商品について */}
+                    <section
+                        id="product-details"
+                        className="mt-20 scroll-mt-24 border-t border-[#DED6D2] pt-14 md:mt-28 md:pt-20"
+                    >
+                        <div className="mb-10 text-center">
+                            <p className="mb-3 text-xs tracking-[0.25em] text-[#B79D95]">
+                                PRODUCT DETAILS
+                            </p>
+
+                            <h2 className="text-2xl font-medium tracking-[0.08em] text-[#3B322C] md:text-3xl">
+                                商品について
+                            </h2>
+
+                            <p className="mt-4 text-sm leading-8 text-[#8B7D70]">
+                                毎日のスキンケアを心地よく整える、
+                                <br />
+                                しっとりとした使い心地を目指して。
+                            </p>
                         </div>
 
-                    </div>
+                        <div className="grid gap-5 md:grid-cols-2">
 
+                            {/* 特徴 */}
+                            <article className="rounded-2xl border border-[#E5DCD7] bg-white/80 p-7 md:p-9">
+                                <p className="mb-4 text-xs tracking-[0.2em] text-[#B79D95]">
+                                    01 / FEATURES
+                                </p>
+
+                                <h3 className="mb-5 text-lg font-medium text-[#3B322C]">
+                                    しっとり、でも重すぎない。
+                                </h3>
+
+                                <p className="text-sm leading-8 text-[#6F6258]">
+                                    長時間うるおいを保ちながら、
+                                    ベタつきすぎないバランスを意識した保湿クリームです。
+                                    やさしく落ち着いた世界観が伝わるよう、
+                                    ミニマルな商品UIで構成しています。
+                                </p>
+                            </article>
+
+                            {/* おすすめ */}
+                            <article className="rounded-2xl border border-[#E5DCD7] bg-white/80 p-7 md:p-9">
+                                <p className="mb-4 text-xs tracking-[0.2em] text-[#B79D95]">
+                                    02 / RECOMMENDED FOR
+                                </p>
+
+                                <h3 className="mb-5 text-lg font-medium text-[#3B322C]">
+                                    こんな方におすすめ
+                                </h3>
+
+                                <ul className="space-y-3 text-sm leading-7 text-[#6F6258]">
+                                    <li className="flex gap-3">
+                                        <span className="text-[#B79D95]">✓</span>
+                                        乾燥が気になる方
+                                    </li>
+
+                                    <li className="flex gap-3">
+                                        <span className="text-[#B79D95]">✓</span>
+                                        しっとりした使用感が好きな方
+                                    </li>
+
+                                    <li className="flex gap-3">
+                                        <span className="text-[#B79D95]">✓</span>
+                                        シンプルなスキンケアを好む方
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+
+                    {/* 商品一覧へ戻る */}
+                    <div className="mt-16 text-center">
+                        <Link
+                            href="/works/cosme-ec/site"
+                            className="inline-flex items-center gap-3 border-b border-[#6F6258] px-2 pb-2 text-sm text-[#6F6258] transition hover:opacity-70"
+                        >
+                            ← 他の商品を見る
+                        </Link>
+                    </div>
                 </div>
             </main>
 

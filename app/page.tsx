@@ -618,8 +618,8 @@ export default function Home() {
                 </div>
 
                 {/* Other */}
-                <div className="rounded-[2rem] border border-border bg-primary/70 p-8">
-                  <h3 className="font-editorial text-3xl font-normal tracking-[0.03em] mb-7 text-[#704F50]">
+                <div className="rounded-[2rem] border border-border bg-gradient-to-br from-primary/[0.04] to-white/[0.025] p-8">
+                  <h3 className="font-editorial mb-7 text-3xl font-normal tracking-[0.03em] text-[#704F50]">
                     Other
                   </h3>
 
@@ -632,14 +632,13 @@ export default function Home() {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 rounded-full border border-border bg-primary/70 text-foreground text-sm"
+                        className="rounded-full border border-[#DED6D2] bg-[#F7F5F2] px-4 py-2 text-sm font-medium text-[#514B47]"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
-
               </div>
             </section>
             {/* Contact */}

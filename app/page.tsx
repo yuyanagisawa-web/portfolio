@@ -440,6 +440,7 @@ export default function Home() {
                   <br className="hidden md:block" />
                   分かりやすいWebサイト制作を心がけています。
                 </p>
+
               </div>
 
               <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:gap-8 items-stretch">

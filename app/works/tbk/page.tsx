@@ -20,7 +20,7 @@ export default function Page() {
     const information = [
         {
             label: "Role",
-            value: "デザイン / コーディング /\nレスポンシブ対応",
+            value: "全ページのデザイン（単独担当）／\nコーディング／レスポンシブ対応",
         },
         {
             label: "Tech",
@@ -110,6 +110,9 @@ export default function Page() {
 
                         <p className="mt-5 text-center text-xs text-muted">
                             ※ 画像をクリックすると拡大表示できます。
+                        </p>
+                        <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
+                            ※社名・一部情報を差し替えて掲載しています。
                         </p>
                     </section>
 

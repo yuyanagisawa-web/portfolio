@@ -85,7 +85,9 @@ export default function Page() {
                                 </div>
                             ))}
                         </div>
-
+                        <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
+                            ※社名・一部情報を差し替えて掲載しています。
+                        </p>
                     </section>
                     {/* スクロール演出デモへのリンク */}
                     <div className="mb-20 rounded-3xl border border-border bg-white/70 px-6 py-10 text-center md:px-10 md:py-14">
@@ -125,7 +127,7 @@ export default function Page() {
                         {[
                             {
                                 label: "Role",
-                                value: "デザイン / コーディング / レスポンシブ対応",
+                                value: "全ページのデザイン（単独担当）／\nコーディング／レスポンシブ対応",
                             },
                             {
                                 label: "Tech",

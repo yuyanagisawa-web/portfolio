@@ -20,7 +20,7 @@ export default function Page() {
     const information = [
         {
             label: "Role",
-            value: "デザイン／コーディング\n／レスポンシブ対応（全て単独担当）",
+            value: "デザイン／コーディング／レスポンシブ対応\n（全て単独担当）",
         },
         {
             label: "Tech",

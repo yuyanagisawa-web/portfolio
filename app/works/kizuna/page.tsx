@@ -127,7 +127,7 @@ export default function Page() {
                         {[
                             {
                                 label: "Role",
-                                value: "全ページのデザイン（単独担当）／\nコーディング／レスポンシブ対応",
+                                value: "デザイン／コーディング\n／レスポンシブ対応（全て単独担当）",
                             },
                             {
                                 label: "Tech",

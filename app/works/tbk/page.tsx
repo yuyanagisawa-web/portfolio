@@ -108,11 +108,8 @@ export default function Page() {
                             ))}
                         </div>
 
-                        <p className="mt-5 text-center text-xs text-muted">
-                            ※ 画像をクリックすると拡大表示できます。
-                        </p>
                         <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
-                            ※社名・一部情報を差し替えて掲載しています。
+                            ※守秘義務に配慮し、社名・一部情報の差し替え、および画像のぼかし加工を行って掲載しています。
                         </p>
                     </section>
 

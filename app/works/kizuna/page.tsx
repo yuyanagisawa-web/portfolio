@@ -61,28 +61,31 @@ export default function Page() {
                                 サイトイメージ
                             </p>
                         </div>
-
+                        <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
+                            クリックすると拡大することができます
+                        </p>
                         {/* PC：3枚横並び / スマホ：1枚 */}
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                             {siteImages.map((image) => (
-                                <div
+                                <button
                                     key={image.src}
-                                    className="min-w-0 rounded-2xl border border-border bg-white/70 p-3"
+                                    type="button"
+                                    onClick={() => setSelectedImage(image)}
+                                    className="min-w-0 rounded-2xl border border-border bg-white/70 p-3 text-left transition hover:shadow-lg"
                                 >
                                     <div className="overflow-hidden rounded-xl bg-white">
-                                        <p className="mt-4 mb-4 px-1 text-center text-sm text-foreground">
+                                        <p className="my-4 px-1 text-center text-sm text-foreground">
                                             {image.alt}
                                         </p>
 
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="block h-auto w-full"
+                                            className="block h-[800px] w-full object-cover object-top"
                                         />
                                     </div>
+                                </button>
 
-
-                                </div>
                             ))}
                         </div>
                         <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">

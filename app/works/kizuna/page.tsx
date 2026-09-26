@@ -44,11 +44,7 @@ export default function Page() {
                             デザイン / コーディング / レスポンシブ対応
                         </p>
                     </header>
-                    {/* <img
-                        src="/tbk.png"
-                        alt="製造業"
-                        className="w-full rounded-2xl border border-white/10 mb-12"
-                    /> */}
+
                     <section className="mb-16">
 
                         {/* 見出し */}
@@ -329,6 +325,34 @@ export default function Page() {
 
                 </div>
             </main>
+            {/* 画像拡大モーダル */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        type="button"
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute right-5 top-5 z-10 rounded-full bg-white px-4 py-2 text-sm text-[#393735]"
+                    >
+                        閉じる ×
+                    </button>
+
+                    <div
+                        className="max-h-[90vh] max-w-5xl overflow-y-auto rounded-xl bg-white"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={selectedImage.src}
+                            alt={selectedImage.alt}
+                            className="block h-auto w-full"
+                        />
+                    </div>
+                </div>
+            )}
+
+            <BackToTop />
             <BackToTop />
         </>
     );

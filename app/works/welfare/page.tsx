@@ -99,7 +99,7 @@ export default function Page() {
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="block h-[900px] w-full object-cover object-top"
+                                            className="block h-[800px] w-full object-cover object-top"
                                         />
                                     </div>
                                 </button>

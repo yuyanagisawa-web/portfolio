@@ -85,9 +85,9 @@ export default function Page() {
                 サイトイメージ
               </p>
             </div>
-            <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
+            {/* <p className="mt-4 text-right text-xs leading-6 text-[#625B57]">
               クリックすると拡大することができます
-            </p>
+            </p> */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {siteImages.map((image) => (
                 <button

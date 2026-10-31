@@ -1,21 +1,26 @@
 "use client";
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion";
+import { HeartPulse } from "lucide-react";
 import Navbar from "../components/Navbar";
 import BackToTop from "../components/BackToTop";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 import WaveCanvas from "@/components/WaveCanvas";
 import Image from "next/image"
 
 type Work = {
-  title: string
-  category: string
-  image: string
-  popupImage: string
-  href: string
-  description: string
-  tags: string[]
-}
+  title: string;
+  category: string;
+  image: string;
+  popupImage: string;
+  href: string;
+  description: string;
+  concept?: string;
+  designPoint?: string;
+  tags: string[];
+  workType: "client" | "personal";
+};
 
 export default function Home() {
 
@@ -45,6 +50,7 @@ export default function Home() {
     JavaScript: "bg-[#F7F5F2] text-[#625B57] border-[#DED6D2]",
   }
   const works: Work[] = [{
+    workType: "client",
     title: "建設業",
     category: "Corporate Site",
     image: "/kizuna.png",
@@ -55,6 +61,7 @@ export default function Home() {
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   {
+    workType: "client",
     title: "福祉事業",
     category: "Corporate Site",
     image: "/welfare.png",
@@ -65,6 +72,7 @@ export default function Home() {
     tags: ["Design", "HTML", "CSS", "JavaScript"],
   },
   {
+    workType: "client",
     title: "製造業",
     category: "Corporate Site",
     image: "/tbk.png",
@@ -75,6 +83,7 @@ export default function Home() {
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
   // {
+
   //   title: "体操クラブ",
   //   category: "Column Site",
   //   image: "/besk.jpg",
@@ -95,6 +104,7 @@ export default function Home() {
   //   tags: ["Design", "HTML", "CSS", "JavaScript"]
   // },
   {
+    workType: "client",
     title: "観光バス会社",
     category: "Travel Site",
     image: "/nagano.png",
@@ -104,8 +114,68 @@ export default function Home() {
       "観光プランやサービス内容を分かりやすく伝えるため、\n情報整理と視認性を意識して制作しました。",
     tags: ["Design", "HTML", "CSS", "JavaScript"]
   },
+  {
+    workType: "personal",
+    title: "スキンケア美容液 広告デザイン",
+    category: "Graphic Design",
+    image: "/lumiere.png",
+    popupImage: "/lumiere.png",
+    href: "",
+    description:
+      "透明感と上質さをテーマに、光の表現や色調補正、商品画像の合成を行い、\n美容液の魅力を引き立てる広告ビジュアルを制作しました。",
+    concept:
+      "架空ブランド「LUMIÈRE」の商品広告ビジュアルを制作しました。\n透明感と上質さをテーマに、美容液の魅力が伝わるデザインを目指しました。",
+    designPoint:
+      "淡いブルーと光の表現を組み合わせ、清潔感と高級感を演出。\n商品画像の切り抜きや合成、色調補正、光と影の調整を行い、背景と商品が自然になじむよう工夫しました。",
+    tags: ["自主制作", "Photoshop", "Graphic Design"],
+  },
   ];
+  const renderWorkCard = (work: Work) => (
+    <button
+      key={work.title}
+      onClick={() => setSelectedWork(work)}
+      className="
+        group text-left rounded-3xl border border-border bg-primary/70
+        p-5 transition-all duration-300 ease-out
+        hover:-translate-y-1 hover:scale-[1.015]
+        hover:border-primary hover:shadow-xl
+        cursor-pointer will-change-transform
+      "
+    >
+      <div className="mb-5 overflow-hidden rounded-xl">
+        <img
+          src={work.image}
+          alt={work.title}
+          className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.02] md:h-52"
+        />
+      </div>
 
+      <p className="mb-2 text-xs uppercase tracking-[0.2em] text-muted">
+        {work.category}
+      </p>
+
+      <h3 className="mb-3 text-lg font-semibold md:text-2xl">
+        {work.title}
+      </h3>
+
+      <div className="mb-4 flex flex-wrap gap-2">
+        {work.tags.map((tag) => (
+          <span
+            key={tag}
+            className={`rounded-full border px-3 py-1 text-xs font-medium ${tagStyle[tag] ||
+              "bg-[#F7F5F2] text-[#625B57] border-[#DED6D2]"
+              }`}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <p className="min-h-[72px] whitespace-pre-line text-sm leading-6 text-muted">
+        {work.description}
+      </p>
+    </button>
+  );
   return (
     <>
       <Navbar />
@@ -172,222 +242,305 @@ export default function Home() {
                   制作実績
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-10">
+              <div className="relative flex flex-col gap-20">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-                {works.map((work) => (
-                  <button
-                    key={work.title}
-                    onClick={() => setSelectedWork(work)}
-                    className="
-                    group text-left rounded-3xl border border-border bg-primary/70
-                    p-5 transition-all duration-300 ease-out
-                    hover:-translate-y-1 hover:scale-[1.015]
-                    hover:border-primary hover:shadow-xl
-                    cursor-pointer
-                    will-change-transform
-                    "
-                  >
-                    <div className="overflow-hidden rounded-xl mb-4 md:mb-5">
-                      <img
-                        src={work.image}
-                        alt={work.title}
-                        className="mb-4 md:mb-5 rounded-xl h-40 md:h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
+                {/* 制作実績 */}
+                <div className="mb-20">
+                  <h3 className="mb-8 font-editorial text-2xl text-[#704F50] md:text-3xl">
+                    01 <span className="ml-3 font-sans text-lg">制作実績</span>
+                  </h3>
 
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2">
-                      {work.category}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {work.tags.map((tag) => {
-                        const style = tagStyle[tag] || "bg-[#F7F5F2] text-[#625B57] border-[#DED6D2]"
+                  <div className="grid gap-10 md:grid-cols-2">
+                    {works
+                      .filter((work) => work.workType === "client")
+                      .map(renderWorkCard)}
+                  </div>
+                </div>
 
-                        return (
+                {/* 自主制作 */}
+                <div>
+                  <h3 className="mb-8 font-editorial text-2xl text-[#704F50] md:text-3xl">
+                    02 <span className="ml-3 font-sans text-lg">自主制作</span>
+                  </h3>
+
+                  <div className="grid gap-10 md:grid-cols-2">
+                    {works
+                      .filter((work) => work.workType === "personal")
+                      .map(renderWorkCard)}
+
+                    {/* 健康管理LP */}
+                    <Link
+                      href="/works/health"
+                      className="
+    relative z-10
+    group rounded-3xl border border-border
+    bg-primary/70 p-5 block
+    transition-all duration-300 ease-out
+    hover:-translate-y-2 hover:scale-[1.02]
+    hover:border-primary hover:shadow-xl
+    cursor-pointer
+  "
+                    >
+                      {/* 健康管理LP サムネイル */}
+                      <div className="relative mb-5 h-40 overflow-hidden rounded-xl border border-black/5 bg-[#FFF9EC] md:h-52">
+                        <img
+                          src="/health-kv.png"
+                          alt="よりそい健康ノートのLPファーストビュー"
+                          className="
+      h-full w-full
+      object-cover object-center
+      transition-transform duration-700 ease-out
+      group-hover:scale-105
+    "
+                        />
+                      </div>
+
+                      {/* カテゴリ */}
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2">
+                        Landing Page
+                      </p>
+
+                      {/* タイトル */}
+                      <h3 className="text-lg md:text-2xl font-semibold mb-3">
+                        健康管理サービス LP
+                      </h3>
+
+                      <div className="flex gap-2 mb-4 flex-wrap">
+                        {["自主制作", "LP Design", "Next.js"].map((tag) => (
                           <span
                             key={tag}
-                            className={`text-xs px-3 py-1 rounded-full border font-medium tracking-[0.02em] ${style}`}
+                            className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border"
                           >
                             {tag}
                           </span>
-                        )
-                      })}
-                    </div>
+                        ))}
+                      </div>
 
-                    <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                      {work.title}
-                    </h3>
+                      <p className="text-sm text-muted leading-6 min-h-[72px]">
+                        体調記録・服薬管理・通院予定をまとめて管理する、
+                        架空の健康管理サービスのLPです。
+                        情報設計と親しみやすいデザインを意識しました。
+                      </p>
+                    </Link>
 
-                    <p className="text-sm text-muted leading-6 min-h-[72px] whitespace-pre-line">
-                      {work.description}
-                    </p>
-                  </button>
-                ))}
+                    {/* TaskFlow */}
+                    <Link
+                      href="/works/taskflow"
+                      className="
+                  group rounded-3xl border border-border bg-primary/70 p-5 block
+                  transition-all duration-300 ease-out
+                  will-change-transform
+                  hover:-translate-y-2 hover:scale-[1.02]
+                  hover:border-primary hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  active:scale-[0.99]
+                  "
+                    >
+                      <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
+                      <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-secondary to-background border border-border p-5 overflow-hidden">
+                        <div className="rounded-xl border border-border bg-secondary p-4">
+                          <div className="flex justify-between mb-4">
+                            <span className="font-semibold">Today</span>
+                            <span className="text-xs text-muted">4 tasks</span>
+                          </div>
+                          <div className="space-y-2">
+                            {["LP構成を確認", "UIパーツ作成", "レスポンシブ調整"].map((task) => (
+                              <div key={task} className="rounded-lg bg-background p-3 text-sm text-foreground">
+                                {task}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* カテゴリ */}
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2">
+                        Web Application
+                      </p>
+
+                      {/* タイトル */}
+                      <h3 className="text-lg md:text-2xl font-semibold mb-3">
+                        タスク管理アプリ
+                      </h3>
+
+                      <div className="flex gap-2 mb-4 flex-wrap">
+                        <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
+                          自主制作
+                        </span>
+                        <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
+                          Next.js
+                        </span>
+                        <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
+                          Frontend
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-muted leading-6 min-h-[72px]">
+                        タスクの追加・編集・完了切り替えを直感的に行えるよう、
+                        <br />
+                        操作性と視認性を意識して制作したタスク管理UIです。
+                      </p>
+                    </Link>
+                    {/* コスメ */}
+                    <Link
+                      href="/works/cosme-ec"
+                      className="
+                  group rounded-3xl border border-border bg-primary/70 p-5 block
+                  transition-all duration-300 ease-out
+                  will-change-transform
+                  hover:-translate-y-2 hover:scale-[1.02]
+                  hover:border-primary hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  active:scale-[0.99]
+                  "
+                    >
+                      <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
+                      <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
+                        <div className="grid grid-cols-3 gap-3 h-full">
+                          {[1, 2, 3].map((item) => (
+                            <div
+                              key={item}
+                              className="rounded-2xl bg-primary border border-black/5 p-3 flex flex-col justify-between"
+                            >
+                              <div className="rounded-xl bg-[#efe7dd] h-20 flex items-center justify-center">
+                                <div className="h-12 w-6 rounded-t-full rounded-b-lg bg-[#d8c7b5]" />
+                              </div>
+
+                              <div>
+                                <p className="text-[10px] text-[#9c8d80] mb-1">
+                                  skincare
+                                </p>
+
+                                <div className="h-2 rounded bg-[#1f1b18]/10 mb-1" />
+                                <div className="h-2 w-2/3 rounded bg-[#1f1b18]/10" />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* カテゴリ */}
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2">
+                        EC Site
+                      </p>
+
+                      {/* タイトル */}
+                      <h3 className="text-lg md:text-2xl font-semibold mb-3">
+                        スキンケア ECサイト
+                      </h3>
+
+                      <div className="flex gap-2 mb-4 flex-wrap">
+                        <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
+                          自主制作
+                        </span>
+
+                        <span className="text-xs bg-secondary text-foreground border border-border px-3 py-1 rounded-full">
+                          EC Design
+                        </span>
+
+                        <span className="text-xs bg-secondary text-foreground border border-border px-3 py-1 rounded-full">
+                          購入導線を意識
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-muted leading-6 min-h-[72px]">
+                        ブランドの世界観を表現しながら、
+                        <br />
+                        商品比較から購入までを分かりやすく設計した
+                        <br />
+                        コスメECサイトです。
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+
                 {selectedWork && (
                   <div
-                    className="fixed inset-0 z-50 flex items-start justify-center bg-[#393735]/70 px-5 pt-24 md:pt-28"
+                    className="fixed inset-0 z-50 flex items-start justify-center bg-[#393735]/70 px-5 pt-12 md:pt-20"
                     onClick={() => setSelectedWork(null)}
                   >
                     <div
-                      className="relative w-full max-w-4xl max-h-[82vh] rounded-3xl bg-background border border-border"
+                      className="relative w-full max-w-4xl max-h-[85vh] rounded-3xl bg-background border border-border overflow-hidden"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {/* ×ボタン：常に右上に表示 */}
                       <button
                         onClick={() => setSelectedWork(null)}
                         className="absolute right-5 top-5 z-10 text-muted hover:text-foreground text-2xl"
+                        aria-label="閉じる"
                       >
                         ×
                       </button>
 
-                      {/* スクロールする部分 */}
-                      <div className="max-h-[82vh] overflow-y-auto p-5 md:p-8">
-                        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                          <div>
-                            <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2 whitespace-pre-line">
-                              {selectedWork.category}
-                            </p>
+                      <div className="max-h-[85vh] overflow-y-auto p-6 md:p-10">
 
-                            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                              {selectedWork.title}
-                            </h3>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted mb-3">
+                          {selectedWork.category}
+                        </p>
 
-                            <p className="text-foreground leading-7 max-w-2xl whitespace-pre-line">
-                              {selectedWork.description}
-                            </p>
-                          </div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-5">
+                          {selectedWork.title}
+                        </h3>
 
-                          <Link
-                            href={selectedWork.href}
-                            onClick={(e) => e.stopPropagation()}
-                            className="shrink-0 inline-flex items-center justify-center rounded-full bg-primary text-foreground px-6 py-3 text-sm font-medium hover:opacity-90 transition"
-                          >
-                            詳細を見る
-                          </Link>
+                        <div className="flex flex-wrap gap-2 mb-8">
+                          {selectedWork.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs px-3 py-1 rounded-full border border-border bg-secondary"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
 
-                        <img
-                          src={selectedWork.popupImage}
-                          alt={selectedWork.title}
-                          className="mx-auto w-full max-w-[280px] md:max-w-[340px] object-contain rounded-2xl"
-                        />
+                        {selectedWork.concept ? (
+                          <>
+                            <div className="mb-8">
+                              <h4 className="text-base font-semibold mb-3">
+                                制作の目的・コンセプト
+                              </h4>
+                              <p className="text-sm leading-8 text-muted whitespace-pre-line">
+                                {selectedWork.concept}
+                              </p>
+                            </div>
+
+                            <div className="mb-10">
+                              <h4 className="text-base font-semibold mb-3">
+                                デザインの工夫
+                              </h4>
+                              <p className="text-sm leading-8 text-muted whitespace-pre-line">
+                                {selectedWork.designPoint}
+                              </p>
+                            </div>
+                          </>
+                        ) : (
+                          <p className="text-sm leading-8 mb-8 whitespace-pre-line">
+                            {selectedWork.description}
+                          </p>
+                        )}
+
+                        <div className="bg-[#F7F5F2] rounded-2xl p-6 md:p-10">
+                          <img
+                            src={selectedWork.popupImage}
+                            alt={selectedWork.title}
+                            className="mx-auto w-full max-w-[420px] h-auto object-contain"
+                          />
+                        </div>
+
+                        {selectedWork.href && (
+                          <div className="text-center mt-8">
+                            <Link
+                              href={selectedWork.href}
+                              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm hover:opacity-80 transition"
+                            >
+                              詳細を見る
+                            </Link>
+                          </div>
+                        )}
+
                       </div>
                     </div>
                   </div>
                 )}
-                {/* TaskFlow */}
-                <Link
-                  href="/works/taskflow"
-                  className="
-                  group rounded-3xl border border-border bg-primary/70 p-5 block
-                  transition-all duration-300 ease-out
-                  will-change-transform
-                  hover:-translate-y-2 hover:scale-[1.02]
-                  hover:border-primary hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                  active:scale-[0.99]
-                  "
-                >
-                  <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
-                  <div className="rounded-xl mb-4 md:mb-5 h-40 md:h-52 bg-gradient-to-br from-secondary to-background border border-border p-5 overflow-hidden">
-                    <div className="rounded-xl border border-border bg-secondary p-4">
-                      <div className="flex justify-between mb-4">
-                        <span className="font-semibold">Today</span>
-                        <span className="text-xs text-muted">4 tasks</span>
-                      </div>
-                      <div className="space-y-2">
-                        {["LP構成を確認", "UIパーツ作成", "レスポンシブ調整"].map((task) => (
-                          <div key={task} className="rounded-lg bg-background p-3 text-sm text-foreground">
-                            {task}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
 
-                  <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                    TaskFlow
-                  </h3>
 
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
-                      自主制作
-                    </span>
-                    <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
-                      Next.js
-                    </span>
-                    <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
-                      Frontend
-                    </span>
-                  </div>
-
-                  <p className="text-sm text-muted leading-6 min-h-[72px]">
-                    タスクの追加・編集・完了切り替えを直感的に行えるよう、
-                    <br />
-                    操作性と視認性を意識して制作したタスク管理UIです。
-                  </p>
-                </Link>
-                {/* コスメ */}
-                <Link
-                  href="/works/cosme-ec"
-                  className="
-                  group rounded-3xl border border-border bg-primary/70 p-5 block
-                  transition-all duration-300 ease-out
-                  will-change-transform
-                  hover:-translate-y-2 hover:scale-[1.02]
-                  hover:border-primary hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                  active:scale-[0.99]
-                  "
-                >
-                  <div className="transition-transform duration-500 group-hover:scale-[1.03]"></div>
-                  <div className="rounded-[1.5rem] mb-4 md:mb-5 h-40 md:h-52 bg-[#f3ede6] border border-black/5 p-5 overflow-hidden">
-                    <div className="grid grid-cols-3 gap-3 h-full">
-                      {[1, 2, 3].map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-2xl bg-primary border border-black/5 p-3 flex flex-col justify-between"
-                        >
-                          <div className="rounded-xl bg-[#efe7dd] h-20 flex items-center justify-center">
-                            <div className="h-12 w-6 rounded-t-full rounded-b-lg bg-[#d8c7b5]" />
-                          </div>
-
-                          <div>
-                            <p className="text-[10px] text-[#9c8d80] mb-1">
-                              skincare
-                            </p>
-
-                            <div className="h-2 rounded bg-[#1f1b18]/10 mb-1" />
-                            <div className="h-2 w-2/3 rounded bg-[#1f1b18]/10" />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">
-                    Lumière Skin
-                  </h3>
-
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    <span className="text-xs bg-secondary text-foreground px-3 py-1 rounded-full border border-border">
-                      自主制作
-                    </span>
-
-                    <span className="text-xs bg-secondary text-foreground border border-border px-3 py-1 rounded-full">
-                      EC Design
-                    </span>
-
-                    <span className="text-xs bg-secondary text-foreground border border-border px-3 py-1 rounded-full">
-                      購入導線を意識
-                    </span>
-                  </div>
-
-                  <p className="text-sm text-muted leading-6 min-h-[72px]">
-                    ブランドの世界観を表現しながら、
-                    <br />
-                    商品比較から購入までを分かりやすく設計した
-                    <br />
-                    コスメECサイトです。
-                  </p>
-                </Link>
               </div>
             </section>
 

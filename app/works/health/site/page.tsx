@@ -657,7 +657,7 @@ export default function HealthLpSite() {
                             <div className="absolute inset-6 rounded-full bg-[#40775A]/50 blur-2xl" />
 
                             <img
-                                src="service-health.jpg"
+                                src="/service-health.jpg"
                                 alt="スマートフォンで健康管理をする人物"
                                 className="relative z-10 w-full object-contain"
                             />

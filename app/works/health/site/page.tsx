@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const green = "#244B3D";
@@ -14,9 +14,9 @@ const features = [
 
 const faqs = [
     { q: "どんな人に向いているサービスですか？", a: "日々の体調、服薬、通院予定などを一つにまとめて管理したい方を想定しています。" },
-    { q: "スマートフォンでも利用できますか？", a: "スマートフォンでの利用を想定したUIデザインです。画面幅に合わせてレイアウトが変わります。" },
-    { q: "実際に登録して使えますか？", a: "こちらはポートフォリオ用の架空サービスLPです。現在、実際の会員登録や医療情報の保存には対応していません。" },
-    { q: "医療機関と情報を共有できますか？", a: "医療機関との連携は実装していません。サービスのコンセプトを紹介するための自主制作です。" },
+    { q: "スマートフォンでも利用できますか？", a: "スマートフォンでの利用を想定したUIデザインです。\n画面幅に合わせてレイアウトが変わります。" },
+    { q: "実際に登録して使えますか？", a: "こちらはポートフォリオ用の架空サービスLPです。\n現在、実際の会員登録や医療情報の保存には対応していません。" },
+    { q: "医療機関と情報を共有できますか？", a: "医療機関との連携は実装していません。\nサービスのコンセプトを紹介するための自主制作です。" },
 ];
 
 // TOPと同じように、透明度がゆっくり変化するスクロールアニメーション
@@ -289,79 +289,144 @@ export default function HealthLpSite() {
 
     const [openFaq, setOpenFaq] = useState<number | null>(0);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showLpHeader, setShowLpHeader] = useState(true);
+    const previousScrollY = useRef(0);
+
+    useEffect(() => {
+        previousScrollY.current = window.scrollY;
+        const onScroll = () => {
+            const currentY = Math.max(0, window.scrollY);
+            const difference = currentY - previousScrollY.current;
+            if (currentY < 150) {
+                setShowLpHeader(true);
+            } else if (Math.abs(difference) > 8) {
+                setShowLpHeader(difference < 0);
+            }
+            previousScrollY.current = currentY;
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
 
     return (
-        <main className="overflow-x-hidden bg-[#FBFCFA] text-[#244B3D]">
+        <main className="overflow-x-clip bg-[#FBFCFA] text-[#244B3D]">
 
-            {/* ポートフォリオへの戻るリンク */}
-            <div className="border-b border-[#E0E9E2] bg-white">
-                <div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-2 px-5 py-3 text-[12px] text-[#64776D] md:px-8">
-                    <Link href="/works/health" className="hover:text-[#244B3D]">
-                        ← 実績詳細に戻る
-                    </Link>
-                    <Link href="/#works" className="hover:text-[#244B3D]">
-                        ← WORKS一覧に戻る
-                    </Link>
+            {/* 戻るリンク＋LPヘッダーを固定 */}
+            <div className="sticky top-0 z-50">
+                {/* ポートフォリオへの戻るリンク */}
+                <div className="border-b border-[#EADFE0] bg-[#F7F5F2]">
+                    <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-start gap-3 px-5 py-3 md:px-8">
+
+                        {/* 実績詳細に戻る */}
+                        <Link
+                            href="/works/health"
+                            className="
+          group inline-flex items-center justify-center gap-2
+          rounded-full border border-[#965564]
+          bg-transparent px-5 py-2.5
+          text-[12px] font-medium text-[#965564]
+          transition-all duration-300
+          hover:-translate-y-0.5
+          hover:bg-[#F0E2E4]
+        "
+                        >
+                            <span className="transition-transform duration-300 group-hover:-translate-x-1">
+                                ←
+                            </span>
+                            実績詳細に戻る
+                        </Link>
+
+                        {/* 制作実績に戻る */}
+                        <Link
+                            href="/#works"
+                            className="
+          group inline-flex items-center justify-center gap-2
+          rounded-full bg-[#965564]
+          px-6 py-2.5
+          text-[12px] font-medium text-white
+          shadow-[0_5px_15px_rgba(150,85,100,0.15)]
+          transition-all duration-300
+          hover:-translate-y-0.5
+          hover:bg-[#7E4352]
+          hover:shadow-[0_8px_20px_rgba(150,85,100,0.22)]
+        "
+                        >
+                            <span className="transition-transform duration-300 group-hover:-translate-x-1">
+                                ←
+                            </span>
+                            制作実績に戻る
+                        </Link>
+
+                    </div>
                 </div>
+
+
+                {/* ヘッダー */}
+                <motion.header
+                    className="absolute left-0 top-full w-full border-b border-[#E0E9E2] bg-white/95 shadow-sm backdrop-blur-md"
+                    initial={false}
+                    animate={{ y: showLpHeader || menuOpen ? "0%" : "-110%", opacity: showLpHeader || menuOpen ? 1 : 0 }}
+                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ pointerEvents: showLpHeader || menuOpen ? "auto" : "none" }}
+                >
+                    <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 md:px-8">
+                        <a href="#top" className="flex items-center gap-3">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E2F0E6] text-xl">
+                                ♡
+                            </span>
+                            <span className="text-[15px] font-bold tracking-[0.02em]">
+                                よりそい健康ノート
+                            </span>
+                        </a>
+
+                        <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#536B5D] md:flex">
+                            <a href="#about" className="hover:text-[#2B7554]">サービス紹介</a>
+                            <a href="#features" className="hover:text-[#2B7554]">機能紹介</a>
+                            <a href="#howto" className="hover:text-[#2B7554]">使い方</a>
+                            <a href="#faq" className="hover:text-[#2B7554]">FAQ</a>
+                        </nav>
+
+                        <a
+                            href="#features"
+                            className="hidden rounded-full bg-[#244B3D] px-6 py-3 text-[12px] font-bold text-white transition hover:bg-[#3A7659] md:block"
+                        >
+                            機能を見る ↗
+                        </a>
+
+                        <button
+                            type="button"
+                            aria-label="メニュー"
+                            aria-expanded={menuOpen}
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            className="rounded-lg border border-[#DCE7DF] px-3 py-2 text-sm md:hidden"
+                        >
+                            {menuOpen ? "閉じる ×" : "メニュー ☰"}
+                        </button>
+                    </div>
+
+                    {menuOpen && (
+                        <nav className="flex flex-col gap-4 border-t border-[#E0E9E2] bg-white px-6 py-5 text-sm md:hidden">
+                            {[
+                                ["サービス紹介", "#about"],
+                                ["機能紹介", "#features"],
+                                ["使い方", "#howto"],
+                                ["FAQ", "#faq"],
+                            ].map(([label, href]) => (
+                                <a
+                                    key={href}
+                                    href={href}
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {label}
+                                </a>
+                            ))}
+                        </nav>
+                    )}
+                </motion.header>
             </div>
-
-            {/* ヘッダー */}
-            <header className="sticky top-0 z-40 border-b border-[#E0E9E2] bg-white/95 backdrop-blur-md">
-                <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 md:px-8">
-                    <a href="#top" className="flex items-center gap-3">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E2F0E6] text-xl">
-                            ♡
-                        </span>
-                        <span className="text-[15px] font-bold tracking-[0.02em]">
-                            よりそい健康ノート
-                        </span>
-                    </a>
-
-                    <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#536B5D] md:flex">
-                        <a href="#about" className="hover:text-[#2B7554]">サービス紹介</a>
-                        <a href="#features" className="hover:text-[#2B7554]">機能紹介</a>
-                        <a href="#howto" className="hover:text-[#2B7554]">使い方</a>
-                        <a href="#faq" className="hover:text-[#2B7554]">FAQ</a>
-                    </nav>
-
-                    <a
-                        href="#features"
-                        className="hidden rounded-full bg-[#244B3D] px-6 py-3 text-[12px] font-bold text-white transition hover:bg-[#3A7659] md:block"
-                    >
-                        機能を見る ↗
-                    </a>
-
-                    <button
-                        type="button"
-                        aria-label="メニュー"
-                        aria-expanded={menuOpen}
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        className="rounded-lg border border-[#DCE7DF] px-3 py-2 text-sm md:hidden"
-                    >
-                        {menuOpen ? "閉じる ×" : "メニュー ☰"}
-                    </button>
-                </div>
-
-                {menuOpen && (
-                    <nav className="flex flex-col gap-4 border-t border-[#E0E9E2] bg-white px-6 py-5 text-sm md:hidden">
-                        {[
-                            ["サービス紹介", "#about"],
-                            ["機能紹介", "#features"],
-                            ["使い方", "#howto"],
-                            ["FAQ", "#faq"],
-                        ].map(([label, href]) => (
-                            <a
-                                key={href}
-                                href={href}
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {label}
-                            </a>
-                        ))}
-                    </nav>
-                )}
-            </header>
-
+            {/* 初期表示時のLPヘッダー分の余白。スクロール中は高さを変更しない */}
+            <div className="h-[72px]" aria-hidden="true" />
             {/* ファーストビュー */}
             <section id="top" className="relative isolate overflow-hidden bg-[#FFF9EC]">
                 <div className="pointer-events-none absolute -right-24 top-10 h-[530px] w-[530px] rounded-full bg-[#F9E6BB] md:right-[-60px]" />
@@ -1097,7 +1162,7 @@ export default function HealthLpSite() {
                                     </button>
 
                                     {openFaq === i && (
-                                        <div className="border-t border-[#ECF1ED] px-5 py-5 text-[13px] leading-8 text-[#64786C] md:px-7">
+                                        <div className="whitespace-pre-line border-t border-[#ECF1ED] px-5 py-5 text-[13px] leading-8 text-[#64786C] md:px-7">
                                             {f.a}
                                         </div>
                                     )}

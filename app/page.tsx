@@ -389,7 +389,9 @@ export default function Home() {
 
                         <p className="text-sm text-muted leading-6 min-h-[72px]">
                           体調記録・服薬管理・通院予定をまとめて管理する、
+                          <br />
                           架空の健康管理サービスのLPです。
+                          <br />
                           情報設計と親しみやすいデザインを意識しました。
                         </p>
                       </Link>
@@ -528,93 +530,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {selectedWork && (
-                  <div
-                    className="fixed inset-0 z-50 flex items-start justify-center bg-[#393735]/70 px-5 pt-12 md:pt-20"
-                    onClick={() => setSelectedWork(null)}
-                  >
-                    <div
-                      className="relative w-full max-w-4xl max-h-[85vh] rounded-3xl bg-background border border-border overflow-hidden"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <button
-                        onClick={() => setSelectedWork(null)}
-                        className="absolute right-5 top-5 z-10 text-muted hover:text-foreground text-2xl"
-                        aria-label="閉じる"
-                      >
-                        ×
-                      </button>
 
-                      <div className="max-h-[85vh] overflow-y-auto p-6 md:p-10">
-
-                        <p className="text-xs uppercase tracking-[0.2em] text-muted mb-3">
-                          {selectedWork.category}
-                        </p>
-
-                        <h3 className="text-2xl md:text-3xl font-bold mb-5">
-                          {selectedWork.title}
-                        </h3>
-
-                        <div className="flex flex-wrap gap-2 mb-8">
-                          {selectedWork.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-xs px-3 py-1 rounded-full border border-border bg-secondary"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-
-                        {selectedWork.concept ? (
-                          <>
-                            <div className="mb-8">
-                              <h4 className="text-base font-semibold mb-3">
-                                制作の目的・コンセプト
-                              </h4>
-                              <p className="text-sm leading-8 text-muted whitespace-pre-line">
-                                {selectedWork.concept}
-                              </p>
-                            </div>
-
-                            <div className="mb-10">
-                              <h4 className="text-base font-semibold mb-3">
-                                デザインの工夫
-                              </h4>
-                              <p className="text-sm leading-8 text-muted whitespace-pre-line">
-                                {selectedWork.designPoint}
-                              </p>
-                            </div>
-                          </>
-                        ) : (
-                          <p className="text-sm leading-8 mb-8 whitespace-pre-line">
-                            {selectedWork.description}
-                          </p>
-                        )}
-
-                        <div className="bg-[#F7F5F2] rounded-2xl p-6 md:p-10">
-                          <img
-                            src={selectedWork.popupImage}
-                            alt={selectedWork.title}
-                            className="mx-auto w-full max-w-[420px] h-auto object-contain"
-                          />
-                        </div>
-
-                        {selectedWork.href && (
-                          <div className="text-center mt-8">
-                            <Link
-                              href={selectedWork.href}
-                              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm hover:opacity-80 transition"
-                            >
-                              詳細を見る
-                            </Link>
-                          </div>
-                        )}
-
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </section>
 
@@ -679,24 +595,40 @@ export default function Home() {
                   <div className="h-full rounded-[2rem] border border-border bg-white/80 p-6 md:p-10 shadow-[0_12px_40px_rgba(57,55,53,0.04)]">
                     <h3 className="font-editorial mb-6 text-3xl font-normal text-[#965564]">Experience</h3>
                     <div className="space-y-6 text-sm md:text-[15px] leading-8 text-[#514B47]">
-                      <p>現在は事業会社にてWebデザイナーとして約1年半、コーポレートサイト・採用サイト・LP制作に携わっています。WebデザインからHTML/CSS・JavaScriptを用いたコーディング、レスポンシブ対応まで一貫して担当しています。</p>
+                      <p>現在は事業会社にてWebデザイナーとして約1年半、コーポレートサイト
+                        <br />
+                        ・採用サイト・LP制作に携わっています。Webデザインから<br />HTML/CSS・JavaScriptを用いたコーディング、レスポンシブ対応まで
+                        <br />
+                        一貫して担当しています。</p>
                       <div className="h-px bg-border" />
-                      <p>前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、制作においても「誰に何を伝えるサイトなのか」を意識しながら、情報の優先順位や見せ方を整理することを大切にしています。</p>
+                      <p>前職では広告代理店にて営業・企画書作成・ディレクション業務を経験し、
+                        <br />
+                        制作においても「誰に何を伝えるサイトなのか」を意識しながら、
+                        <br />
+                        情報の優先順位や見せ方を整理することを大切にしています。</p>
                     </div>
                   </div>
                 </FadeIn>
                 <FadeIn delay={0.15} className="h-full">
                   <div className="h-full rounded-[2rem] border border-border bg-primary/45 p-6 md:p-10">
                     <h3 className="font-editorial mb-7 text-3xl font-normal text-[#704F50]">Mind</h3>
+
                     <ul className="space-y-5">
                       {[
-                        "目的やターゲットに合わせて、情報の見せ方を整理することを大切にしています。",
-                        "デザイン意図を理解したうえで、実装まで一貫して対応することを心がけています。",
-                        "見た目だけでなく、ユーザーにとって分かりやすい導線や視認性も意識して制作します。",
+                        "目的やターゲットに合わせて、\n情報の見せ方を整理することを大切にしています。",
+                        "デザイン意図を理解したうえで、\n実装まで一貫して対応することを心がけています。",
+                        "見た目だけでなく、ユーザーにとって分かりやすい\n導線や視認性も意識して制作します。",
                       ].map((item, index) => (
-                        <li key={item} className="flex gap-4 border-b border-[#B79D95]/40 pb-4 last:border-0 last:pb-0">
-                          <span className="font-editorial shrink-0 text-xl leading-8 text-[#704F50]">0{index + 1}</span>
-                          <span className="text-sm leading-8 text-[#393735]">{item}</span>
+                        <li
+                          key={item}
+                          className="flex gap-4 border-b border-[#B79D95]/40 pb-4 last:border-0 last:pb-0"
+                        >
+                          <span className="font-editorial shrink-0 text-xl leading-8 text-[#704F50]">
+                            0{index + 1}
+                          </span>
+                          <span className="whitespace-pre-line text-sm leading-8 text-[#393735]">
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -738,8 +670,12 @@ export default function Home() {
 
                         <p className="text-sm text-muted mb-2">現在</p>
                         <p className="text-foreground leading-8">
-                          事業会社にてWebデザイナーとして、コーポレートサイトや採用サイト、LP制作に携わっています。<br />
-                          WebデザインからHTML/CSS・JavaScriptを用いたコーディング、<br />
+                          事業会社にてWebデザイナーとして、コーポレートサイトや
+                          <br />
+                          採用サイト、LP制作に携わっています。
+                          <br />
+                          WebデザインからHTML/CSS・JavaScriptを用いたコーディング、
+                          <br />
                           レスポンシブ対応まで一貫して担当しています。
                         </p>
                       </div>
@@ -748,9 +684,13 @@ export default function Home() {
                         <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary" />
                         <p className="text-sm text-muted mb-2">前職</p>
                         <p className="text-foreground leading-8">
-                          広告代理店にて、営業・企画書作成・ディレクション業務を経験しました。<br />
-                          その経験を活かし、現在の制作でも「誰に何を伝えるか」を意識しながら、<br />
-                          情報の見せ方や訴求の整理を大切にしています。
+                          広告代理店にて、営業・企画書作成・ディレクション業務を
+                          <br />
+                          経験しました。
+                          <br />
+                          その経験を活かし、現在の制作でも「誰に何を伝えるか」を
+                          <br />
+                          意識しながら、情報の見せ方や訴求の整理を大切にしています。
                         </p>
                       </div>
                     </div>
@@ -960,6 +900,95 @@ export default function Home() {
           </div>
         </div>
       </main>
+      {selectedWork && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#393735]/70 px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-[calc(env(safe-area-inset-top)+5rem)] sm:px-5 md:p-8"
+          onClick={() => setSelectedWork(null)}
+        >
+          <div
+            className="relative flex w-full max-w-4xl max-h-full flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl md:rounded-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedWork(null)}
+              className="absolute right-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-background/95 text-2xl text-muted shadow-sm hover:text-foreground md:right-5 md:top-5"
+              aria-label="閉じる"
+            >
+              ×
+            </button>
+
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-5 pt-7 md:p-10">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-muted mb-3">
+                {selectedWork.category}
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-bold mb-5">
+                {selectedWork.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {selectedWork.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 rounded-full border border-border bg-secondary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {selectedWork.href && (
+                <div className="mb-7">
+                  <Link
+                    href={selectedWork.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#965564] px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7E4352]"
+                  >
+                    詳細を見る ↗
+                  </Link>
+                </div>
+              )}
+
+              {selectedWork.concept ? (
+                <>
+                  <div className="mb-8">
+                    <h4 className="text-base font-semibold mb-3">
+                      制作の目的・コンセプト
+                    </h4>
+                    <p className="text-sm leading-8 text-muted whitespace-pre-line">
+                      {selectedWork.concept}
+                    </p>
+                  </div>
+
+                  <div className="mb-10">
+                    <h4 className="text-base font-semibold mb-3">
+                      デザインの工夫
+                    </h4>
+                    <p className="text-sm leading-8 text-muted whitespace-pre-line">
+                      {selectedWork.designPoint}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm leading-8 mb-8 whitespace-pre-line">
+                  {selectedWork.description}
+                </p>
+              )}
+
+              <div className="bg-[#F7F5F2] rounded-2xl p-6 md:p-10">
+                <img
+                  src={selectedWork.popupImage}
+                  alt={selectedWork.title}
+                  className="mx-auto w-full max-w-[420px] h-auto object-contain"
+                />
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      )}
       <BackToTop />
     </>
   )

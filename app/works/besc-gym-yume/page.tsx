@@ -25,7 +25,7 @@ export default function Page() {
             href="/#works"
             className="inline-flex items-center gap-2 text-sm md:text-base text-gray-300 hover:text-white transition mb-8 px-3 py-2 rounded-md hover:bg-white/10"
           >
-            ← Works一覧に戻る
+            ← 制作実績に戻る
           </Link>
           <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
             体操クラブ

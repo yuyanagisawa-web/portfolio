@@ -57,7 +57,7 @@ export default function Page() {
             href="/#works"
             className="mb-10 inline-flex items-center gap-2 rounded-full border border-[#DED6D2] bg-[#F3ECE6] px-5 py-3 text-sm text-[#625B57] transition-colors hover:bg-[#E8DCD6] hover:text-[#965564]"
           >
-            ← Works一覧に戻る
+            ← 制作実績に戻る
           </Link>
 
           <header className="mb-16 border-b border-border pb-10">

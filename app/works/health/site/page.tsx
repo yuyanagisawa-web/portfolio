@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const green = "#244B3D";
 
@@ -19,33 +19,46 @@ const faqs = [
     { q: "医療機関と情報を共有できますか？", a: "医療機関との連携は実装していません。サービスのコンセプトを紹介するための自主制作です。" },
 ];
 
-function Reveal({ children, className = "", delay = 0, y = 26 }: { children: React.ReactNode; className?: string; delay?: number; y?: number }) {
-    const reduced = useReducedMotion();
-    return (
-        <motion.div
-            initial={reduced ? false : { opacity: 0, y: 38, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.18 }}
-            transition={{ duration: 1.05, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
-            className={className}
-        >
-            {children}
-        </motion.div>
-    );
-}
+// TOPと同じように、透明度がゆっくり変化するスクロールアニメーション
+// sectionごとに方向を変えつつ、移動距離は控えめにして柔らかく表示
+type RevealDirection = "up" | "left" | "right" | "soft" | "zoom";
 
-function CardReveal({ children, index, className = "" }: { children: React.ReactNode; index: number; className?: string }) {
-    const reduced = useReducedMotion();
+function Reveal({
+    children,
+    className = "",
+    delay = 0,
+    y = 24,
+    direction = "up",
+    duration = 1.4,
+}: {
+    children: React.ReactNode;
+    className?: string;
+    delay?: number;
+    y?: number;
+    direction?: RevealDirection;
+    duration?: number;
+}) {
+    const reduced = false;
+    const x = direction === "left" ? -28 : direction === "right" ? 28 : 0;
+    const startY = direction === "soft" ? 10 : direction === "zoom" ? 18 : y;
+    const startScale = direction === "zoom" ? 0.975 : 1;
+
     return (
         <motion.div
             className={className}
-            initial={reduced ? false : { opacity: 0, y: 44, scale: 0.975, filter: "blur(7px)" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.12 }}
+            initial={reduced ? false : {
+                opacity: 0,
+                x,
+                y: startY,
+                scale: startScale,
+            }}
+            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -35px 0px" }}
             transition={{
-                duration: 1.35,
-                delay: reduced ? 0 : index * 0.32,
-                ease: [0.22, 1, 0.36, 1],
+                opacity: { duration: reduced ? 0 : duration, delay: reduced ? 0 : delay, ease: "linear" },
+                x: { duration: reduced ? 0 : duration, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] },
+                y: { duration: reduced ? 0 : duration, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] },
+                scale: { duration: reduced ? 0 : duration, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] },
             }}
         >
             {children}
@@ -53,14 +66,34 @@ function CardReveal({ children, index, className = "" }: { children: React.React
     );
 }
 
-function HeroItem({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-    const reduced = useReducedMotion();
+function CardReveal({ children, index, className = "", direction = "up" }: {
+    children: React.ReactNode;
+    index: number;
+    className?: string;
+    direction?: RevealDirection;
+}) {
+    return (
+        <Reveal className={className} direction={direction} delay={(index % 3) * 0.13} y={28} duration={1.75}>
+            {children}
+        </Reveal>
+    );
+}
+
+function HeroItem({ children, delay = 0, className = "" }: {
+    children: React.ReactNode;
+    delay?: number;
+    className?: string;
+}) {
+    const reduced = false;
     return (
         <motion.div
-            initial={reduced ? false : { opacity: 0, y: 65, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.15, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
             className={className}
+            initial={reduced ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                opacity: { duration: reduced ? 0 : 1.65, delay: reduced ? 0 : delay, ease: "linear" },
+                y: { duration: reduced ? 0 : 1.65, delay: reduced ? 0 : delay, ease: [0.22, 1, 0.36, 1] },
+            }}
         >
             {children}
         </motion.div>
@@ -68,7 +101,7 @@ function HeroItem({ children, delay = 0, className = "" }: { children: React.Rea
 }
 
 function HeroVisual() {
-    const reduced = useReducedMotion();
+    const reduced = false;
     return (
         <div className="relative flex min-h-[470px] items-center justify-center">
             <motion.div
@@ -83,9 +116,9 @@ function HeroVisual() {
 
             <motion.div
                 className="relative z-10"
-                initial={reduced ? false : { opacity: 0, y: 100, scale: 0.78, rotate: -7 }}
+                initial={reduced ? false : { opacity: 0, y: 32, scale: 0.96, rotate: -2 }}
                 animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
-                transition={{ duration: 1.5, delay: reduced ? 0 : 0.45, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1.8, delay: reduced ? 0 : 0.45, ease: [0.16, 1, 0.3, 1] }}
             >
                 <motion.div
                     animate={reduced ? undefined : { y: [0, -18, 0] }}
@@ -252,7 +285,7 @@ function Phone({ kind = "health", compact = false }: { kind?: "health" | "medici
 
 
 export default function HealthLpSite() {
-    const reduced = useReducedMotion();
+    const reduced = false;
 
     const [openFaq, setOpenFaq] = useState<number | null>(0);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -411,7 +444,7 @@ export default function HealthLpSite() {
                             />
 
                             {/* 中央：文章は変更なし */}
-                            <div className="min-w-0 text-center">
+                            <Reveal className="min-w-0 text-center" delay={0.1} direction="soft">
                                 <p className="mb-3 text-[11px] font-bold tracking-[0.2em] text-[#C48642]">
                                     YOUR DAILY CONCERNS
                                 </p>
@@ -436,7 +469,7 @@ export default function HealthLpSite() {
                                     <br />
                                     健康管理には、意外と手間がかかるものです。
                                 </p>
-                            </div>
+                            </Reveal>
 
                             {/* 右イラスト */}
                             <motion.img
@@ -451,7 +484,7 @@ export default function HealthLpSite() {
                         </div>
 
                         {/* スマホでは見出しの下にイラストを配置 */}
-                        <div className="mt-5 flex items-end justify-center gap-10 md:hidden">
+                        <Reveal className="mt-5 flex items-end justify-center gap-10 md:hidden" delay={0.15}>
                             <img
                                 src="/worry-person01.png"
                                 alt=""
@@ -462,7 +495,7 @@ export default function HealthLpSite() {
                                 alt=""
                                 className="h-[100px] w-auto object-contain"
                             />
-                        </div>
+                        </Reveal>
                     </div>
 
                     {/* お悩みカード */}
@@ -490,7 +523,7 @@ export default function HealthLpSite() {
                                 text: "診察券やメモ、カレンダー。\n予定があちこちに分かれていて確認しづらい。",
                             },
                         ].map((item) => (
-                            <CardReveal key={item.number} className="h-full" index={Number(item.number) - 1}>
+                            <CardReveal key={item.number} className="h-full" index={Number(item.number) - 1} direction="zoom">
                                 <div className="group relative flex h-full flex-col rounded-[26px] border border-[#DDE8DF] bg-white px-7 pb-9 pt-8 shadow-[0_12px_35px_rgba(39,75,55,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(39,75,55,0.09)]">
 
                                     <div className="flex items-center justify-between">
@@ -653,7 +686,7 @@ export default function HealthLpSite() {
                         </div>
 
                         {/* 右：イラスト */}
-                        <Reveal delay={0.45} className="relative mx-auto w-full max-w-[460px]">
+                        <Reveal delay={0.2} direction="right" className="relative mx-auto w-full max-w-[460px]">
                             <div className="absolute inset-6 rounded-full bg-[#40775A]/50 blur-2xl" />
 
                             <img
@@ -672,7 +705,7 @@ export default function HealthLpSite() {
                             { n: "02", icon: "✓", title: "お薬を管理する" },
                             { n: "03", icon: "▦", title: "通院予定を確認する" },
                         ].map((item, i) => (
-                            <CardReveal key={item.n} index={i} className="group h-full cursor-default">
+                            <CardReveal key={item.n} index={i} direction="zoom" className="group h-full cursor-default">
                                 <div className="flex h-full flex-col items-center justify-center rounded-[26px] border border-white/20 bg-white/10 px-6 py-10 text-center transition-colors duration-300 group-hover:border-[#F8D77C]/70 group-hover:bg-white/15 group-hover:shadow-[0_18px_35px_rgba(0,0,0,0.12)] md:min-h-[240px]">
 
                                     {/* アイコン */}
@@ -707,7 +740,7 @@ export default function HealthLpSite() {
 
                     {/* 次のセクションへの誘導 */}
                     <div>
-                        <div className="mt-12 flex flex-col items-center md:mt-16">
+                        <Reveal className="mt-12 flex flex-col items-center md:mt-16" y={25}>
                             <a
                                 href="#features"
                                 className="group flex flex-col items-center gap-5"
@@ -765,7 +798,7 @@ export default function HealthLpSite() {
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </Reveal>
                     </div>
 
                 </div>
@@ -800,7 +833,7 @@ export default function HealthLpSite() {
                     {/* 3つの機能 */}
                     <div className="grid gap-5 md:grid-cols-3">
                         {features.map((f, i) => (
-                            <CardReveal key={f.number} index={i} className="h-full">
+                            <CardReveal key={f.number} index={i} direction="zoom" className="h-full">
                                 <div
                                     className="flex h-full flex-col rounded-[26px] border border-[#E3E9E2] p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(39,75,55,0.08)] md:p-6"
                                     style={{
@@ -917,7 +950,7 @@ export default function HealthLpSite() {
                                 type: "chart",
                             },
                         ].map((step, i) => (
-                            <CardReveal key={step.number} className="relative h-full" index={i}>
+                            <CardReveal key={step.number} className="relative h-full" index={i} direction="up">
                                 <div className="relative flex h-full flex-col rounded-[26px] border border-[#F0E6D3] bg-white px-6 pb-9 pt-8 shadow-[0_12px_30px_rgba(97,77,42,0.05)] md:px-7">
 
                                     {/* STEP番号 */}
@@ -1044,31 +1077,32 @@ export default function HealthLpSite() {
 
                     <div className="space-y-3">
                         {faqs.map((f, i) => (
-                            <div
-                                key={f.q}
-                                className="overflow-hidden rounded-2xl border border-[#DFEAE2] bg-white"
-                            >
-                                <button
-                                    type="button"
-                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                    aria-expanded={openFaq === i}
-                                    className="flex w-full items-center justify-between gap-4 px-5 py-6 text-left md:px-7"
+                            <Reveal key={f.q} delay={(i % 2) * 0.1} direction="soft">
+                                <div
+                                    className="overflow-hidden rounded-2xl border border-[#DFEAE2] bg-white"
                                 >
-                                    <span className="flex gap-3 text-[14px] font-bold leading-6">
-                                        <span className="text-[#5C9B73]">Q.</span>
-                                        {f.q}
-                                    </span>
-                                    <span className="text-xl text-[#D4873F]">
-                                        {openFaq === i ? "−" : "＋"}
-                                    </span>
-                                </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        aria-expanded={openFaq === i}
+                                        className="flex w-full items-center justify-between gap-4 px-5 py-6 text-left md:px-7"
+                                    >
+                                        <span className="flex gap-3 text-[14px] font-bold leading-6">
+                                            <span className="text-[#5C9B73]">Q.</span>
+                                            {f.q}
+                                        </span>
+                                        <span className="text-xl text-[#D4873F]">
+                                            {openFaq === i ? "−" : "＋"}
+                                        </span>
+                                    </button>
 
-                                {openFaq === i && (
-                                    <div className="border-t border-[#ECF1ED] px-5 py-5 text-[13px] leading-8 text-[#64786C] md:px-7">
-                                        {f.a}
-                                    </div>
-                                )}
-                            </div>
+                                    {openFaq === i && (
+                                        <div className="border-t border-[#ECF1ED] px-5 py-5 text-[13px] leading-8 text-[#64786C] md:px-7">
+                                            {f.a}
+                                        </div>
+                                    )}
+                                </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -1104,7 +1138,7 @@ export default function HealthLpSite() {
 
             {/* フッター */}
             <footer className="bg-[#18382D] px-5 py-7 text-center text-[11px] text-[#BCD3C3]">
-                © よりそい健康ノート — Personal Portfolio Project
+                <Reveal direction="soft">© よりそい健康ノート — Personal Portfolio Project</Reveal>
             </footer>
         </main>
     );

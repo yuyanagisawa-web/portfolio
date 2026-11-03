@@ -751,15 +751,17 @@ export default function HealthLpSite() {
                         </div>
 
                         {/* 右：イラスト */}
-                        <Reveal delay={0.2} direction="right" className="relative mx-auto w-full max-w-[460px]">
+                        <div className="relative mx-auto w-full max-w-[460px]">
                             <div className="absolute inset-6 rounded-full bg-[#40775A]/50 blur-2xl" />
 
                             <img
                                 src="/service-health.jpg"
                                 alt="スマートフォンで健康管理をする人物"
-                                className="relative z-10 w-full object-contain"
+                                className="relative z-10 block w-full h-auto object-contain"
                             />
-                        </Reveal>
+                        </div>
+
+
                     </div>
 
 

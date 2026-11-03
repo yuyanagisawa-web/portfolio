@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap");
+
 @import "tailwindcss";
 
+
+
 :root {
+  /* フォント */
+  --font-noto: "Noto Sans JP";
+  --font-bodoni: "Bodoni Moda";
+
   /* メイン背景 */
   --background: #F7F5F2;
 
@@ -18,7 +26,6 @@
 
   /* 境界線 */
   --border: #DED6D2;
-
 }
 
 @theme inline {

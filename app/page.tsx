@@ -122,11 +122,35 @@ export default function Home() {
     description:
       "透明感と上質さをテーマに、光の表現や色調補正、商品画像の合成を行い、\n美容液の魅力を引き立てる広告ビジュアルを制作しました。",
     concept:
-      "架空ブランド「LUMIÈRE」の商品広告ビジュアルを制作しました。\n透明感と上質さをテーマに、美容液の魅力が伝わるデザインを目指しました。",
+      "架空ブランド「Lumière」の商品広告ビジュアルを制作しました。\n透明感と上質さをテーマに、美容液の魅力が伝わるデザインを目指しました。",
     designPoint:
       "淡いブルーと光の表現を組み合わせ、清潔感と高級感を演出。\n商品画像の切り抜きや合成、色調補正、光と影の調整を行い、背景と商品が自然になじむよう工夫しました。",
     tags: ["自主制作", "Photoshop", "Graphic Design"],
   },
+  {
+    workType: "personal",
+    title: "業務効率化クラウドサービス 紹介資料",
+    category: "Presentation Design",
+    image: "/presentation-cloud.png",
+    popupImage: "/presentation-cloud.png",
+    href: "",
+    description: "業務効率化クラウドサービスを紹介する架空の営業資料。\nサービスの特徴や導入メリットを図解と数値で分かりやすく整理しました。",
+    concept: "架空の業務効率化クラウドサービス『Clear Works』の紹介資料を制作しました。\nサービスの概要から導入メリット、利用開始までの流れを順序立てて伝える構成にしています。",
+    designPoint: "ネイビーを基調に信頼感のあるトーンで統一。\n業務フローは図解で、導入効果は数値を大きく見せることで、内容を短時間で把握できるよう工夫しました。",
+    tags: ["自主制作", "PowerPoint", "Presentation Design"],
+  },
+  {
+    workType: "personal",
+    title: "新卒採用 会社説明資料",
+    category: "Presentation Design",
+    image: "/presentation-recruit.png",
+    popupImage: "/presentation-recruit.png",
+    href: "",
+    description: "新卒採用向けの架空の会社説明資料。\n写真と図表を組み合わせ、企業の魅力や募集内容が伝わるよう構成しました。",
+    concept: "架空企業の新卒採用向け会社説明資料を制作しました。\n企業理念・会社概要・募集職種・社員インタビュー・採用情報を順序立てて紹介しています。",
+    designPoint: "明るいターコイズをアクセントに、親しみやすく清潔感のある印象を目指しました。\n写真を効果的に使い、見出しや情報ブロックの配置を統一して、各スライドの読みやすさを意識しました。",
+    tags: ["自主制作", "PowerPoint", "Presentation Design"],
+  }
   ];
   const renderWorkCard = (work: Work, index: number) => (
     <FadeIn
@@ -335,7 +359,7 @@ export default function Home() {
 
                   <div className="grid gap-10 md:grid-cols-2">
                     {works
-                      .filter((work) => work.workType === "personal")
+                      .filter((work) => work.workType === "personal" && work.category !== "Presentation Design")
                       .map(renderWorkCard)}
 
                     {/* 健康管理LP */}
@@ -527,6 +551,11 @@ export default function Home() {
                         </p>
                       </Link>
                     </FadeIn>
+
+                    {/* PowerPoint資料：自主制作の最後に表示 */}
+                    {works
+                      .filter((work) => work.workType === "personal" && work.category === "Presentation Design")
+                      .map(renderWorkCard)}
                   </div>
                 </div>
 
@@ -979,7 +1008,7 @@ export default function Home() {
                 <img
                   src={selectedWork.popupImage}
                   alt={selectedWork.title}
-                  className="mx-auto w-full max-w-[420px] h-auto object-contain"
+                  className={`mx-auto w-full h-auto object-contain ${selectedWork.category === "Presentation Design" ? "max-w-[760px]" : "max-w-[420px]"}`}
                 />
               </div>
 

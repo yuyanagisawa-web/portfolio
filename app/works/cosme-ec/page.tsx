@@ -70,7 +70,7 @@ export default function Page() {
                         </p>
 
                         <h1 className="font-heading-ja mb-5 text-3xl font-medium tracking-[0.08em] text-foreground md:text-4xl">
-                            Lumière Skin
+                            Lumère Skin
                         </h1>
 
                         <p className="text-sm leading-8 text-[#625B57] md:text-base">
@@ -123,7 +123,7 @@ export default function Page() {
                                 <div className="flex aspect-[4/5] items-center justify-center rounded-xl border border-white/70 bg-gradient-to-br from-white via-[#EADF D3] to-[#CDBDAA]">
                                     <div className="text-center">
                                         <p className="mb-5 text-sm tracking-[0.3em] text-[#8B7D70]">
-                                            Lumière
+                                            Lumère
                                         </p>
 
                                         <div className="mx-auto h-40 w-24 rounded-t-full rounded-b-2xl border border-white bg-white/70 shadow-sm" />

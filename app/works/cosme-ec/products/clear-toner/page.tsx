@@ -77,7 +77,7 @@ export default function Page() {
                             href="/works/cosme-ec/site"
                             className="transition hover:text-[#6F6258]"
                         >
-                            Lumière Skin
+                            Lumère Skin
                         </Link>
 
                         <span>/</span>
@@ -95,21 +95,21 @@ export default function Page() {
                                 <div className="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] border border-white/70 bg-gradient-to-br from-white via-[#EADFD3] to-[#CDBDAA] p-8">
                                     <img
                                         src="/clear-toner.png"
-                                        alt="Lumière Skin Clear Toner"
+                                        alt="Lumère Skin Clear Toner"
                                         className="h-full w-full object-contain drop-shadow-xl"
                                     />
                                 </div>
                             </div>
 
                             <p className="mt-5 text-center text-xs tracking-[0.2em] text-[#A49486]">
-                                LUMIÈRE SKIN — DAILY SKINCARE
+                                Lumère SKIN — DAILY SKINCARE
                             </p>
                         </div>
 
                         {/* 右：商品情報 */}
                         <div>
                             <p className="mb-4 text-xs tracking-[0.25em] text-[#B79D95]">
-                                LUMIÈRE SKIN / TONER
+                                Lumère SKIN / TONER
                             </p>
 
                             <h1 className="mb-3 text-3xl font-medium tracking-[0.03em] text-[#3B322C] md:text-5xl">

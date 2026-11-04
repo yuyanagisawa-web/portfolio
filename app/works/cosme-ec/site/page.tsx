@@ -50,7 +50,7 @@ export default function Page() {
                             {/* 左：ブランドメッセージ */}
                             <div className="relative z-10 px-7 py-16 md:px-12 lg:px-16">
                                 <p className="mb-7 text-xs tracking-[0.35em] text-[#9B8574] md:text-sm">
-                                    LUMIÈRE SKIN
+                                    Lumère SKIN
                                 </p>
 
                                 <p className="mb-5 text-xs tracking-[0.2em] text-[#8B7D70]">
@@ -92,7 +92,7 @@ export default function Page() {
                                 <div className="relative z-10 flex w-full max-w-[320px] items-center justify-center">
                                     <img
                                         src="/glow-serum.png"
-                                        alt="Lumière Skin Glow Serum"
+                                        alt="Lumère Skin Glow Serum"
                                         className="h-[320px] w-full object-contain drop-shadow-2xl md:h-[430px]"
                                     />
                                 </div>

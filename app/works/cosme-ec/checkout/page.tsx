@@ -100,7 +100,7 @@ export default function Page() {
                             href="/works/cosme-ec/site"
                             className="transition hover:text-[#6F6258]"
                         >
-                            Lumière Skin
+                            Lumère Skin
                         </Link>
 
                         <span>/</span>
@@ -226,7 +226,7 @@ export default function Page() {
 
                                                     <div>
                                                         <p className="mb-2 text-[11px] tracking-[0.18em] text-[#B79D95]">
-                                                            LUMIÈRE SKIN
+                                                            Lumère SKIN
                                                         </p>
 
                                                         <Link
@@ -393,7 +393,7 @@ export default function Page() {
                     {/* ブランドメッセージ */}
                     <div className="mt-20 border-t border-[#DED6D2] pt-10 text-center">
                         <p className="mb-3 text-xs tracking-[0.25em] text-[#B79D95]">
-                            LUMIÈRE SKIN
+                            Lumère SKIN
                         </p>
 
                         <p className="text-sm leading-8 text-[#8B7D70]">

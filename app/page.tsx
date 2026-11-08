@@ -114,7 +114,7 @@ export default function Home() {
   },
   {
     workType: "personal",
-    title: "スキンケア美容液 広告デザイン",
+    title: "スキンケア広告デザイン",
     category: "Graphic Design",
     image: "/lumiere.png",
     popupImage: "/lumiere.png",
@@ -130,7 +130,7 @@ export default function Home() {
 
   {
     workType: "personal",
-    title: "金沢女子旅 旅行広告バナー",
+    title: "旅行広告バナー",
     category: "Graphic Design",
     image: "/kanazawa-banner.png",
     popupImage: "/kanazawa-banner.png",

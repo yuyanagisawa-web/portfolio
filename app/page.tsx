@@ -127,6 +127,23 @@ export default function Home() {
       "淡いブルーと光の表現を組み合わせ、清潔感と高級感を演出。\n商品画像の切り抜きや合成、色調補正、光と影の調整を行い、背景と商品が自然になじむよう工夫しました。",
     tags: ["自主制作", "Photoshop", "Graphic Design"],
   },
+
+  {
+    workType: "personal",
+    title: "金沢女子旅 旅行広告バナー",
+    category: "Graphic Design",
+    image: "/kanazawa-banner.png",
+    popupImage: "/kanazawa-banner.png",
+    href: "",
+    description:
+      "大人の女性をターゲットにした金沢旅行の広告バナー。\n和の雰囲気と上品さを意識し、写真の色調やレイアウトを\n工夫しました。",
+    concept:
+      "金沢への旅行を検討する大人の女性をターゲットに、歴史・自然・食・アートの魅力を伝える\n架空の旅行広告バナーを制作しました。\n落ち着いた雰囲気の中にも、旅への期待感が感じられるデザインを目指しました。",
+    designPoint:
+      "4枚の写真を組み合わせ、金沢の多彩な魅力を視覚的に表現しました。\n中央には和紙をイメージした背景と金色の装飾を配置し、上品な和の世界観を演出。\n写真ごとの色調補正や縦書きコピーの配置にもこだわり、全体の統一感と文字の視認性を意識しました。",
+    tags: ["自主制作", "Photoshop", "Banner Design"],
+  },
+
   {
     workType: "personal",
     title: "業務効率化クラウドサービス 紹介資料",
@@ -1008,7 +1025,11 @@ export default function Home() {
                 <img
                   src={selectedWork.popupImage}
                   alt={selectedWork.title}
-                  className={`mx-auto w-full h-auto object-contain ${selectedWork.category === "Presentation Design" ? "max-w-[760px]" : "max-w-[420px]"}`}
+                  className={`mx-auto w-full h-auto object-contain ${selectedWork.category === "Presentation Design" ||
+                    selectedWork.title === "金沢女子旅 旅行広告バナー"
+                    ? "max-w-[760px]"
+                    : "max-w-[420px]"
+                    }`}
                 />
               </div>
 
